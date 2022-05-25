@@ -21,7 +21,9 @@ export const Demo = () => {
 						<button className="forgotPassword">ForgotPassword</button>
 					</div>
 					<div className = "signUpBtn">
+					<Link to="/FormSignup">
 						<button className="signUp">Sign Up</button>
+						</Link>
 					</div>
 				</div>
 			</div>
