@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-
+import sunsetImg from "../../img/sunset.jpg";
 import { Context } from "../store/appContext";
 
 export const Demo = () => {
@@ -9,7 +9,7 @@ export const Demo = () => {
 	return (
 
 		<div id="loginFormAndPhoto" >
-			<img id="loginPhoto" style={{ height: "auto", width: "50%" }} src="https://us.123rf.com/450wm/natalimis/natalimis1906/natalimis190600024/124388899-the-hand-shows-the-symbol-of-the-psychologists-on-the-background-of-the-human-brain-.jpg?ver=6"></img>
+			<img id="loginPhoto" style={{ height: "auto", width: "50%" }} src={sunsetImg}></img>
 			<form style={{ width: "50%", margin: "10px", display: "flex", flexDirection: "column" }}>
 				<div style={{ display: "flex", flexDirection: "column", textAlign: "center" }}>
 					<i className="fa-solid fa-circle-user fa-2xl" style={{ marginTop: "12px" }}></i>
