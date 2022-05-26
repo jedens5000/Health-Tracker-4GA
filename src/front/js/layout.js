@@ -8,9 +8,10 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+// import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import FormSignup from "./pages/FormSignup";
+import { Login } from "./pages/Login";
 
 //create your first component
 const Layout = () => {
@@ -30,10 +31,13 @@ const Layout = () => {
             <Route exact path="/demo">
               <Demo />
             </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
             <Route exact path="/single/:theid">
               <Single />
             </Route>
-            <Route exact path="/FormSignup">
+            <Route exact path="/signup">
               <FormSignup />
             </Route>
             <Route>
