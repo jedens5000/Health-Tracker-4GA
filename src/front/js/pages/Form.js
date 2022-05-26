@@ -12,10 +12,8 @@ const Form = () => {
   return (
     <>
       <div className='form-container'>
-        <span className='close-btn'>×</span>
-        <div className='form-content-left'>
-          <img className='form-img' src='img/img-2.svg' alt='spaceship' />
-        </div>
+        {/* <span className='close-btn'>×</span> */}
+       
         {!isSubmitted ? (
           <FormSignup submitForm={submitForm} />
         ) : (
