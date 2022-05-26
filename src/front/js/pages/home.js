@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import sunsetImg from "../../img/sunset.jpg";
 import mindsetLogo from "../../img/mindset-logo.png";
 import "../../styles/home.css";
+import { Navbar } from "../component/navbar";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
