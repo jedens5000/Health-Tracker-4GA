@@ -1,0 +1,28 @@
+#loginPhoto {
+  width: 50vw !important;
+  height: 100vh;
+  object-fit: cover;
+}
+
+form {
+  width: 50%;
+  height: auto;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.form-check-label {
+  float: left !important;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}

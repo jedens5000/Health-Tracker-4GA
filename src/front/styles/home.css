@@ -15,11 +15,7 @@ html {
   margin: 0;
 }
 
-.bgimg {
-  background: url(../img/sunset.jpg);
-  /* height: 100vw; */
-  height: 100vh;
-  background-repeat: "no-repeat";
-  background-size: "cover";
-  background-position: "center";
+.logo-home {
+  height: 90vh;
+  text-align: center;
 }
