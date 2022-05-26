@@ -1,17 +1,16 @@
 .form-container {
-    border-style: solid;
-    border-color: aqua;
+  
     margin: auto;
     /* position: fixed; */
     padding: 70px;
     width: 500px;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2); */
     position: relative;
     border-radius: 5px;
     height: 600px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
+  } */
   
   .close-btn {
     position: absolute;
@@ -56,7 +55,7 @@
     border-style: solid;
     border-width: .05rem;
     position: relative;
-    background-color: azure;
+    background-color: rgb(170, 168, 168);
   }
   
   .form {
@@ -120,11 +119,7 @@
     height: 50px;
     margin-top: 10px;
     border-radius: 2px;
-    background: linear-gradient(
-      90deg,
-      rgb(39, 176, 255) 0%,
-      rgb(0, 232, 236) 100%
-    );
+    background-color: blue;
     outline: none;
     border: none;
     color: #fff;
@@ -151,7 +146,7 @@
   
   .form-input-login a {
     text-decoration: none;
-    color: #27cdff;
+    color: #7d1626;
     font-weight: 600;
   }
   
