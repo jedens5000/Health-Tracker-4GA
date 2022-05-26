@@ -1,4 +1,6 @@
 #loginFormAndPhoto{
-    display:flex;
-    
+    display:flex;   
+}
+.html {
+    scroll-behavior: smooth;
 }

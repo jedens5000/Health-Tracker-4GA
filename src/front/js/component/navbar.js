@@ -6,7 +6,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-light bg-light">
       <div className="container">
         <Link to="/">
-          {/* <span className="navbar-brand mb-0 h1">React Boilerplate</span> */}
+          <span className="navbar-brand mb-0 h1"><img src="img.project-localStorage.png"></img></span>
         </Link>
         <div className="ml-auto">
           <Link to="/demo">
