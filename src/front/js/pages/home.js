@@ -10,6 +10,7 @@ export const Home = () => {
 
   return (
     <div className="logo-home">
+      <Navbar/>
       <img src={mindsetLogo} />
       <p>Welcome</p>
     </div>
