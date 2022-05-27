@@ -26,3 +26,14 @@ form {
   margin-right: auto;
   object-fit: cover;
 }
+
+@media (max-width: 500px) {
+  #loginPhoto {
+    display: none;
+  }
+
+  form {
+    width: 100%;
+    height: auto;
+  }
+}
