@@ -2,6 +2,7 @@
 // import { Link } from "react-router-dom";
 // import sunsetImg from "../../img/sunset.jpg";
 // import { Context } from "../store/appContext";
+// import mindsetLogo from "../../img/mindset-logo.png";
 
 // export const Demo = () => {
 //   const { store, actions } = useContext(Context);
@@ -28,10 +29,11 @@
 //             textAlign: "center",
 //           }}
 //         >
-//           <i
+//             <img src={mindsetLogo} style={{display:"flex",marginLeft: "24.5%",height:"auto", width:"50%"}}></img>
+//           {/* <i
 //             className="fa-solid fa-circle-user fa-2xl"
 //             style={{ marginTop: "12px" }}
-//           ></i>
+//           ></i> */}
 //           <p style={{ marginTop: "12px" }}>Sign In</p>
 //         </div>
 //         <div className="mb-3">
