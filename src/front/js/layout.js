@@ -12,6 +12,7 @@ import injectContext from "./store/appContext";
 import { Footer } from "./component/footer";
 import FormSignup from "./pages/FormSignup";
 import { Login } from "./pages/Login";
+import { StatusUpdate } from "./pages/StatusUpdate";
 
 //create your first component
 const Layout = () => {
@@ -40,11 +41,14 @@ const Layout = () => {
             <Route exact path="/signup">
               <FormSignup />
             </Route>
+            <Route exact path="/statusupdate">
+              <StatusUpdate />
+            </Route>
             <Route>
               <h1>Not found!</h1>
             </Route>
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </ScrollToTop>
       </BrowserRouter>
     </div>

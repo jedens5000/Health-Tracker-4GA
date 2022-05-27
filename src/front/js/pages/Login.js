@@ -21,7 +21,8 @@ export const Login = () => {
             className="form-control"
             id="inputEmail"
             placeholder="Email Address"
-          ></input>
+            required
+          />
         </div>
         <div className="mb-3">
           <input
@@ -29,7 +30,8 @@ export const Login = () => {
             className="form-control"
             id="inputPassword"
             placeholder="Password"
-          ></input>
+            required
+          />
         </div>
         <div className="form-check mb-3">
           <input
@@ -41,7 +43,7 @@ export const Login = () => {
             Remember Me
           </label>
         </div>
-        <button type="submit" className="btn btn-primary mb-3">
+        <button type="submit" className="btn btn-primary mb-3" style={{width: "100%"}}>
           Submit
         </button>
         <div className="d-flex justify-content-between">
