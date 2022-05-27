@@ -9,9 +9,19 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="logo-home">
-      <img src={mindsetLogo} />
-      <p>Welcome</p>
+    <div id="homePhoto">
+      <div className="position-absolute top-50 start-50 translate-middle">
+        <div className="d-flex flex-column align-items-center">
+          {/* <img id="homePhoto" src={sunsetImg} /> */}
+          <img src={mindsetLogo} />
+          <p>MindSet - /ˈmaɪn(d)ˌset/ - noun</p>
+          <p>: a mental attitude or inclination</p>
+          <p>: a fixed state of mind</p>
+          <a class="btn btn-primary" href="./login" role="button">
+            Get started now
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

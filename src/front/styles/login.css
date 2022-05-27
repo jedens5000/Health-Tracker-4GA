@@ -12,6 +12,9 @@ form {
   flex-direction: column;
   text-align: center;
 }
+.input-field {
+  height: 50px !important;
+}
 
 .form-check-label {
   float: left !important;
