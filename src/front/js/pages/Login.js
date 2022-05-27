@@ -15,21 +15,23 @@ export const Login = () => {
         <div>
           <p className="mt-3">Sign In</p>
         </div>
-        <div className="mb-3">
+        <div className="form-floating mb-3">
           <input
             type="email"
             className="form-control"
-            id="inputEmail"
-            placeholder="Email Address"
-          ></input>
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email address</label>
         </div>
-        <div className="mb-3">
+        <div className="form-floating mb-3">
           <input
             type="password"
             className="form-control"
-            id="inputPassword"
+            id="floatingPassword"
             placeholder="Password"
-          ></input>
+          />
+          <label for="floatingPassword">Password</label>
         </div>
         <div className="form-check mb-3">
           <input
