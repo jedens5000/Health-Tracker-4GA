@@ -1,13 +1,43 @@
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+#questionnaire {
+  text-align: center;
 }
 
-.material-symbols-outlined:hover {
-  /* font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48; */
-  background-color: yellow;
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+  margin: 0 0 0 1.5rem;
+  /* color: yellow; */
+  color: rgb(252, 252, 173);
+  background-color: black;
   border-radius: 50%;
 }
 
+.material-symbols-outlined:hover {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+  /* color: lightyellow; */
+  color: yellow;
+  cursor: pointer;
+}
+.form-check-inline {
+  margin-left: 1rem;
+}
+
+#radioEmojis {
+  margin: 0 0.75rem;
+}
+
 #icon-face {
-  padding-right: 24px !important;
+  /* padding-right: 24px !important; */
+  /* padding: 0 0 0 1.5rem !important; */
+}
+
+.selected-icon1,
+.selected-icon2,
+.selected-icon3,
+.selected-icon4 {
+  background-color: yellow;
+  border-radius: 50%;
+}
+.selected-icon5 {
+  background-color: rgb(121, 255, 139);
+  border-radius: 50%;
 }
