@@ -4,8 +4,8 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
 import { Signup } from "./component/Form";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
+// import { Demo } from "./pages/demo";
+// import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 // import { Navbar } from "./component/navbar";
@@ -29,15 +29,15 @@ const Layout = () => {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path="/demo">
+            {/* <Route exact path="/demo">
               <Demo />
-            </Route>
+            </Route> */}
             <Route exact path="/login">
               <Login />
             </Route>
-            <Route exact path="/single/:theid">
+            {/* <Route exact path="/single/:theid">
               <Single />
-            </Route>
+            </Route> */}
             <Route exact path="/signup">
               <FormSignup />
             </Route>

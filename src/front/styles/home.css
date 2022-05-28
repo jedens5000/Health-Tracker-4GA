@@ -6,16 +6,6 @@
     on that page only (the ones not reused in other pages).
 */
 
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  margin: 0;
-}
-
 /* #homePhoto {
   width: 100vw !important;
   height: 100vh;
