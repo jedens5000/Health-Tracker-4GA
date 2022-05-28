@@ -1,23 +1,25 @@
 import React from 'react';
 import validate from '../component/validateInfo';
 import useForm from '../component/useForm';
+import mindsetLogo from "../../img/mindset-logo.png";
 import "../../styles/Form.css";
 
-const FormSignup = ({ submitForm }) => {
+export const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
   );
 
   return (
-    <div className='form-container'>     
-    <div className='form-content-right'>
+    <div className='form-container'>    
+    {/* <div className='form-content-right'> */}
       <form onSubmit={handleSubmit} className='form' noValidate>
+      <img className="logo" src={mindsetLogo} /> 
         <h1>
-          Get started with us today! Create your account by filling out the
+          Start tracking your mental health today! Create your account by filling out the
           information below.
         </h1>
-        <div className='form-inputs'>
+        {/* <div className='form-inputs'>
           <label className='form-label'>Username</label>
           <input
             className='form-input'
@@ -28,8 +30,8 @@ const FormSignup = ({ submitForm }) => {
             onChange={handleChange}
           />
           {errors.username && <p>{errors.username}</p>}
-        </div>
-        <div className='form-inputs'>
+        </div> */}
+        <div className='mb-3'>
           <label className='form-label'>Email</label>
           <input
             className='form-input'
@@ -41,7 +43,7 @@ const FormSignup = ({ submitForm }) => {
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
-        <div className='form-inputs'>
+        <div className='mb-3'>
           <label className='form-label'>Password</label>
           <input
             className='form-input'
@@ -53,7 +55,7 @@ const FormSignup = ({ submitForm }) => {
           />
           {errors.password && <p>{errors.password}</p>}
         </div>
-        <div className='form-inputs'>
+        <div className='mb-3'>
           <label className='form-label'>Confirm Password</label>
           <input
             className='form-input'
@@ -65,17 +67,18 @@ const FormSignup = ({ submitForm }) => {
           />
           {errors.password2 && <p>{errors.password2}</p>}
         </div>
-        <button className='form-input-btn' type='submit'>
+        {/* <Link to="/main"> */}
+        <button type="submit" className="btn btn-primary mb-3">
           Sign up
         </button>
-        
+        {/* </Link> */}
         <span className='form-input-login'>
           Already have an account? Login <a href='Login'>here</a>
         </span>
         
       </form>
     </div>
-    </div>
+    // </div>
   );
 };
 
