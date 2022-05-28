@@ -44,7 +44,7 @@ export const Login = () => {
             Remember Me
           </label>
         </div>
-        <button type="submit" className="btn btn-primary mb-3" style={{width: "100%"}}>
+        <button type="submit" className="btn btn-primary mb-3">
           Submit
         </button>
         <div className="d-flex justify-content-between">
