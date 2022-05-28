@@ -44,6 +44,9 @@ const Layout = () => {
             <Route exact path="/statusupdate">
               <StatusUpdate />
             </Route>
+            <Route exact path="/main">
+              <main />
+            </Route>
             <Route>
               <h1>Not found!</h1>
             </Route>

@@ -49,14 +49,14 @@
     color: rgb(0, 0, 0);
   }
   
-  .form-content-right {
+  /* .form-content-right {
     width: 400px;
     border-radius: 5rem;
     border-style: solid;
     border-width: .05rem;
     position: relative;
     background-color: rgb(170, 168, 168);
-  }
+  } */
   
   .form {
     position: absolute;
@@ -78,7 +78,7 @@
     text-align: start;
     width: 80%;
     margin-bottom: 1rem;
-    color: rgb(0, 0, 0);
+    /* color: rgb(0, 0, 0); */
   }
   
   .form-inputs {
@@ -94,27 +94,27 @@
   
   .form-label {
     display: inline-block;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
     margin-bottom: 6px;
     color: rgb(0, 0, 0);
   }
   
   .form-input {
-    display: block;
+    /* display: block; */
     padding-left: 10px;
-    outline: none;
-    border-radius: 2px;
+    /* outline: none; */
+    /* border-radius: 2px; */
     height: 40px;
     width: 100%;
-    border: none;
+    /* border: none; */
   }
   
   .form-input::placeholder {
     color: #595959;
-    font-size: 12px;
+    /* font-size: 12px; */
   }
   
-  .form-input-btn {
+  /* .form-input-btn {
     width: 80%;
     height: 50px;
     margin-top: 10px;
@@ -124,7 +124,7 @@
     border: none;
     color: #fff;
     font-size: 1rem;
-  }
+  } */
   
   .form-input-btn:hover {
     cursor: pointer;
@@ -146,7 +146,7 @@
   
   .form-input-login a {
     text-decoration: none;
-    color: #7d1626;
+    color: green;
     font-weight: 600;
   }
   
