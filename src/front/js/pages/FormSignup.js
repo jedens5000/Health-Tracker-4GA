@@ -11,26 +11,19 @@ export const FormSignup = ({ submitForm }) => {
   );
 
   return (
-    <div className='form-container'>    
-    {/* <div className='form-content-right'> */}
-      <form onSubmit={handleSubmit} className='form' noValidate>
+    <div className='top'>
       <img className="logo" src={mindsetLogo} /> 
         <h1>
           Start tracking your mental health today! Create your account by filling out the
           information below.
         </h1>
-        {/* <div className='form-inputs'>
-          <label className='form-label'>Username</label>
-          <input
-            className='form-input'
-            type='text'
-            name='username'
-            placeholder='Enter your username'
-            value={values.username}
-            onChange={handleChange}
-          />
-          {errors.username && <p>{errors.username}</p>}
-        </div> */}
+    
+    <div className='form-container'>    
+    
+      <div style={{ backgroundImage: "url(/mainPageBackground.png)", width: '100%', id: 'background', }}>
+  
+      <form onSubmit={handleSubmit} className='form' noValidate>
+     
         <div className='mb-3'>
           <label className='form-label'>Email</label>
           <input
@@ -78,8 +71,11 @@ export const FormSignup = ({ submitForm }) => {
         
       </form>
     </div>
-    // </div>
+    </div>
+    </div>
+    
   );
 };
+
 
 export default FormSignup;

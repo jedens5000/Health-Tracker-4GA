@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			token: [],
 			message: null,
 			demo: [
 				{
@@ -21,27 +22,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 
-			getMessage: () => {
-				// fetching data from the backend
-				fetch(process.env.BACKEND_URL + "/api/hello")
-					.then(resp => resp.json())
-					.then(data => setStore({ message: data.message }))
-					.catch(error => console.log("Error loading message from backend", error));
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+			login:async (email, password) => {
+				try {
+					const response = await fetch("https://3001-jedens5000-healthtracke-heo344qeauv.ws-us46.gitpod.io/api/login", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							email, password
+						})
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+		
+					})
+					if (response.ok) {
+						const token = await response.json()
+						localStorage.setItem("token", JSON.stringify(token))
+						console.log(response)
+						return true
+					} else {throw "password not correct"} 
 
-				//reset the global store
-				setStore({ demo: demo });
+				}catch (error) {
+					throw Error("email incorrect")
+				}
 			}
+			
+			
 		}
 	};
 };

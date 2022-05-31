@@ -2,7 +2,7 @@
   
     margin: auto;
     /* position: fixed; */
-    padding: 70px;
+    /* padding: 70px; */
     width: 500px;
     /* box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2); */
     position: relative;
@@ -61,7 +61,7 @@
   .form {
     position: absolute;
     margin: auto;
-    padding: 70px;
+    /* padding: 70px; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
