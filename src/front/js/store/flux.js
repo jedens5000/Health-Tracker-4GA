@@ -22,9 +22,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().changeColor(0, "green");
 			},
 
-			login:async (email, password) => {
+			login: async (email, password) => {
 				try {
-					const response = await fetch("https://3001-jedens5000-healthtracke-heo344qeauv.ws-us46.gitpod.io/api/login", {
+					const response = await fetch("https://3001-jedens5000-healthtracke-k1y9n29dys9.ws-us46.gitpod.io/api/login", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"
