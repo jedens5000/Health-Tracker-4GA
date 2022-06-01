@@ -1,5 +1,4 @@
-.form-container {
-  
+.form-container {  
     margin: auto;
     /* position: fixed; */
     /* padding: 70px; */
@@ -24,7 +23,7 @@
   
   
   
-  .form-img {
+  /* .form-img {
     width: 80%;
     height: 80%;
     position: absolute;
@@ -40,7 +39,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
   
   .form-success {
     text-align: center;
@@ -62,7 +61,7 @@
     position: absolute;
     margin: auto;
     /* padding: 70px; */
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 450px;
@@ -76,7 +75,7 @@
   .form h1 {
     font-size: 1rem;
     text-align: start;
-    width: 80%;
+    width: 100%;
     margin-bottom: 1rem;
     /* color: rgb(0, 0, 0); */
   }
