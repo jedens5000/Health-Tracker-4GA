@@ -6,22 +6,34 @@ import { Context } from "../store/appContext";
 
 export const Login = () => {
   const { store, actions } = useContext(Context);
-
+  const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [error, setError] = useState(null);
+  const handleSubmit = e => {
+    e.preventDefault();
+    actions.login(email, password).catch(error => {
+    setError(error);
+    console.log("This is my error", error);
+    });
+    };
   return (
     <div id="loginFormAndPhoto">
       <img id="loginPhoto" src={sunsetImg}></img>
-      <form>
+      <form onSubmit={handleSubmit}>
         <img className="logo" src={mindsetLogo} />
         <div>
           <p className="mt-3">Sign In</p>
         </div>
         <div className="mb-3">
           <input
-            type="email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            type="text"
+            // pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             className="form-control"
             id="inputEmail"
             placeholder="Email Address"
+            onChange={e => setEmail(e.target.value)}
+value={email}
+
             required
           />
         </div>
@@ -31,6 +43,8 @@ export const Login = () => {
             className="form-control"
             id="inputPassword"
             placeholder="Password"
+            onChange={e => setPassword(e.target.value)}
+value={password}
             required
           />
         </div>

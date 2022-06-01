@@ -17,7 +17,7 @@ export const Home = () => {
           <p>MindSet - /ˈmaɪn(d)ˌset/ - noun</p>
           <p>: a mental attitude or inclination</p>
           <p>: a fixed state of mind</p>
-          <a class="btn btn-primary" href="./login" role="button">
+          <a className="btn btn-primary" href="./login" role="button">
             Get started now
           </a>
         </div>
