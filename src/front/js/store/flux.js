@@ -1,3 +1,5 @@
+import FormSignup from "../pages/FormSignup";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -24,7 +26,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			login: async (email, password) => {
 				try {
-					const response = await fetch("https://3001-jedens5000-healthtracke-k1y9n29dys9.ws-us46.gitpod.io/api/login", {
+					const response = await fetch("https://3001-jedens5000-healthtracke-1uoaqj0mckj.ws-us46.gitpod.io/api/login", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"
@@ -45,7 +47,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}catch (error) {
 					throw Error("email incorrect")
 				}
+			},
+
+			FormSignup: async (name, email, password, password2, condition1) => {
+				try {
+					const response = await fetch("https://3001-jedens5000-healthtracke-1uoaqj0mckj.ws-us46.gitpod.io/api/FormSignup", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify({
+							name, email, password, password2, condition1
+						})
+
+		
+					})
+					// if (response.ok) {
+					// 	const token = await response.json()
+					// 	localStorage.setItem("token", JSON.stringify(token))
+					// 	console.log(response)
+					// 	return true
+					// } else {throw "password does not match"} 
+
+				}catch (error) {
+					throw Error("Invalid email")
+				}
 			}
+			
 			
 			
 		}

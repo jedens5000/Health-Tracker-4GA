@@ -5,20 +5,22 @@ db = SQLAlchemy()
 
 class UserAcct(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(100), unique=True, nullable=False)
-    pw = db.Column(db.String(100), unique=True, nullable=False)
-    first_name = db.Column(db.String(100), unique=False, nullable=False)
     
+    name = db.Column(db.String(120), unique=False, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(80), unique=False, nullable=False)
+    condition1 = db.Column(db.String(120), unique=False, nullable=False)
     issues = db.relationship('Issues', backref='useracct', lazy=True)
 
     def __repr__(self):
-        return self.first_name           
+        return self.name           
 
     def serialize(self):
         return {
             "id": self.id,
+            "name": self.name,
             "email": self.email,
-            "first_name": self.first_name,            
+            "condition1": self.condition1,
         }
 
 class Issues(db.Model):
@@ -26,7 +28,6 @@ class Issues(db.Model):
     issue1 = db.Column(db.String(100), unique=False, nullable=False)
     issue2 = db.Column(db.String(100), unique=False, nullable=True)
     issue3 = db.Column(db.String(100), unique=False, nullable=True)
-    useracct = UserAcct
     user_id = db.Column(db.Integer, db.ForeignKey('useracct.id'), nullable= False)
 
     def __repr__(self):
@@ -58,3 +59,6 @@ class Issues(db.Model):
 #             "email": self.email,
 #             # do not serialize the password, its a security breach
 #         }
+
+            # do not serialize the password, its a security breach
+        

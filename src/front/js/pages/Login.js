@@ -58,9 +58,11 @@ value={password}
             Remember Me
           </label>
         </div>
+        <Link to="/main">
         <button type="submit" className="btn btn-primary mb-3">
           Submit
         </button>
+        </Link>
         <div className="d-flex justify-content-between">
           <Link to="/formForgotPassword">
             {" "}
