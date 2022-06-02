@@ -1,8 +1,8 @@
 export default function validateInfo(values) {
     let errors = {};
   
-    if (!values.username.trim()) {
-      errors.username = 'Username required';
+    if (!values.name.trim()) {
+      errors.name = 'Name required';
     }
    
   
@@ -22,6 +22,19 @@ export default function validateInfo(values) {
     } else if (values.password2 !== values.password) {
       errors.password2 = 'Passwords do not match';
     }
+
+    if (!values.condition1) {
+      errors.condition1 = 'condition is required';
+    } 
+
+    if (!values.condition2) {
+      errors.condition2 = 'condition is required';
+    } 
+
+    if (!values.condition3) {
+      errors.condition3 = 'condition is required';
+    } 
+    
     return errors;
   }
   
