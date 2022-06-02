@@ -1,3 +1,5 @@
+import FormSignup from "../pages/FormSignup";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -46,6 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					throw Error("email incorrect")
 				}
 			}
+			
 			
 			
 		}
