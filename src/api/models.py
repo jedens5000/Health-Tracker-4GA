@@ -8,9 +8,8 @@ class UserAcct(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     pw = db.Column(db.String(100), unique=True, nullable=False)
     first_name = db.Column(db.String(100), unique=False, nullable=False)
+    
     issues = db.relationship('Issues', backref='useracct', lazy=True)
-
-
 
     def __repr__(self):
         return self.first_name           
@@ -27,8 +26,8 @@ class Issues(db.Model):
     issue1 = db.Column(db.String(100), unique=False, nullable=False)
     issue2 = db.Column(db.String(100), unique=False, nullable=True)
     issue3 = db.Column(db.String(100), unique=False, nullable=True)
+    useracct = UserAcct
     user_id = db.Column(db.Integer, db.ForeignKey('useracct.id'), nullable= False)
-
 
     def __repr__(self):
         return self.issue1
