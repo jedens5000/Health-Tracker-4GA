@@ -13,6 +13,7 @@ import { Footer } from "./component/footer";
 import FormSignup from "./pages/FormSignup";
 import { Login } from "./pages/Login";
 import { StatusUpdate } from "./pages/StatusUpdate";
+import { Main } from "./pages/main";
 
 //create your first component
 const Layout = () => {
@@ -45,11 +46,12 @@ const Layout = () => {
               <StatusUpdate />
             </Route>
             <Route exact path="/main">
-              <main />
+              <Main />
             </Route>
             <Route>
               <h1>Not found!</h1>
             </Route>
+            
           </Switch>
           {/* <Footer /> */}
         </ScrollToTop>

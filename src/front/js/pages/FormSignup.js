@@ -1,16 +1,19 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import validate from '../component/validateInfo';
 import useForm from '../component/useForm';
 import mindsetLogo from "../../img/mindset-logo.png";
 import mainPageBackground from "../../img/mainPageBackground.png";
-import lotus from "../../img/lotus.png"
 import "../../styles/Form.css";
+import { Context } from '../store/appContext';
+import { Link } from 'react-router-dom';
 
 export const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
   );
+
+const{store,actions}=useContext(Context)
 
   return (
     <div className='top'>
@@ -110,11 +113,11 @@ export const FormSignup = ({ submitForm }) => {
           />
           {errors.condition3 && <p>{errors.condition3}</p>}
         </div>
-        {/* <Link to="/main"> */}
-        <button type="submit" className="btn btn-primary mb-3">
+        <Link to="/main">
+        <button type="submit" className="btn btn-primary mb-3" onClick={()=>actions.FormSignup(values.name, values.email, values.password, values.password2, values.condition1)}>
           Sign up
         </button>
-        {/* </Link> */}
+        </Link>
         <span className='form-input-login'>
           Already have an account? Login <a href='Login'>here</a>
         </span>
