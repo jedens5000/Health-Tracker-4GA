@@ -1,8 +1,14 @@
 import FormSignup from "../pages/FormSignup";
 
 const getState = ({ getStore, getActions, setStore }) => {
+  const apiJon =
+    "https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io";
+  const apiChad =
+    "https://3001-jedens5000-healthtracke-1uoaqj0mckj.ws-us46.gitpod.io";
+  const apiJustin = "";
   return {
     store: {
+      apiURL: apiJon, //CHANGE THIS TO YOUR api(NAME) TO WORK FOR YOU
       token: [],
       message: null,
       issues: [],
@@ -16,7 +22,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       login: async (email, password) => {
         try {
           const response = await fetch(
-            "https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io/api/login",
+            // "https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io/api/login",
+
+            getStore().apiURL + "/api/login/",
             {
               method: "POST",
               headers: {
@@ -43,22 +51,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       FormSignup: async (name, email, password, password2, condition1) => {
         try {
-          const response = await fetch(
-            "https://3001-jedens5000-healthtracke-1uoaqj0mckj.ws-us46.gitpod.io/api/FormSignup",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                name,
-                email,
-                password,
-                password2,
-                condition1,
-              }),
-            }
-          );
+          const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              password,
+              password2,
+              condition1,
+            }),
+          });
           // if (response.ok) {
           // 	const token = await response.json()
           // 	localStorage.setItem("token", JSON.stringify(token))
@@ -69,10 +74,12 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw Error("Invalid email");
         }
       },
-      getIssues: async (userId = 2) => {
+      //NEED TO UPDATE THE userID params below
+      getIssues: async (userId = 1) => {
         try {
           const response = await fetch(
-            `https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io/api/issues/${userId}`,
+            // `https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io/api/issues/${userId}`,
+            getStore().apiURL + `/api/issues/${userId}`,
             {
               method: "GET",
               headers: {

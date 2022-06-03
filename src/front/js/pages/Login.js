@@ -63,7 +63,9 @@ export const Login = () => {
           type="submit"
           className="btn btn-primary mb-3"
         >
-          <Link to="/main">Submit</Link>
+          <Link className="button-text" to="/main">
+            Submit
+          </Link>
         </button>
         <div className="d-flex justify-content-between">
           <Link to="/formForgotPassword">
