@@ -6,13 +6,11 @@ export const Navbar = () => {
     <nav className="navbar navbar-light bg-light">
       <div className="nav-container">
         <Link to="/">
-          <span className="navbar-brand mb-0 h1"><img src="img.project-localStorage.png"></img></span>
+          <span className="navbar-brand mb-0 h1">
+            {/* <img src="img.project-localStorage.png"></img> */}
+          </span>
         </Link>
-        <div className="ml-auto">
-          <Link to="/demo">
-            <button className="btn btn-primary">Log In</button>
-          </Link>
-        </div>
+        <div className="ml-auto"></div>
       </div>
     </nav>
   );

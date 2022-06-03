@@ -7,15 +7,16 @@ import { Context } from "../store/appContext";
 export const Login = () => {
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const [error, setError] = useState(null);
-  const handleSubmit = e => {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const handleSubmit = (e) => {
     e.preventDefault();
-    actions.login(email, password).catch(error => {
-    setError(error);
-    console.log("This is my error", error);
-    });
-    };
+    // actions.login(email, password).catch((error) => {
+    //   setError(error);
+    //   console.log("This is my error", error);
+    // });
+    actions.getIssues();
+  };
   return (
     <div id="loginFormAndPhoto">
       <img id="loginPhoto" src={sunsetImg}></img>
@@ -31,9 +32,8 @@ const [error, setError] = useState(null);
             className="form-control"
             id="inputEmail"
             placeholder="Email Address"
-            onChange={e => setEmail(e.target.value)}
-value={email}
-
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
             required
           />
         </div>
@@ -43,8 +43,8 @@ value={email}
             className="form-control"
             id="inputPassword"
             placeholder="Password"
-            onChange={e => setPassword(e.target.value)}
-value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
             required
           />
         </div>
@@ -58,11 +58,13 @@ value={password}
             Remember Me
           </label>
         </div>
-        <Link to="/main">
-        <button type="submit" className="btn btn-primary mb-3">
-          Submit
+        <button
+          onClick={handleSubmit}
+          type="submit"
+          className="btn btn-primary mb-3"
+        >
+          <Link to="/main">Submit</Link>
         </button>
-        </Link>
         <div className="d-flex justify-content-between">
           <Link to="/formForgotPassword">
             {" "}

@@ -35,6 +35,11 @@ def create_token():
         return jsonify({"msg": "Invalid email or password"}), 401
     print('message succeeded')
     access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    return jsonify(access_token=access_token), 200
 
-    # return jsonify(response_body), 200
+@api.route("/issues/<int:user_id>", methods=["GET"])
+def get_user_issues(user_id):
+    user = User.query.filter_by(id = user_id).first()
+    issues = [issue.serialize() for issue in user.issues]
+    return jsonify(issues), 200
+
