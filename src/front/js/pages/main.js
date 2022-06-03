@@ -14,7 +14,7 @@ export const Main = () => {
       <Navbar />
       {/* <div id="homePhoto"> */}
       <div>
-        <h2>Welcome {user.name}!</h2>
+        {/* <h2>Welcome {user.name}!</h2> */}
         {store.issues.map((item) => {
           return `<span>${item.name}</span>`;
         })}
