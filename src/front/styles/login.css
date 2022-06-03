@@ -30,6 +30,15 @@ form {
   object-fit: cover;
 }
 
+.button-text {
+  color: white;
+  text-decoration: none;
+}
+.button-text:hover {
+  color: white;
+  text-decoration: none;
+}
+
 @media (max-width: 500px) {
   #loginPhoto {
     display: none;
