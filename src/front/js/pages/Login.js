@@ -11,10 +11,10 @@ export const Login = () => {
   const [error, setError] = useState(null);
   const handleSubmit = (e) => {
     e.preventDefault();
-    // actions.login(email, password).catch((error) => {
-    //   setError(error);
-    //   console.log("This is my error", error);
-    // });
+    actions.login(email, password, history).catch((error) => {
+      setError(error);
+      console.log("This is my error", error);
+    });
     actions.getIssues();
   };
   return (
@@ -58,15 +58,21 @@ export const Login = () => {
             Remember Me
           </label>
         </div>
+        {error && (
+          <div className="alert alert-danger">
+            <h6>{error.message}</h6>
+          </div>
+        )}
+        {/* <Link className="button-text" to="/main"> */}
         <button
-          onClick={handleSubmit}
+          // onClick={handleSubmit}
+          href="/main"
           type="submit"
           className="btn btn-primary mb-3"
         >
-          <Link className="button-text" to="/main">
-            Submit
-          </Link>
+          Submit
         </button>
+        {/* </Link> */}
         <div className="d-flex justify-content-between">
           <Link to="/formForgotPassword">
             {" "}

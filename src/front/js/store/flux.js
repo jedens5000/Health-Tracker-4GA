@@ -19,33 +19,29 @@ const getState = ({ getStore, getActions, setStore }) => {
         getActions().changeColor(0, "green");
       },
 
-      login: async (email, password) => {
+      login: async (email, password, history) => {
         try {
-          const response = await fetch(
-            // "https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io/api/login",
-
-            getStore().apiURL + "/api/login/",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                email,
-                password,
-              }),
-            }
-          );
+          const response = await fetch(getStore().apiURL + "/api/login/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email,
+              password,
+            }),
+          });
           if (response.ok) {
             const token = await response.json();
             localStorage.setItem("token", JSON.stringify(token));
             console.log(response);
+            history.push("/main");
             return true;
           } else {
             throw "password not correct";
           }
         } catch (error) {
-          throw Error("email incorrect");
+          throw Error("Please check your credentials");
         }
       },
 
@@ -75,7 +71,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       //NEED TO UPDATE THE userID params below
-      getIssues: async (userId = 1) => {
+      getIssues: async (userId = 2) => {
         try {
           const response = await fetch(
             // `https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io/api/issues/${userId}`,
