@@ -21,7 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       login: async (email, password, history) => {
         try {
-          const response = await fetch(getStore().apiURL + "/api/login/", {
+          const response = await fetch(getStore().apiURL + "/api/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

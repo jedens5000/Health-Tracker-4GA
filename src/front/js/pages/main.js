@@ -15,9 +15,9 @@ export const Main = () => {
       {/* <div id="homePhoto"> */}
       <div>
         {/* <h2>Welcome {user.name}!</h2> */}
-        {store.issues.map((item) => {
+        {/* {store.issues.map((item) => {
           return `<span>${item.name}</span>`;
-        })}
+        })} */}
       </div>
     </div>
   );
