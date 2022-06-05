@@ -11,9 +11,14 @@ export const Login = () => {
   const [error, setError] = useState(null);
   const handleSubmit = (e) => {
     e.preventDefault();
-    actions.login(email, password, history).catch((error) => {
+    actions.login(email, password, history)
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
       setError(error);
       console.log("This is my error", error);
+      
     });
     actions.getIssues();
   };
@@ -65,8 +70,7 @@ export const Login = () => {
         )}
         {/* <Link className="button-text" to="/main"> */}
         <button
-          // onClick={handleSubmit}
-          href="/main"
+          onClick={handleSubmit}
           type="submit"
           className="btn btn-primary mb-3"
         >
