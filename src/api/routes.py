@@ -45,3 +45,4 @@ def get_user_issues(user_id):
     issues = [issue.serialize() for issue in user.issues]
     return jsonify(issues), 200
 
+# UPDATED FILE
