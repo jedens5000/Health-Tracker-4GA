@@ -13,14 +13,15 @@ export const Main = () => {
   return (
     <div>
       <Navbar />
+
       <div className="homeContainer">
       <div style={{backgroundImage: "url(/mainPageBackground.png)", backgroundSize: 'cover', id: 'background', border: '1px solid yellowgreen', borderRadius: 5}}>
+
         {/* <h2>Welcome {user.name}!</h2> */}
         {/* {store.issues.map((item) => {
           return `<span>${item.name}</span>`;
         })} */}
-      
-        </div>
+
       </div>
     </div>
   );
