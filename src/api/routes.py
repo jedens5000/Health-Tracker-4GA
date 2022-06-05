@@ -30,6 +30,7 @@ def create_user():
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
+    
     if email != "test" or password != "test":
         print('message failed')
         return jsonify({"msg": "Invalid email or password"}), 401

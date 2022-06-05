@@ -1,17 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../../styles/navbar.css";
+import mindsetLogo from "../../img/mindset-logo.png";
+import navbarBackground from "../../img/navbarBackground.png";
 
 export const Navbar = () => {
   return (
-    <nav className="navbar navbar-light bg-light">
-      <div className="nav-container">
-        <Link to="/">
-          <span className="navbar-brand mb-0 h1">
-            {/* <img src="img.project-localStorage.png"></img> */}
-          </span>
-        </Link>
-        <div className="ml-auto"></div>
+<nav className="navbar navbar-expand-lg">
+  <div className="container-fluid">
+  {/* <span style={{backgroundImage: "url(/navbarBackground.png)", backgroundSize: 'cover'}}> */}
+  <img className="logo" src={mindsetLogo} />
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div className="navbar-nav ml-auto" id="homeNavbar">
+        <a className="nav-link active" aria-current="page" href="#">Home</a>
+        <a className="nav-link" href="#">Medications</a>
+        <a className="nav-link" href="#">Find a Doctor</a>
+        <a className="nav-link" href="#">Progress Tracker</a>
       </div>
-    </nav>
+    </div>
+    {/* </span> */}
+  </div>
+</nav>
   );
 };
