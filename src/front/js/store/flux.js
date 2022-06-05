@@ -5,7 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     "https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io";
   const apiChad =
     "https://3001-jedens5000-healthtracke-1uoaqj0mckj.ws-us46.gitpod.io";
-  const apiJustin = "https://3001-jedens5000-healthtracke-u5bh9avmhck.ws-us46.gitpod.io";
+  const apiJustin = "https://3001-jedens5000-healthtracke-r1epl1z8hxv.ws-us46.gitpod.io";
   return {
     store: {
       apiURL: apiJustin, //CHANGE THIS TO YOUR api(NAME) TO WORK FOR YOU
