@@ -26,7 +26,7 @@ export const Login = () => {
     <div id="loginFormAndPhoto">
       <img id="loginPhoto" src={sunsetImg}></img>
       <form onSubmit={handleSubmit}>
-        <img className="logo" src={mindsetLogo} />
+        <img className="login-logo" src={mindsetLogo} />
         <div>
           <p className="mt-3">Sign In</p>
         </div>
