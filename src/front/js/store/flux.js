@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
   
   return {
     store: {
-      apiURL:   process.env.BACKEND_URL, //CHANGE THIS TO YOUR api(NAME) TO WORK FOR YOU
+      apiURL:   process.env.BACKEND_URL,
       token: [],
       message: null,
       issues: [],
