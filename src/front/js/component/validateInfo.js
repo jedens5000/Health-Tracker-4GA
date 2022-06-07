@@ -1,6 +1,6 @@
 export default function validateInfo(values) {
     let errors = {};
-  
+  console.log("validate info was called")
     if (!values.name.trim()) {
       errors.name = 'Name required';
     }
@@ -22,7 +22,7 @@ export default function validateInfo(values) {
     } else if (values.password2 !== values.password) {
       errors.password2 = 'Passwords do not match';
     }
-
+    console.log("values",values)
     if (!values.condition1) {
       errors.condition1 = 'condition is required';
     } 
