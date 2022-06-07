@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useForm = (callback, validate) => {
+  console.log("init useform")
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -23,7 +24,7 @@ const useForm = (callback, validate) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
+console.log("handlesubmit called on useform")
     setErrors(validate(values));
     setIsSubmitting(true);
   };
