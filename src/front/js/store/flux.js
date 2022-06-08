@@ -1,10 +1,9 @@
 import FormSignup from "../pages/FormSignup";
 
 const getState = ({ getStore, getActions, setStore }) => {
-  
   return {
     store: {
-      apiURL:   process.env.BACKEND_URL,
+      apiURL: process.env.BACKEND_URL,
       token: [],
       message: null,
       issues: [],
@@ -70,7 +69,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       getIssues: async (userId = 2) => {
         try {
           const response = await fetch(
-            // `https://3001-jedens5000-healthtracke-kpqy3xy7o4t.ws-us46.gitpod.io/api/issues/${userId}`,
             getStore().apiURL + `/api/issues/${userId}`,
             {
               method: "GET",

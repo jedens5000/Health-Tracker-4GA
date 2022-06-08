@@ -48,9 +48,8 @@ class Issues(db.Model):
 
 class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    issue1 = db.Column(db.Integer, unique=False, nullable=False)
-    issue2 = db.Column(db.Integer, unique=False, nullable=True)
-    issue3 = db.Column(db.Integer, unique=False, nullable=True)
+    issue = db.Column(db.String, unique=False, nullable=False)
+    value = db.Column(db.Integer, unique=False, nullable=True)
     date = db.Column(db.Date, unique=False, nullable=False)
     time = db.Column(db.String(15), unique=False, nullable=True)
    
