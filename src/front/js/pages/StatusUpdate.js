@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 export const StatusUpdate = () => {
-  // const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
   const [isSelected, setSelected] = useState(false);
-
+  console.log(store.issues);
   const clickHandler = (e) => {
     setSelected(!isSelected);
   };
   // EXAMPLE OF USER'S ISSUES///////////////////
-  const issue1 = "anxiety";
-  const issue2 = "depression";
-  const issue3 = "manic";
-  const issue4 = "insomnia";
-  const issue5 = null;
+  // const issue1 = "anxiety";
+  // const issue2 = "depression";
+  // const issue3 = "insomnia";
 
   // DOES NOT WORK - START//////////////////////////////////////////
   // const mindSetScore = ()
@@ -26,16 +26,16 @@ export const StatusUpdate = () => {
   }
   // DOES NOT WORK - END////////////////////////////////////////////
 
-  window.onload = function loadfn() {
-    document.getElementById("issue1").innerHTML =
-      "How is your " + issue1 + " today?";
-    document.getElementById("issue2").innerHTML =
-      "How is your " + issue2 + " today?";
-    document.getElementById("issue3").innerHTML =
-      "Did you feel " + issue3 + " today?";
-    document.getElementById("totalValue").innerHTML =
-      "Your MindSet score is: " + OnRadioStateChange;
-  };
+  // window.onload = function loadfn() {
+  //   document.getElementById("issue1").innerHTML =
+  //     "How is your " + issue1 + " today?";
+  //   document.getElementById("issue2").innerHTML =
+  //     "How is your " + issue2 + " today?";
+  //   document.getElementById("issue3").innerHTML =
+  //     "How is your " + issue3 + " today?";
+  //   document.getElementById("totalValue").innerHTML =
+  //     "Your MindSet score is: " + OnRadioStateChange;
+  // };
   // console.log((document.getElementById(totalValue).innerHTML = totalValue));
 
   return (
@@ -44,8 +44,8 @@ export const StatusUpdate = () => {
       className="container position-absolute top-0 start-50 translate-middle-x"
     >
       {/* START QUESTION --> */}
-      <p className="mt-3">How is your overall MindSet today?</p>
-      <div className="form-check form-check-inline">
+      {/* <p className="mt-3">How is your overall MindSet today?</p> */}
+      {/* <div className="form-check form-check-inline">
         <input
           className="form-check-input"
           type="radio"
@@ -107,7 +107,9 @@ export const StatusUpdate = () => {
       </div>
       {/* END QUESTION --> */}
       {/* START QUESTION --> */}
-      <p id="issue1" className="mt-3"></p>
+      {/* <p id="issue1" className="mt-3">
+        How is your {issue1} today?
+      </p>
       <div className="form-check form-check-inline">
         <input
           className="form-check-input"
@@ -167,10 +169,12 @@ export const StatusUpdate = () => {
         <label className="form-check-label" for="inlineRadio5">
           5
         </label>
-      </div>
+      </div> */}
       {/* END QUESTION --> */}
       {/* START QUESTION --> */}
-      <p id="issue2" className="mt-3"></p>
+      {/* <p id="issue2" className="mt-3">
+        How is your {issue2} today?
+      </p>
       <div className="form-check form-check-inline">
         <input
           className="form-check-input"
@@ -230,19 +234,94 @@ export const StatusUpdate = () => {
         <label className="form-check-label" for="inlineRadio5">
           5
         </label>
-      </div>
+      </div> */}
       {/* END QUESTION ------------------------------------> */}
+      <p className="mt-3">How is your overall MindSet today?</p>
+      <div className="form-check">
+        <button
+          className="fs-4"
+          onClick={() => setValue({ issue: "MindSet", value: 1 })}
+        >
+          ☹️
+        </button>
+        <button
+          className="fs-4"
+          onClick={() => setValue({ issue: "MindSet", value: 2 })}
+        >
+          🙁
+        </button>
+        <button
+          className="fs-4"
+          onClick={() => setValue({ issue: "MindSet", value: 3 })}
+        >
+          😐
+        </button>
+        <button
+          className="fs-4"
+          onClick={() => setValue({ issue: "MindSet", value: 4 })}
+        >
+          🙂
+        </button>
+        <button
+          className="fs-4"
+          onClick={() => setValue({ issue: "MindSet", value: 5 })}
+        >
+          😊
+        </button>
+      </div>
+      {/* START QUESTION & ICONS ------------------------------------> */}
 
-      {/* START QUESTION ------------------------------------> */}
-      <p id="issue3" className="mt-3"></p>
-      {/* START ICONS ------------------------------------> */}
+      {store.issues.map((item) => {
+        const [value, setValue] = useState(null);
+        console.log(value);
+        return (
+          <div key={item.id}>
+            <p className="mt-3">How is your {item.name} today?</p>
+            <div className="form-check">
+              <button
+                className="fs-4"
+                onClick={() => setValue({ issue: item.name, value: 1 })}
+              >
+                ☹️
+              </button>
+              <button
+                className="fs-4"
+                onClick={() => setValue({ issue: item.name, value: 2 })}
+              >
+                🙁
+              </button>
+              <button
+                className="fs-4"
+                onClick={() => setValue({ issue: item.name, value: 3 })}
+              >
+                😐
+              </button>
+              <button
+                className="fs-4"
+                onClick={() => setValue({ issue: item.name, value: 4 })}
+              >
+                🙂
+              </button>
+              <button
+                className="fs-4"
+                onClick={() => setValue({ issue: item.name, value: 5 })}
+              >
+                😊
+              </button>
+            </div>
+          </div>
+        );
+      })}
+      {/* END ICONS ------------------------------------>   */}
+      <Link to="/main">
+        <button>Return to main</button>
+      </Link>
       {/* <div
         id="radioEmojis"
         className="d-flex flex-row mb-3"
         onClick={clickHandler}
       > */}
-      <div className="form-check">
-        <span
+      {/* <span
           id="icon-face face1"
           className={`material-symbols-outlined ${
             isSelected ? "selected-icon1" : ""
@@ -286,10 +365,10 @@ export const StatusUpdate = () => {
           value="5"
         >
           mood
-        </span>
-      </div>
+        </span> */}
+
       {/* END ICONS ------------------------------------>   */}
-      <div className="form-check form-check-inline">
+      {/* <div className="form-check form-check-inline">
         <input
           className="form-check-input"
           type="radio"
@@ -338,7 +417,7 @@ export const StatusUpdate = () => {
           value="5"
         />
         <label className="form-check-label" for="inlineRadio5"></label>
-      </div>
+      </div> */}
       {/* END QUESTION ------------------------------------> */}
       {/* START ICONS --> */}
       {/* <div
