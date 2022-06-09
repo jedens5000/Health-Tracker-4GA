@@ -1,4 +1,5 @@
 import FormSignup from "../pages/FormSignup";
+import login from "../pages/Login";
 
 const getState = ({ getStore, getActions, setStore }) => {
   return {
@@ -16,7 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       login: async (email, password, history) => {
         try {
-          const response = await fetch(getStore().apiURL + "/api/login", {
+          const response = await fetch("https://3001-jedens5000-healthtracke-2jb3zdzxh17.ws-us47.gitpod.io/api/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -30,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             const token = await response.json();
             localStorage.setItem("token", JSON.stringify(token));
             console.log(response);
-            history.push("/main");
+            
             return true;
           } else {
             throw "password not correct";
