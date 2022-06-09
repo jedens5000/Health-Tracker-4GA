@@ -23,7 +23,7 @@ def create_user():
     user=User(name=name, email=email, password=password, condition1=condition1)
     db.session.add(user)
     db.session.commit()
-    return "Success, user created", 200
+    return jsonify({"msg": "success, user created"}), 200
 
 
 @api.route("/login", methods=["POST"])

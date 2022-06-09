@@ -1,4 +1,4 @@
-export default function validateInfo(values) {
+export function validateSignUp(values) {
     let errors = {};
   console.log("validate info was called")
     if (!values.name.trim()) {
