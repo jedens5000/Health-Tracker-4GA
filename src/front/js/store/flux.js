@@ -40,7 +40,15 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      formSignup: async (name, email, password, password2, condition1) => {
+      formSignup: async (
+        name,
+        email,
+        password,
+        password2,
+        issue1,
+        issue2,
+        issue3
+      ) => {
         try {
           const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
             method: "POST",
@@ -52,32 +60,53 @@ const getState = ({ getStore, getActions, setStore }) => {
               email,
               password,
               password2,
-              condition1,
+              issue1,
+              issue2,
+              issue3,
             }),
           });
-         return response.json();
+          return response.json();
         } catch (error) {
           throw error;
         }
       },
-      //NEED TO UPDATE THE userID params below
-      getIssues: async (userId = 2) => {
+      getIssues: async () => {
         try {
-          const response = await fetch(
-            getStore().apiURL + `/api/issues/${userId}`,
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          const response = await fetch(getStore().apiURL + `/api/user`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
           const data = await response.json();
-          setStore({ issues: data });
+          let issues = {
+            issue1: data.issue1,
+            issue2: data.issue2,
+            issue3: data.issue3,
+          };
+          setStore({ issues: issues });
         } catch (error) {
-          throw Error("Invalid email");
+          throw Error("admin error");
         }
       },
+      //NEED TO UPDATE THE userID params below
+      // getIssues: async (userId = 1) => {
+      //   try {
+      //     const response = await fetch(
+      //       getStore().apiURL + `/api/issues/${userId}`,
+      //       {
+      //         method: "GET",
+      //         headers: {
+      //           "Content-Type": "application/json",
+      //         },
+      //       }
+      //     );
+      //     const data = await response.json();
+      //     setStore({ issues: data });
+      //   } catch (error) {
+      //     throw Error("Invalid email");
+      //   }
+      // },
     },
   };
 };

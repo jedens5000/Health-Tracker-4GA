@@ -11,6 +11,12 @@ export const Home = () => {
     <div id="homePhoto">
       <div className="position-absolute top-50 start-50 translate-middle">
         <div className="d-flex flex-column align-items-center">
+          <h5 className="pb-5">
+            <em>
+              We all have issues, seeing how they affect you is the first step
+              to getting them under control.
+            </em>
+          </h5>
           <img src={mindsetLogo} />
           <div id="homeCardBody">
             <p>MindSet - /ˈmaɪn(d)ˌset/ - noun</p>
