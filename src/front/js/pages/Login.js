@@ -11,15 +11,15 @@ export const Login = () => {
   const [error, setError] = useState(null);
   const handleSubmit = (e) => {
     e.preventDefault();
-    actions.login(email, password, history)
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      setError(error);
-      console.log("This is my error", error);
-      
-    });
+    actions
+      .login(email, password, history)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        setError(error);
+        console.log("This is my error", error);
+      });
     actions.getIssues();
   };
   return (
@@ -78,12 +78,12 @@ export const Login = () => {
         </button>
         {/* </Link> */}
         <div className="d-flex justify-content-between">
+          <Link to="/signup">
+            <div>Don't have an account? Sign Up</div>
+          </Link>
           <Link to="/formForgotPassword">
             {" "}
             <div>ForgotPassword?</div>
-          </Link>
-          <Link to="/signup">
-            <div>Don't have an account? Sign Up</div>
           </Link>
         </div>
       </form>
