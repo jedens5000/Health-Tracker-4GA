@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      FormSignup: async (name, email, password, password2, condition1) => {
+      formSignup: async (name, email, password, password2, condition1) => {
         try {
           const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
             method: "POST",
@@ -55,14 +55,9 @@ const getState = ({ getStore, getActions, setStore }) => {
               condition1,
             }),
           });
-          // if (response.ok) {
-          // 	const token = await response.json()
-          // 	localStorage.setItem("token", JSON.stringify(token))
-          // 	console.log(response)
-          // 	return true
-          // } else {throw "password does not match"}
+         return response.json();
         } catch (error) {
-          throw Error("Invalid email");
+          throw error;
         }
       },
       //NEED TO UPDATE THE userID params below
