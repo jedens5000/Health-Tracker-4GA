@@ -6,6 +6,7 @@ import "../../styles/home.css";
 import { Navbar } from "../component/navbar";
 import FormSignup from "../pages/FormSignup.js";
 import { Link } from "react-router-dom";
+import { Quote } from "../component/Quote";
 
 export const Main = () => {
   const { store, actions } = useContext(Context);
@@ -30,16 +31,20 @@ export const Main = () => {
         >
           {/* <h2>Welcome {user.name}!</h2> */}
           <h3>Currently tracking:</h3>
-          {store.issues.map((item) => {
+          <p>Issue: {store.issues.issue1}</p>
+          <p>Issue: {store.issues.issue2}</p>
+          <p>Issue: {store.issues.issue3}</p>
+          {/* {store.issues.map((item) => {
             return (
               <ul>
                 <li>{item.name}</li>
               </ul>
             );
-          })}
+          })} */}
           <Link to="/statusupdate">
             <button>Status Update</button>
           </Link>
+          <Quote />
         </div>
       </div>
     </div>

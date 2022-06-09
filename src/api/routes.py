@@ -2,6 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 import os
+import datetime
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Issues
 from api.utils import generate_sitemap, APIException
@@ -17,13 +18,20 @@ def create_user():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     password2 = request.json.get("password2", None)
-    condition1 = request.json.get("condition1", None)
+    issue1 = request.json.get("issue1", None)
+    issue2 = request.json.get("issue2", None)
+    issue3 = request.json.get("issue3", None)
     if email == "test" or password == "test":
         return jsonify({"msg": "Invalid email or password doesn't match"}), 401
-    user=User(name=name, email=email, password=password, condition1=condition1)
+    user=User(name=name, email=email, password=password, issue1=issue1, issue2=issue2, issue3=issue3)
     db.session.add(user)
     db.session.commit()
     return jsonify({"msg": "success, user created"}), 200
+
+@api.route("/user", methods=["GET"])
+def get_user():
+    user = User.query.filter_by(id=1).first() #hardcoded ID needs update
+    return jsonify(user.serialize())
 
 
 @api.route("/login", methods=["POST"])
@@ -49,13 +57,16 @@ def get_user_issues(user_id):
     return jsonify(issues), 200
 
 # TO STORE STATUS ANSWERS
-# @api.route("/answer", methods=["POST"])
-# def create_answer():
-#     issue = request.json.get("issue", None)
-#     value = request.json.get("value", None)
-#     date = request.json.get("date", None)
-#     db.session.add(answer)
-#     db.session.commit()
-#     return "Success, answers saved", 200
+@api.route("/answer", methods=["POST"])
+def create_answer():
+    request_data = request.get_json()
+    for item in request_data:
+        issue = item.issue
+        value = item.value
+        date = datetime.datetime.now()
+        answer = Answer(issue=issue, value=value, date=date)
+        db.session.add(answer)
+        db.session.commit()
+    return "Success, answers saved", 200
 
 # UPDATED FILE
