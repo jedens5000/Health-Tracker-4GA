@@ -16,7 +16,7 @@ export const FormSignup = ({ submitForm }) => {
     <div className="top">
       <img className="logo" src={mindsetLogo} />
       <h1>
-        Start tracking your mental health today!
+        Start tracking your issues today!
         <br />
         Create your account by filling out the information below.
       </h1>
