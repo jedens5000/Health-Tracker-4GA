@@ -50,6 +50,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         issue3
       ) => {
         try {
+          console.log("post /formsignup");
           const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
             method: "POST",
             headers: {
@@ -86,7 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           };
           setStore({ issues: issues });
         } catch (error) {
-          throw Error("admin error");
+          throw error;
         }
       },
       //NEED TO UPDATE THE userID params below
