@@ -23,16 +23,16 @@ export function validateSignUp(values) {
       errors.password2 = 'Passwords do not match';
     }
     console.log("values",values)
-    if (!values.condition1) {
-      errors.condition1 = 'condition is required';
+    if (!values.issue1) {
+      errors.issue1 = 'issue is required';
     } 
 
-    if (!values.condition2) {
-      errors.condition2 = 'condition is required';
+    if (!values.issue2) {
+      errors.issue2 = 'issue is required';
     } 
 
-    if (!values.condition3) {
-      errors.condition3 = 'condition is required';
+    if (!values.issue3) {
+      errors.issue3 = 'issue is required';
     } 
     
     return errors;

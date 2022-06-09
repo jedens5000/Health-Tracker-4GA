@@ -37,9 +37,11 @@ export const FormSignup = ({ submitForm }) => {
               const _errors = validateSignUp(values);
               if (Object.keys(_errors).length > 0) {
                 setErrors(_errors);
+                console.log("errors were found onSubmit", _errors);
                 return false;
               } else {
                 setErrors({});
+                console.log("no errors were found call formSignUp");
               }
               actions
                 .formSignup(
