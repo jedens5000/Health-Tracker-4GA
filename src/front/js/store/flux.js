@@ -17,7 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       login: async (email, password, history) => {
         try {
-          const response = await fetch("https://3001-jedens5000-healthtracke-2jb3zdzxh17.ws-us47.gitpod.io/api/login", {
+          const response = await fetch(getStore().apiURL + "/api/login", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
