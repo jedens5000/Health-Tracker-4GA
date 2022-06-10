@@ -1,3 +1,7 @@
+#loginFormAndPhoto {
+  display: flex;
+}
+
 #loginPhoto {
   width: 50vw !important;
   height: 100vh;

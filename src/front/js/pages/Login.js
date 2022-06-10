@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 
 export const Login = () => {
-  const history = useHistory()
+  const history = useHistory();
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,7 +20,6 @@ export const Login = () => {
         setError(error);
         console.log("This is my error", error);
       });
-    actions.getIssues();
   };
   return (
     <div id="loginFormAndPhoto">
@@ -68,7 +67,6 @@ export const Login = () => {
             <h6>{error.message}</h6>
           </div>
         )}
-        {/* <Link className="button-text" to="/main"> */}
         <button
           onClick={handleSubmit}
           type="submit"
@@ -76,7 +74,6 @@ export const Login = () => {
         >
           Submit
         </button>
-        {/* </Link> */}
         <div className="d-flex justify-content-between">
           <Link to="/signup">
             <div>Don't have an account? Sign Up</div>

@@ -17,9 +17,7 @@ class User(db.Model):
     issue1 = db.Column(db.String(120), unique=False, nullable=False)
     issue2 = db.Column(db.String(120), unique=False, nullable=True)
     issue3 = db.Column(db.String(120), unique=False, nullable=True)
-    # issues = db.relationship(
-    #     "Issues", secondary="associations", back_populates="users"
-    # )
+    answers = db.relationship("Answer", back_populates="user")  
 
     def __repr__(self):
         return self.name           
@@ -37,9 +35,6 @@ class User(db.Model):
 class Issues(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True, nullable=False)
-    # users = db.relationship(
-    #     "User", secondary="associations", back_populates="issues"
-    # )
 
     def __repr__(self):
         return self.name
@@ -55,7 +50,8 @@ class Answer(db.Model):
     issue = db.Column(db.String, unique=False, nullable=False)
     value = db.Column(db.Integer, unique=False, nullable=True)
     date = db.Column(db.Date, unique=False, nullable=False)
-   
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    user = db.relationship("User", back_populates="answers")
 
     def __repr__(self):
         return self.value
@@ -65,5 +61,16 @@ class Answer(db.Model):
             "id": self.id,
             "value": self.value,       
             "date": self.date,       
-            "time": self.time,       
         }
+
+# class Parent(Base):
+#     __tablename__ = "parent"
+#     id = Column(Integer, primary_key=True)
+#     children = relationship("Child", back_populates="parent")
+
+
+# class Child(Base):
+#     __tablename__ = "child"
+#     id = Column(Integer, primary_key=True)
+#     parent_id = Column(Integer, ForeignKey("parent.id"))
+#     parent = relationship("Parent", back_populates="children")
