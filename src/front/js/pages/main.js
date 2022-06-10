@@ -6,13 +6,13 @@ import "../../styles/home.css";
 import { Navbar } from "../component/navbar";
 import FormSignup from "../pages/FormSignup.js";
 import { Link } from "react-router-dom";
-import { Quote } from "../component/Quote";
 
 export const Main = () => {
   const { store, actions } = useContext(Context);
   console.log(store.issues);
   useEffect(() => {
     actions.getIssues();
+    actions.getQuote();
   }, []);
 
   return (
@@ -21,6 +21,7 @@ export const Main = () => {
 
       <div className="homeContainer">
         <div
+          className="ps-3"
           style={{
             backgroundImage: "url(/mainPageBackground.png)",
             backgroundSize: "cover",
@@ -44,7 +45,12 @@ export const Main = () => {
           <Link to="/statusupdate">
             <button>Status Update</button>
           </Link>
-          <Quote />
+          <blockquote className="pt-2">
+            "{store.quote.text}"<br />
+            <p>
+              <em> &mdash; {store.quote.author}</em>
+            </p>
+          </blockquote>
         </div>
       </div>
     </div>

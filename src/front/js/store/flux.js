@@ -8,13 +8,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       token: [],
       message: null,
       issues: [],
+      quote: [],
     },
     actions: {
-      // Use getActions to call a function within a fuction
-      exampleFunction: () => {
-        getActions().changeColor(0, "green");
-      },
-
       login: async (email, password, history) => {
         try {
           const response = await fetch(getStore().apiURL + "/api/login", {
@@ -31,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             const token = await response.json();
             localStorage.setItem("token", JSON.stringify(token));
             console.log(response);
-            
+
             return true;
           } else {
             throw "password not correct";
@@ -40,7 +36,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw Error("Please check your credentials");
         }
       },
-
       formSignup: async (
         name,
         email,
@@ -91,24 +86,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
-      //NEED TO UPDATE THE userID params below
-      // getIssues: async (userId = 1) => {
-      //   try {
-      //     const response = await fetch(
-      //       getStore().apiURL + `/api/issues/${userId}`,
-      //       {
-      //         method: "GET",
-      //         headers: {
-      //           "Content-Type": "application/json",
-      //         },
-      //       }
-      //     );
-      //     const data = await response.json();
-      //     setStore({ issues: data });
-      //   } catch (error) {
-      //     throw Error("Invalid email");
-      //   }
-      // },
+      getQuote: async () => {
+        const response = await fetch("https://type.fit/api/quotes", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const data = await response.json();
+        let x = Math.floor(Math.random() * data.length);
+        setStore({ quote: data[x] });
+      },
     },
   };
 };

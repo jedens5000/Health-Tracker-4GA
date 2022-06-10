@@ -22,8 +22,6 @@ export const StatusUpdate = () => {
       className="container position-absolute top-0 start-50 translate-middle-x"
     >
       {/* START QUESTION --> */}
-
-      {/* END QUESTION ------------------------------------> */}
       <p className="mt-3">How is your overall MindSet today?</p>
       <div className="form-check">
         <button
