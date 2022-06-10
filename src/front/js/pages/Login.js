@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import sunsetImg from "../../img/sunset.jpg";
 import mindsetLogo from "../../img/mindset-logo.png";
 import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 
 export const Login = () => {
+  const history = useHistory()
   const { store, actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,9 +15,7 @@ export const Login = () => {
     e.preventDefault();
     actions
       .login(email, password, history)
-      .then((data) => {
-        console.log(data);
-      })
+      .then(history.push("/main"))
       .catch((error) => {
         setError(error);
         console.log("This is my error", error);
