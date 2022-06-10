@@ -14,6 +14,7 @@ export const Main = () => {
     actions.getIssues();
     actions.getQuote();
   }, []);
+  console.log(store.name);
 
   return (
     <div>
@@ -30,7 +31,7 @@ export const Main = () => {
             borderRadius: 5,
           }}
         >
-          {/* <h2>Welcome {user.name}!</h2> */}
+          <h2>Welcome {store.name}!</h2>
           <h3>Currently tracking:</h3>
           <p>Issue: {store.issues.issue1}</p>
           <p>Issue: {store.issues.issue2}</p>

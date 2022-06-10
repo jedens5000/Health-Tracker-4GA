@@ -9,6 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       message: null,
       issues: [],
       quote: [],
+      name: "",
     },
     actions: {
       login: async (email, password, history) => {
@@ -73,6 +74,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
+              Authorization: `Bearer ${localStorage.getItem(
+                "token.access_token"
+              )}`,
             },
           });
           const data = await response.json();
@@ -81,7 +85,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             issue2: data.issue2,
             issue3: data.issue3,
           };
+          let name = data.name;
           setStore({ issues: issues });
+          setStore({ name: name });
         } catch (error) {
           throw error;
         }

@@ -1,6 +1,3 @@
-"""
-This module takes care of starting the API Server, Loading the DB and Adding the endpoints
-"""
 import os
 import datetime
 from flask import Flask, request, jsonify, url_for, Blueprint
@@ -29,7 +26,10 @@ def create_user():
     return jsonify({"msg": "success, user created"}), 200
 
 @api.route("/user", methods=["GET"])
+# @jwt_required()
 def get_user():
+    # user_id = get_jwt_identity()
+    # user = User.query.filter_by(id=user_id).first() #non hardcoded
     user = User.query.filter_by(id=1).first() #hardcoded ID needs update
     return jsonify(user.serialize())
 
