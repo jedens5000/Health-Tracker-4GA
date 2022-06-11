@@ -1,7 +1,7 @@
 import os
 import datetime
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Issues
+from api.models import db, User, Issues, Answer
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -25,13 +25,17 @@ def create_user():
     db.session.commit()
     return jsonify({"msg": "success, user created"}), 200
 
+#
+
 @api.route("/user", methods=["GET"])
 # @jwt_required()
 def get_user():
     # user_id = get_jwt_identity()
-    # user = User.query.filter_by(id=user_id).first() #non hardcoded
-    user = User.query.filter_by(id=1).first() #hardcoded ID needs update
+#######CHANGED filter_by(id=user_id) because postman showed email as id, JWT token shows it includes email but not userID
+    # user = User.query.filter_by(email=user_id).first() #not hardcoded
+    user = User.query.filter_by(id=2).first() #hardcoded ID needs update
     return jsonify(user.serialize())
+
 
 
 @api.route("/login", methods=["POST"])
@@ -47,6 +51,7 @@ def create_token():
 
       
     print('message succeeded')
+    # SHOULD THIS BE ID INSTEAD OF EMAIL??
     access_token = create_access_token(identity=email)
     return jsonify(access_token=access_token), 200
 
