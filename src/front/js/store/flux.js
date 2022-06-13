@@ -77,11 +77,11 @@ const getState = ({ getStore, getActions, setStore }) => {
               headers: {
                 "Content-Type": "application/json",
                 // REMOVED AUTHORIZATION CAUSING 422 ERROR
-                // Authorization: `Bearer ${localStorage.getItem(
-                //   "token.access_token"
-                // CHANGED TO email BECAUSE EMAIL IS IN TOKEN, NOT ID, WHICH CAUSED THIS ERROR (TypeError: __str__ returned non-string (type int))
-                // "email"
-                // )}`,
+                Authorization: `Bearer ${localStorage.getItem(
+                  "token.access_token"
+                  // CHANGED TO email BECAUSE EMAIL IS IN TOKEN, NOT ID, WHICH CAUSED THIS ERROR (TypeError: __str__ returned non-string (type int))
+                  // "email"
+                )}`,
               },
             }
             // .then((response) => response.json())
