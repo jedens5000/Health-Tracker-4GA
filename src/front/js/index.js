@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 
 //include your index.scss file into the bundle
 import "../styles/login.css";
+import "../styles/main.css";
 import "../styles/statusupdate.css";
 import "../styles/signup.css";
 

@@ -1,5 +1,6 @@
 #questionnaire {
   text-align: center;
+  background: transparent;
 }
 
 .material-symbols-outlined {
@@ -11,33 +12,22 @@
   border-radius: 50%;
 }
 
-.material-symbols-outlined:hover {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-  /* color: lightyellow; */
-  color: yellow;
-  cursor: pointer;
+.emoji {
+  border: none;
+  background: transparent;
+  margin: 0.5rem;
 }
-.form-check-inline {
-  margin-left: 1rem;
-}
-
-#radioEmojis {
-  margin: 0 0.75rem;
-}
-
-#icon-face {
-  /* padding-right: 24px !important; */
-  /* padding: 0 0 0 1.5rem !important; */
-}
-
-.selected-icon1,
-.selected-icon2,
-.selected-icon3,
-.selected-icon4 {
+.emoji-selected {
   background-color: yellow;
+  box-shadow: 0px 0px 20px 5px yellow;
   border-radius: 50%;
 }
-.selected-icon5 {
-  background-color: rgb(121, 255, 139);
+.emoji:hover {
+  /* font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48; */
+  background-color: yellow;
+  box-shadow: 0px 0px 20px 5px yellow;
   border-radius: 50%;
+}
+.form-check {
+  padding-left: 0 !important;
 }
