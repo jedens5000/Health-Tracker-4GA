@@ -28,12 +28,13 @@ def create_user():
 #
 
 @api.route("/user", methods=["GET"])
-# @jwt_required()
+@jwt_required()
 def get_user():
-    # user_id = get_jwt_identity()
+    user_id = get_jwt_identity()
+    print(user_id)
 #######CHANGED filter_by(id=user_id) because postman showed email as id, JWT token shows it includes email but not userID
-    # user = User.query.filter_by(email=user_id).first() #not hardcoded
-    user = User.query.filter_by(id=2).first() #hardcoded ID needs update
+    user = User.query.filter_by(id=user_id).first() #not hardcoded
+    # user = User.query.filter_by(id=2).first() #hardcoded ID needs update
     return jsonify(user.serialize())
 
 
@@ -51,8 +52,10 @@ def create_token():
 
       
     print('message succeeded')
-    # SHOULD THIS BE ID INSTEAD OF EMAIL??
-    access_token = create_access_token(identity=email)
+    # SHOULD THIS BE ID INSTEAD OF EMAIL?? YEs confirmed.
+    # access_token = create_access_token(identity=email)
+    print(user.id)
+    access_token = create_access_token(identity=user.id)
     return jsonify(access_token=access_token), 200
 
 @api.route("/issues/<int:user_id>", methods=["GET"])

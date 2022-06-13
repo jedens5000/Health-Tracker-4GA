@@ -63,7 +63,7 @@ export const StatusUpdate = () => {
             😊
           </button>
         </div>
-        {/* START QUESTION & ICONS ------------------------------------> */}
+        {/* START ISSSUE QUESTIONS & ICONS --------------------> */}
 
         {issues.map((item, index) => {
           const [value, setValue] = useState(null);
@@ -115,6 +115,7 @@ export const StatusUpdate = () => {
           );
         })}
         {/* END ICONS ------------------------------------>   */}
+        {/* BOOTSTRAP RADIO TEST-------------------------->   */}
         <p className="mt-3">Bootstrap radio button test:</p>
         <input
           type="radio"
