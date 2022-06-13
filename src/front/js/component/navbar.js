@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import mindsetLogo from "../../img/mindset-logo.png";
 import navbarBackground from "../../img/navbarBackground.png";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -38,7 +40,7 @@ export const Navbar = () => {
             <a className="nav-link" href="#">
               Find a Doctor
             </a>
-            <a className="nav-link" href="/login">
+            <a className="nav-link" href="#" onClick={() => actions.logOut()}>
               Sign Out
             </a>
           </div>

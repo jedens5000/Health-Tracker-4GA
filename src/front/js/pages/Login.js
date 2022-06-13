@@ -15,7 +15,7 @@ export const Login = () => {
     e.preventDefault();
     actions
       .login(email, password, history)
-      .then(history.push("/main"))
+      .then(() => history.push("/main"))
       .catch((error) => {
         setError(error);
         console.log("This is my error", error);
