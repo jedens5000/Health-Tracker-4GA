@@ -1,0 +1,6 @@
+.main-body {
+  height: 80vh;
+  background-size: cover;
+  border: 1px solid yellowgreen;
+  border-radius: 5px;
+}

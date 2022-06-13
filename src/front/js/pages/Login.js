@@ -52,7 +52,7 @@ export const Login = () => {
             required
           />
         </div>
-        <div className="form-check mb-3">
+        {/* <div className="form-check mb-3">
           <input
             className="form-check-input"
             type="checkbox"
@@ -61,7 +61,7 @@ export const Login = () => {
           <label className="form-check-label" for="flexCheckIndeterminate">
             Remember Me
           </label>
-        </div>
+        </div> */}
         {error && (
           <div className="alert alert-danger">
             <h6>{error.message}</h6>
@@ -78,10 +78,10 @@ export const Login = () => {
           <Link to="/signup">
             <div>Don't have an account? Sign Up</div>
           </Link>
-          <Link to="/formForgotPassword">
+          {/* <Link to="/formForgotPassword">
             {" "}
             <div>ForgotPassword?</div>
-          </Link>
+          </Link> */}
         </div>
       </form>
     </div>
