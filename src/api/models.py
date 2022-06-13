@@ -55,7 +55,9 @@ class Answer(db.Model):
 
 
     def __repr__(self):
-        return self.value
+        if self.value is None: 
+            return "issue without value"
+        return str(self.value)
            
     def serialize(self):
         return {
