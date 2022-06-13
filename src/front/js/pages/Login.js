@@ -11,7 +11,7 @@ export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     actions
       .login(email, password) .then(resp => {if (resp == true) history.push("/main") })
