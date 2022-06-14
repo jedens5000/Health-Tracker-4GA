@@ -15,7 +15,6 @@ const getToken = () => {
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
-      // apiURL: "https://3001-jedens5000-healthtracke-20wl5sqntlx.ws-us47.gitpod.io",
       apiURL: process.env.BACKEND_URL,
       token: [],
       message: null,
@@ -24,7 +23,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       name: "",
     },
     actions: {
-      
       logOut: function () {
         localStorage.clear();
         window.location.href = "/login";
@@ -87,19 +85,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       getIssues: async () => {
         try {
-          const response = await fetch(
-            getStore().apiURL + `/api/user`,
-            {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                // REMOVED AUTHORIZATION CAUSING 422 ERROR
-                Authorization: `Bearer ${getToken()}`,
-              },
-            }
-            // .then((response) => response.json())
-            // .then((data) => console.log(data))
-          );
+          const response = await fetch(getStore().apiURL + `/api/user`, {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${getToken()}`,
+            },
+          });
           const data = await response.json();
           let issues = {
             issue1: data.issue1,
