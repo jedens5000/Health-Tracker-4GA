@@ -1,6 +1,17 @@
 import FormSignup from "../pages/FormSignup";
 import login from "../pages/Login";
 
+const getToken = () => {
+  const tokenObject = localStorage.getItem("token");
+  if (
+    (!tokenObject || typeof tokenObject === "undefined") &&
+    !window.location.href.includes("/login")
+  ) {
+    window.location.href = "/login";
+  }
+  return JSON.parse(tokenObject)?.access_token || null;
+};
+
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
@@ -13,8 +24,12 @@ const getState = ({ getStore, getActions, setStore }) => {
       name: "",
     },
     actions: {
+      
+      logOut: function () {
+        localStorage.clear();
+        window.location.href = "/login";
+      },
       login: async (email, password) => {
-        console.log(process.env.BACKEND_URL)
         try {
           const response = await fetch(getStore().apiURL + "/api/login", {
             method: "POST",
@@ -79,11 +94,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               headers: {
                 "Content-Type": "application/json",
                 // REMOVED AUTHORIZATION CAUSING 422 ERROR
-                Authorization: `Bearer ${localStorage.getItem(
-                  "token.access_token"
-                  // CHANGED TO email BECAUSE EMAIL IS IN TOKEN, NOT ID, WHICH CAUSED THIS ERROR (TypeError: __str__ returned non-string (type int))
-                  // "email"
-                )}`,
+                Authorization: `Bearer ${getToken()}`,
               },
             }
             // .then((response) => response.json())
