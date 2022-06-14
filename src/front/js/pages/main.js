@@ -27,8 +27,8 @@ export const Main = () => {
         <h2>Welcome {store.name}!</h2>
         <h3>Currently tracking:</h3>
         <p>Issue: {store.issues.issue1}</p>
-        <p>Issue: {store.issues.issue2}</p>
-        <p>Issue: {store.issues.issue3}</p>
+        {store.issues.issue2 ? <p>Issue: {store.issues.issue2}</p> : ""}
+        {store.issues.issue3 ? <p>Issue: {store.issues.issue3}</p> : ""}
         {/* {store.issues.map((item) => {
             return (
               <ul>
