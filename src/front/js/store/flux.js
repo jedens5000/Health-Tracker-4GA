@@ -15,6 +15,7 @@ const getToken = () => {
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      // apiURL: "https://3001-jedens5000-healthtracke-20wl5sqntlx.ws-us47.gitpod.io",
       apiURL: process.env.BACKEND_URL,
       token: [],
       message: null,
@@ -23,11 +24,12 @@ const getState = ({ getStore, getActions, setStore }) => {
       name: "",
     },
     actions: {
+      
       logOut: function () {
         localStorage.clear();
         window.location.href = "/login";
       },
-      login: async (email, password, history) => {
+      login: async (email, password) => {
         try {
           const response = await fetch(getStore().apiURL + "/api/login", {
             method: "POST",
@@ -46,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             return true;
           } else {
-            throw "password not correct";
+            throw new Error("password not correct");
           }
         } catch (error) {
           throw Error("Please check your credentials");
