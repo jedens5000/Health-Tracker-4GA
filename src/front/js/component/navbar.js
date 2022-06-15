@@ -31,10 +31,10 @@ export const Navbar = () => {
             <a className="nav-link" href="/statusupdate">
               Progress Tracker
             </a>
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="/">
               Chart History
             </a>
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="/medications">
               Medications
             </a>
             <a className="nav-link" href="#">
