@@ -21,6 +21,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       issues: [],
       quote: [],
       name: "",
+      answers: [],
     },
     actions: {
       logOut: function () {
@@ -105,6 +106,29 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
+      // NEED TO UPDATE TO PULL ANSWER DATA
+      // getAnswers: async () => {
+      //   try {
+      //     const response = await fetch(getStore().apiURL + `/api/answer`, {
+      //       method: "GET",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //         // Authorization: `Bearer ${getToken()}`,
+      //       },
+      //     });
+      //     const data = await response.json();
+      //     let issues = {
+      //       issue1: data.issue1,
+      //       issue2: data.issue2,
+      //       issue3: data.issue3,
+      //     };
+      //     let name = data.name;
+      //     setStore({ issues: issues });
+      //     setStore({ name: name });
+      //   } catch (error) {
+      //     throw error;
+      //   }
+      // },
       getQuote: async () => {
         const response = await fetch("https://type.fit/api/quotes", {
           method: "GET",
