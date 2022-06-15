@@ -30,14 +30,14 @@ export const StatusUpdate = () => {
           <button
             type="radio"
             className="fs-4 emoji"
-            onClick={() => setValue({ issue: "MindSet", value: 1 })}
+            onClick={() => setValue({ issue: "MindSet", value: 5 })}
           >
             ☹️
           </button>
           <button
             type="radio"
             className="fs-4 emoji"
-            onClick={() => setValue({ issue: "MindSet", value: 2 })}
+            onClick={() => setValue({ issue: "MindSet", value: 4 })}
           >
             🙁
           </button>
@@ -51,14 +51,14 @@ export const StatusUpdate = () => {
           <button
             type="radio"
             className="fs-4 emoji"
-            onClick={() => setValue({ issue: "MindSet", value: 4 })}
+            onClick={() => setValue({ issue: "MindSet", value: 2 })}
           >
             🙂
           </button>
           <button
             type="radio"
             className="fs-4 emoji"
-            onClick={() => setValue({ issue: "MindSet", value: 5 })}
+            onClick={() => setValue({ issue: "MindSet", value: 1 })}
           >
             😊
           </button>
@@ -78,7 +78,7 @@ export const StatusUpdate = () => {
                   className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
                   // TWO FUNCTIONS ONCLICK
                   onClick={() => {
-                    setValue({ issue: item, value: 1 });
+                    setValue({ issue: item, value: 5 });
                     {
                       clickHandler;
                     }
@@ -88,7 +88,7 @@ export const StatusUpdate = () => {
                 </button>
                 <button
                   className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                  onClick={() => setValue({ issue: item, value: 2 })}
+                  onClick={() => setValue({ issue: item, value: 4 })}
                 >
                   🙁
                 </button>
@@ -100,13 +100,13 @@ export const StatusUpdate = () => {
                 </button>
                 <button
                   className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                  onClick={() => setValue({ issue: item, value: 4 })}
+                  onClick={() => setValue({ issue: item, value: 2 })}
                 >
                   🙂
                 </button>
                 <button
                   className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                  onClick={() => setValue({ issue: item, value: 5 })}
+                  onClick={() => setValue({ issue: item, value: 1 })}
                 >
                   😊
                 </button>
@@ -119,7 +119,7 @@ export const StatusUpdate = () => {
         <p className="mt-3">Bootstrap radio button test:</p>
         <input
           type="radio"
-          class="btn-check"
+          className="btn-check"
           name="options"
           id="option1"
           autocomplete="off"
@@ -127,7 +127,7 @@ export const StatusUpdate = () => {
         <label
           className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
           onClick={() => {
-            setValue({ issue: item, value: 1 });
+            setValue({ issue: item, value: 5 });
             {
               clickHandler;
             }
@@ -139,7 +139,7 @@ export const StatusUpdate = () => {
 
         <input
           type="radio"
-          class="btn-check"
+          className="btn-check"
           name="options"
           id="option2"
           autocomplete="off"
@@ -149,7 +149,7 @@ export const StatusUpdate = () => {
             isSelected ? "emoji-selected" : ""
           }`}
           onClick={() => {
-            setValue({ issue: item, value: 2 });
+            setValue({ issue: item, value: 4 });
             {
               clickHandler;
             }
@@ -161,7 +161,7 @@ export const StatusUpdate = () => {
 
         <input
           type="radio"
-          class="btn-check"
+          className="btn-check"
           name="options"
           id="option3"
           autocomplete="off"
@@ -181,7 +181,7 @@ export const StatusUpdate = () => {
 
         <input
           type="radio"
-          class="btn-check"
+          className="btn-check"
           name="options"
           id="option4"
           autocomplete="off"
@@ -189,7 +189,7 @@ export const StatusUpdate = () => {
         <label
           className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
           onClick={() => {
-            setValue({ issue: item, value: 4 });
+            setValue({ issue: item, value: 2 });
             {
               clickHandler;
             }
@@ -201,7 +201,7 @@ export const StatusUpdate = () => {
 
         <input
           type="radio"
-          class="btn-check"
+          className="btn-check"
           name="options"
           id="option5"
           autocomplete="off"
@@ -209,7 +209,7 @@ export const StatusUpdate = () => {
         <label
           className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
           onClick={() => {
-            setValue({ issue: item, value: 5 });
+            setValue({ issue: item, value: 1 });
             {
               clickHandler;
             }
@@ -246,35 +246,7 @@ export const StatusUpdate = () => {
           value="2"
         >
           sentiment_dissatisfied
-        </span>
-        <span
-          id="icon-face face3"
-          className={`material-symbols-outlined ${
-            isSelected ? "selected-icon3" : ""
-          }`}
-          value="3"
-        >
-          sentiment_neutral
-        </span>
-        <span
-          id="icon-face face4"
-          className={`material-symbols-outlined ${
-            isSelected ? "selected-icon4" : ""
-          }`}
-          value="4"
-        >
-          sentiment_satisfied
-        </span>
-        <span
-          id="icon-face face5"
-          className={`material-symbols-outlined ${
-            isSelected ? "selected-icon5" : ""
-          }`}
-          value="5"
-        >
-          mood
         </span> */}
-
         {/* END ICONS ------------------------------------>   */}
         {/* <div className="form-check form-check-inline">
         <input
@@ -295,36 +267,6 @@ export const StatusUpdate = () => {
           value="2"
         />
         <label className="form-check-label" for="inlineRadio2"></label>
-      </div>
-      <div className="form-check form-check-inline">
-        <input
-          className="form-check-input"
-          type="radio"
-          name="inlineRadioOptions"
-          id="inlineRadio3"
-          value="3"
-        />
-        <label className="form-check-label" for="inlineRadio3"></label>
-      </div>
-      <div className="form-check form-check-inline">
-        <input
-          className="form-check-input"
-          type="radio"
-          name="inlineRadioOptions"
-          id="inlineRadio4"
-          value="4"
-        />
-        <label className="form-check-label" for="inlineRadio4"></label>
-      </div>
-      <div className="form-check form-check-inline">
-        <input
-          className="form-check-input"
-          type="radio"
-          name="inlineRadioOptions"
-          id="inlineRadio5"
-          value="5"
-        />
-        <label className="form-check-label" for="inlineRadio5"></label>
       </div> */}
         {/* END QUESTION ------------------------------------> */}
         {/* START ICONS --> */}
@@ -342,45 +284,7 @@ export const StatusUpdate = () => {
           value="1"
         >
           mood_bad
-        </span>
-        <span
-          id="icon-face face2"
-          className={`material-symbols-outlined ${
-            isSelected ? "selected-icon2" : ""
-          }`}
-          value="2"
-        >
-          sentiment_dissatisfied
-        </span>
-        <span
-          id="icon-face face3"
-          className={`material-symbols-outlined ${
-            isSelected ? "selected-icon3" : ""
-          }`}
-          value="3"
-        >
-          sentiment_neutral
-        </span>
-        <span
-          id="icon-face face4"
-          className={`material-symbols-outlined ${
-            isSelected ? "selected-icon4" : ""
-          }`}
-          value="4"
-        >
-          sentiment_satisfied
-        </span>
-        <span
-          id="icon-face face5"
-          // className="material-symbols-outlined"
-          className={`material-symbols-outlined ${
-            isSelected ? "selected-icon5" : ""
-          }`}
-          value="5"
-        >
-          mood
-        </span>
-      </div> */}
+        </span>       
         {/* END ICONS */}
       </div>
     </div>
