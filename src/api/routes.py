@@ -6,6 +6,7 @@ from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
+from flask_jwt_extended import create_refresh_token
 
 api = Blueprint('api', __name__)
 
@@ -49,7 +50,14 @@ def create_token():
       
     print('message succeeded')
     access_token = create_access_token(identity=user.id)
-    return jsonify(access_token=access_token), 200
+    refresh_token = create_refresh_token(user.id)
+    return {
+        'access_token': access_token,
+        'refresh_token': refresh_token
+        }, 200
+
+
+    # return jsonify(access_token=access_token), 200
 
 @api.route("/issues/<int:user_id>", methods=["GET"])
 def get_user_issues(user_id):

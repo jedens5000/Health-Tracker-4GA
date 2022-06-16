@@ -12,64 +12,66 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const current = new Date();
-const date = `${
-  current.getMonth() + 1
-}/${current.getDate()}/${current.getFullYear()}`;
-
-const data = [
-  {
-    name: "6/09",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "6/10",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "6/11",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "6/12",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "6/13",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "6/14",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: { date },
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
 export const ChartLine = () => {
   const { store, actions } = useContext(Context);
   useEffect(() => {
     actions.getIssues();
-    actions.getQuote();
-    actions.getQuote();
+    // actions.getAnswers();
   }, []);
   console.log(store.issues);
+  console.log(store.issues.issue1);
+  console.log(store.issues.issue2);
+  console.log(store.issues.issue3);
+
+  const current = new Date();
+  const date = `${
+    current.getMonth() + 1
+  }/${current.getDate()}/${current.getFullYear()}`;
+
+  const data = [
+    {
+      name: "6/09",
+      uv: 4000,
+      pv: 2400,
+      amt: 2400,
+    },
+    {
+      name: "6/10",
+      uv: 3000,
+      pv: 1398,
+      amt: 2210,
+    },
+    {
+      name: "6/11",
+      uv: 2000,
+      pv: 9800,
+      amt: 2290,
+    },
+    {
+      name: "6/12",
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    },
+    {
+      name: "6/13",
+      uv: 1890,
+      pv: 4800,
+      amt: 2181,
+    },
+    {
+      name: "6/14",
+      uv: 2390,
+      pv: 3800,
+      amt: 2500,
+    },
+    {
+      name: { date },
+      uv: 3490,
+      pv: 4300,
+      amt: 2100,
+    },
+  ];
 
   // export default class Example extends PureComponent {
   //   static demoUrl = "https://codesandbox.io/s/simple-line-chart-kec3v";
@@ -104,5 +106,5 @@ export const ChartLine = () => {
       </ResponsiveContainer>
     </div>
   );
-  //   }
+  // }
 };
