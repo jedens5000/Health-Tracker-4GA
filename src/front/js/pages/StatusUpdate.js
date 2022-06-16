@@ -70,9 +70,7 @@ export const StatusUpdate = () => {
           console.log(value);
           return (
             <div key={index}>
-              <p className="mt-3">
-                How is your (NEED TO FIX THIS) {item} today?
-              </p>
+              <p className="mt-3">How is your {item} today?</p>
               <div className="form-check">
                 <button
                   className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}

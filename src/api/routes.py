@@ -81,9 +81,8 @@ def create_answer():
 # TO RETRIEVE ANSWERS
 @api.route("/answer/<int:user_id>", methods=["GET"])
 def get_user_answers(user_id):
-    user = User.query.filter_by(id = user_id).first()
-    issues = [issue.serialize() for issue in user.issues]
-    value = [value.serialize() for value in user.value] #Value = Answers
-    date = [date.serialize() for date in user.date]
-    return jsonify(answers), 200
+    answers = Answer.query.filter_by(user_id = user_id)
+    answers_serialized = [item.serialize() for item in answers]
+  
+    return jsonify(answers_serialized), 200
 

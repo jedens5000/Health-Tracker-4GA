@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, PureComponent } from "react";
-import { Navbar } from "../component/navbar";
+
 import { Context } from "../store/appContext";
 import {
   LineChart,
@@ -14,10 +14,9 @@ import {
 
 export const ChartLine = () => {
   const { store, actions } = useContext(Context);
-  useEffect(() => {
-    actions.getIssues();
-    // actions.getAnswers();
-  }, []);
+  // useEffect(() => {
+  //   actions.getIssues();
+  // }, []);
   console.log(store.issues);
   console.log(store.issues.issue1);
   console.log(store.issues.issue2);
@@ -75,36 +74,32 @@ export const ChartLine = () => {
 
   // export default class Example extends PureComponent {
   //   static demoUrl = "https://codesandbox.io/s/simple-line-chart-kec3v";
-  //   render() {
+
   return (
-    <div>
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#8884d8"
-            activeDot={{ r: 8 }}
-          />
-          <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
+    <LineChart
+      width={800}
+      height={300}
+      data={data}
+      margin={{
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}
+      className="LineChart"
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line
+        type="monotone"
+        dataKey="pv"
+        stroke="#8884d8"
+        activeDot={{ r: 8 }}
+      />
+      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+    </LineChart>
   );
-  // }
 };
