@@ -31,7 +31,7 @@ export const Navbar = () => {
             <a className="nav-link" href="/statusupdate">
               Progress Tracker
             </a>
-            <a className="nav-link" href="/">
+            <a className="nav-link" href="/charts">
               Chart History
             </a>
             <a className="nav-link" href="/medications">

@@ -50,14 +50,14 @@ def create_token():
       
     print('message succeeded')
     access_token = create_access_token(identity=user.id)
-    refresh_token = create_refresh_token(user.id)
-    return {
-        'access_token': access_token,
-        'refresh_token': refresh_token
-        }, 200
+    #THIS WAS TO ADD A REFRESH TOKEN, BUT APPEARS TO BE UNNECESSARY
+    # refresh_token = create_refresh_token(user.id)
+    # return {
+    #     'access_token': access_token,
+    #     'refresh_token': refresh_token
+    #     }, 200
 
-
-    # return jsonify(access_token=access_token), 200
+    return jsonify(access_token=access_token), 200
 
 @api.route("/issues/<int:user_id>", methods=["GET"])
 def get_user_issues(user_id):
