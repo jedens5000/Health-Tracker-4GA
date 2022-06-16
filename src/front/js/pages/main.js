@@ -6,7 +6,7 @@ import "../../styles/home.css";
 import "../../styles/main.css";
 import { Navbar } from "../component/navbar";
 import { Link } from "react-router-dom";
-import { ChartLine } from "../component/chartLine";
+import { ChartLine } from "../component/ChartLine";
 
 export const Main = () => {
   const { store, actions } = useContext(Context);
@@ -14,6 +14,7 @@ export const Main = () => {
   useEffect(() => {
     actions.getIssues();
     actions.getQuote();
+    actions.getAnswers();
   }, []);
   console.log(store.name);
 
@@ -37,7 +38,6 @@ export const Main = () => {
               </ul>
             );
           })} */}
-        <ChartLine />
         <blockquote className="pt-2 text-center">
           "{store.quote.text}"<br />
           <p>

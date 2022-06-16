@@ -9,6 +9,7 @@ import FormSignup from "./pages/FormSignup";
 import { Login } from "./pages/Login";
 import { StatusUpdate } from "./pages/StatusUpdate";
 import { Main } from "./pages/main";
+import Charts from "./pages/Charts";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";
@@ -29,6 +30,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/statusupdate">
               <StatusUpdate />
+            </Route>
+            <Route exact path="/charts">
+              <Charts />
             </Route>
             <Route exact path="/main">
               <Main />

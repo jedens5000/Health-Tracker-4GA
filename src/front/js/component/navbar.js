@@ -28,18 +28,18 @@ export const Navbar = () => {
             <a className="nav-link active" aria-current="page" href="/main">
               Home
             </a>
-            <a className="nav-link" href="/statusupdate">
-              Progress Tracker
-            </a>
-            <a className="nav-link" href="/charts">
-              Chart History
-            </a>
-            <a className="nav-link" href="/medications">
-              Medications
-            </a>
-            <a className="nav-link" href="#">
-              Find a Doctor
-            </a>
+            <Link to="/statusupdate" className="nav-link">
+              <p>Progress Tracker</p>
+            </Link>
+            <Link to="/charts" className="nav-link">
+              <p>Chart History</p>
+            </Link>
+            <Link to="/medications" className="nav-link">
+              <p>Medications</p>
+            </Link>
+            <Link to="#" className="nav-link">
+              <p>Resources</p>
+            </Link>
             <a className="nav-link" href="#" onClick={() => actions.logOut()}>
               Sign Out
             </a>
