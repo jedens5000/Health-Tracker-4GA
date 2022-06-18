@@ -1,7 +1,7 @@
 import { Navbar } from "../component/navbar";
 import React, { useContext, useState } from "react";
 
-export default Medications = () => {
+const Medications = () => {
 
     return (
         <div>
@@ -12,3 +12,4 @@ export default Medications = () => {
         </div>
     )
 }
+export default Medications;

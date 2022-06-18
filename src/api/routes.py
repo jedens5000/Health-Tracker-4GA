@@ -65,6 +65,11 @@ def get_user_issues(user_id):
     issues = [issue.serialize() for issue in user.issues]
     return jsonify(issues), 200
 
+#TO STORE MEDICATIONS
+# @api.route("/medications", methods=["POST"])
+# def meds():
+    
+
 # TO STORE STATUS ANSWERS
 @api.route("/answer", methods=["POST"])
 def create_answer():
