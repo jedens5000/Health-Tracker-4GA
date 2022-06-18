@@ -10,6 +10,7 @@ import { Login } from "./pages/Login";
 import { StatusUpdate } from "./pages/StatusUpdate";
 import { Main } from "./pages/main";
 import Charts from "./pages/Charts";
+import Medications from "./pages/medications";
 
 const Layout = () => {
   const basename = process.env.BASENAME || "";
@@ -36,6 +37,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/main">
               <Main />
+            </Route>
+            <Route exact path="/medications">
+              <Medications />
             </Route>
             <Route>
               <h1>Not found!</h1>
