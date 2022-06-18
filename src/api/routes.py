@@ -26,7 +26,6 @@ def create_user():
     db.session.commit()
     return jsonify({"msg": "success, user created"}), 200
 
-#
 
 @api.route("/user", methods=["GET"])
 @jwt_required()
@@ -86,7 +85,7 @@ def create_answer():
 # TO RETRIEVE ANSWERS
 @api.route("/answer/<int:user_id>", methods=["GET"])
 def get_user_answers(user_id):
-    answers = Answer.query.filter_by(user_id = user_id)
+    answers = Answer.query.filter_by(user_id = user_id).all()
     answers_serialized = [item.serialize() for item in answers]
   
     return jsonify(answers_serialized), 200

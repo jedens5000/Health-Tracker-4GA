@@ -94,6 +94,7 @@ class Answer(db.Model):
         return {
             "id": self.id,
             "value": self.value,       
-            "date": self.date,       
+            "date": self.date,
+            "issue": self.issue,                
         }
 
