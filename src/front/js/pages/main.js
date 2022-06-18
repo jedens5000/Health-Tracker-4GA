@@ -7,6 +7,7 @@ import "../../styles/main.css";
 import { Navbar } from "../component/navbar";
 import { Link } from "react-router-dom";
 import { ChartLine } from "../component/ChartLine";
+import { ChartBar } from "../component/ChartBar";
 
 export const Main = () => {
   const { store, actions } = useContext(Context);
@@ -17,6 +18,7 @@ export const Main = () => {
     actions.getAnswers();
   }, []);
   console.log(store.name);
+  console.log(store.data);
 
   return (
     <div>
@@ -31,6 +33,7 @@ export const Main = () => {
         <p>Issue: {store.issues.issue1}</p>
         {store.issues.issue2 ? <p>Issue: {store.issues.issue2}</p> : ""}
         {store.issues.issue3 ? <p>Issue: {store.issues.issue3}</p> : ""}
+
         {/* {store.issues.map((item) => {
             return (
               <ul>

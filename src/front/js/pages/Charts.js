@@ -1,13 +1,19 @@
 import React from "react";
 import { Navbar } from "../component/navbar";
-import { ChartLine } from "../component/ChartLine";
+import { ChartLines } from "../component/ChartLines";
+import { ChartBar } from "../component/ChartBar";
 
 const Charts = () => {
   return (
     <div>
       <Navbar />
-      <p>Charts</p>
-      <ChartLine />
+      <div className="position-relative">
+        <div className="position-absolute top-50 start-50 translate-middle-x">
+          <p>Charts (Add Pill to change charts)</p>
+          <ChartLines />
+          <ChartBar />
+        </div>
+      </div>
     </div>
   );
 };

@@ -106,24 +106,19 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
-      // NEED TO UPDATE TO PULL ANSWER DATA
+      //////////////////////////////////////////////////
+      // NEED TO UPDATE WITH USER ID /api/answer/user_id
       getAnswers: async () => {
         try {
-          const response = await fetch(getStore().apiURL + `/api/answer`, {
+          const response = await fetch(getStore().apiURL + `/api/answer/2`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
+              Authorization: `Bearer ${getToken()}`,
             },
           });
           const data = await response.json();
-          let issues = {
-            issue1: data.issue1,
-            issue2: data.issue2,
-            issue3: data.issue3,
-          };
-          let name = data.name;
-          setStore({ issues: issues });
-          setStore({ name: name });
+          setStore({ data: data });
         } catch (error) {
           throw error;
         }
