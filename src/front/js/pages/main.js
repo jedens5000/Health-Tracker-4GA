@@ -11,19 +11,18 @@ import { ChartBar } from "../component/ChartBar";
 
 export const Main = () => {
   const { store, actions } = useContext(Context);
-  console.log(store.issues);
   useEffect(() => {
     actions.getIssues();
     actions.getQuote();
     actions.getAnswers();
   }, []);
+  console.log(store.issues);
   console.log(store.name);
   console.log(store.data);
 
   return (
     <div>
       <Navbar />
-      {/* <div className="homeContainer"> */}
       <div
         className="main-body ps-3"
         style={{ backgroundImage: `url(${mainPageBackground})` }}
@@ -48,7 +47,6 @@ export const Main = () => {
           </p>
         </blockquote>
       </div>
-      {/* </div> */}
     </div>
   );
 };
