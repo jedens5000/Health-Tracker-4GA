@@ -61,12 +61,12 @@ export const FormSignup = ({ submitForm }) => {
             noValidate
           >
             <div className="mb-3">
-              <label className="form-label">First Name</label>
+              <label className="form-label">Name</label>
               <input
                 className="form-input"
                 type="name"
                 name="name"
-                placeholder="Enter your first name"
+                placeholder="Enter your name"
                 value={values.name}
                 onChange={(e) => setValues({ ...values, name: e.target.value })}
               />
