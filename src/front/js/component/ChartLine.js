@@ -38,7 +38,7 @@ export const ChartLine = () => {
     dataArray.push(newArray);
   }
 
-  // const issue1 = dataArray[0][0].issue;
+  const issue1 = dataArray[0][0].issue;
   // const issue2 = dataArray[1][0].issue;
   // const issue3 = dataArray[2][0].issue;
   // console.log(issue1, issue2, issue3, date);
@@ -60,6 +60,7 @@ export const ChartLine = () => {
       <YAxis />
       <Tooltip />
       <Legend />
+      {/* <Line type="monotone" dataKey={issue1} stroke="#8884d8" /> */}
       <Line type="monotone" dataKey="issue" stroke="#8884d8" />
       {/* <Line type="monotone" dataKey="Depression" stroke="#82ca9d" /> */}
     </LineChart>

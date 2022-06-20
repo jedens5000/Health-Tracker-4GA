@@ -35,7 +35,6 @@ def get_user():
     user = User.query.filter_by(id=user_id).first()
     return jsonify(user.serialize())
 
-
 @api.route("/login", methods=["POST"])
 def create_token():
     email = request.json.get("email", None)
@@ -49,13 +48,6 @@ def create_token():
       
     print('message succeeded')
     access_token = create_access_token(identity=user.id)
-    #THIS WAS TO ADD A REFRESH TOKEN, BUT APPEARS TO BE UNNECESSARY
-    # refresh_token = create_refresh_token(user.id)
-    # return {
-    #     'access_token': access_token,
-    #     'refresh_token': refresh_token
-    #     }, 200
-
     return jsonify(access_token=access_token), 200
 
 @api.route("/issues/<int:user_id>", methods=["GET"])
@@ -64,12 +56,6 @@ def get_user_issues(user_id):
     issues = [issue.serialize() for issue in user.issues]
     return jsonify(issues), 200
 
-#TO STORE MEDICATIONS
-# @api.route("/medications", methods=["POST"])
-# def meds():
-    
-
-# TO STORE STATUS ANSWERS
 @api.route("/answer", methods=["POST"])
 def create_answer():
     request_data = request.get_json()
@@ -82,7 +68,6 @@ def create_answer():
         db.session.commit()
     return "Success, answers saved", 200
 
-# TO RETRIEVE ANSWERS
 @api.route("/answer/<int:user_id>", methods=["GET"])
 def get_user_answers(user_id):
     answers = Answer.query.filter_by(user_id = user_id).all()
@@ -90,3 +75,6 @@ def get_user_answers(user_id):
   
     return jsonify(answers_serialized), 200
 
+#TO STORE MEDICATIONS
+# @api.route("/medications", methods=["POST"])
+# def meds():
