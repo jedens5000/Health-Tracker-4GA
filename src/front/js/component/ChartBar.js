@@ -33,48 +33,48 @@ export const ChartBar = () => {
   console.log(dataArray);
 
   ///////////////////////////////////
-  const data = [
+  let data = [
     {
-      name: "Page A",
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
+      date: dataArray[0][0].date.slice(0, 11),
+      issue1: dataArray[0][0].value,
+      issue2: dataArray[1][0].value,
+      issue3: dataArray[2][0].value,
     },
     {
-      name: "Page B",
-      uv: 3000,
-      pv: 1398,
-      amt: 2210,
+      date: dataArray[0][1].date.slice(0, 11),
+      issue1: dataArray[0][1].value,
+      issue2: dataArray[1][1].value,
+      issue3: dataArray[2][1].value,
     },
     {
-      name: "Page C",
-      uv: 2000,
-      pv: 9800,
-      amt: 2290,
+      date: dataArray[0][2].date.slice(0, 11),
+      issue1: dataArray[0][2].value,
+      issue2: dataArray[1][2].value,
+      issue3: dataArray[2][2].value,
     },
     {
-      name: "Page D",
-      uv: 2780,
-      pv: 3908,
-      amt: 2000,
+      date: dataArray[0][3].date.slice(0, 11),
+      issue1: dataArray[0][3].value,
+      issue2: dataArray[1][3].value,
+      issue3: dataArray[2][3].value,
     },
     {
-      name: "Page E",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
+      date: dataArray[0][4].date.slice(0, 11),
+      issue1: dataArray[0][4].value,
+      issue2: dataArray[1][4].value,
+      issue3: dataArray[2][4].value,
     },
     {
-      name: "Page F",
-      uv: 2390,
-      pv: 3800,
-      amt: 2500,
+      date: dataArray[0][5].date.slice(0, 11),
+      issue1: dataArray[0][5].value,
+      issue2: dataArray[1][5].value,
+      issue3: dataArray[2][5].value,
     },
     {
-      name: "Page G",
-      uv: 3490,
-      pv: 4300,
-      amt: 2100,
+      date: dataArray[0][6].date.slice(0, 11),
+      issue1: dataArray[0][6].value,
+      issue2: dataArray[1][6].value,
+      issue3: dataArray[2][6].value,
     },
   ];
 
@@ -92,13 +92,13 @@ export const ChartBar = () => {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
+      <XAxis dataKey="date" />
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="pv" fill="#8884d8" />
-      <Bar dataKey="uv" fill="#82ca9d" />
-      <Bar dataKey="amt" fill="#888a9d" />
+      <Bar dataKey="issue1" fill="#8884d8" />
+      <Bar dataKey="issue2" fill="#82ca9d" />
+      <Bar dataKey="issue3" fill="#888a9d" />
     </BarChart>
   );
 };
