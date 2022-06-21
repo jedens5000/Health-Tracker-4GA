@@ -30,12 +30,12 @@ class Medications(db.Model):
 #     user_id = db.column("user", db.ForeignKey('user.id'))
 
 
-#     def __repr__(self):
-#         return self.med_name
-#     def serialize(self):
-#         return {
-#             "med_name": self.med_name,
-#         }
+    def __repr__(self):
+        return self.med_name
+    def serialize(self):
+        return {
+            "med_name": self.med_name,
+        }
     
 class User(db.Model):
     __tablename__ = "user"
