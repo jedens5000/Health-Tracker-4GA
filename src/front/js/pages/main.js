@@ -28,7 +28,7 @@ export const Main = () => {
         style={{ backgroundImage: `url(${mainPageBackground})` }}
       >
         <h2>Welcome {store.name}!</h2>
-        <h3>Currently tracking:</h3>
+        <h3>Here's what you're currently tracking:</h3>
         <p>Issue: {store.issues.issue1}</p>
         {store.issues.issue2 ? <p>Issue: {store.issues.issue2}</p> : ""}
         {store.issues.issue3 ? <p>Issue: {store.issues.issue3}</p> : ""}
