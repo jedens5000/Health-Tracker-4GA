@@ -126,7 +126,7 @@ export const ChartLines = () => {
       <Tooltip />
       <Legend />
       {/* <Line type="monotone" dataKey={issue} stroke="#8884d8" /> */}
-      <Line type="monotone" dataKey={issue1} stroke="#82ca9d" />
+      {/* <Line type="monotone" dataKey={issue1} stroke="#82ca9d" /> */}
       <Line type="monotone" dataKey="issue1" stroke="#8884d8" />
       <Line type="monotone" dataKey="issue2" stroke="#8884d8" />
       <Line type="monotone" dataKey="issue3" stroke="#888a9d" />

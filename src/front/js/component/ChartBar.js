@@ -82,8 +82,8 @@ export const ChartBar = () => {
     <BarChart
       width={800}
       height={300}
-      data={data}
-      // data={dataArray[0]}
+      // data={data}
+      data={dataArray[0]}
       margin={{
         top: 5,
         right: 30,
@@ -96,9 +96,10 @@ export const ChartBar = () => {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Bar dataKey="issue1" fill="#8884d8" />
+      <Bar dataKey="value" fill="#8884d8" />
+      {/* <Bar dataKey="issue1" fill="#8884d8" />
       <Bar dataKey="issue2" fill="#82ca9d" />
-      <Bar dataKey="issue3" fill="#888a9d" />
+      <Bar dataKey="issue3" fill="#888a9d" /> */}
     </BarChart>
   );
 };

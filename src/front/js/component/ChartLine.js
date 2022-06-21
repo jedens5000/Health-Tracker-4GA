@@ -14,13 +14,6 @@ import {
 
 export const ChartLine = () => {
   const { store, actions } = useContext(Context);
-  // useEffect(() => {
-  //   actions.getIssues();
-  // }, []);
-  // console.log(store.issues);
-  // const issue1 = store.issues.issue1;
-  // console.log(store.issues.issue1);
-  // console.log(store.data.issue);
 
   const issues = new Set();
   store.data.forEach((element) => {
@@ -32,37 +25,78 @@ export const ChartLine = () => {
   for (let i = 0; i < setArray.length; i++) {
     const newArray = store.data.filter((element) => {
       if (element.issue === setArray[i]) {
+        element.date = element.date.split("").slice(0, 11).join(""); // Date reformat
         return true;
       }
     });
     dataArray.push(newArray);
   }
 
+  console.log(dataArray);
+
+  // const testArray = [...dataArray[0], ...dataArray[1], ...dataArray[2]];
+  // console.log(testArray);
   const issue1 = dataArray[0][0].issue;
-  // const issue2 = dataArray[1][0].issue;
-  // const issue3 = dataArray[2][0].issue;
-  // console.log(issue1, issue2, issue3, date);
+  const issue2 = dataArray[1][0].issue;
+  const issue3 = dataArray[2][0].issue;
+  console.log(issue1, issue2, issue3);
 
   return (
-    <LineChart
-      width={800}
-      height={300}
-      data={dataArray[0]}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      {/* <Line type="monotone" dataKey={issue1} stroke="#8884d8" /> */}
-      <Line type="monotone" dataKey="issue" stroke="#8884d8" />
-      {/* <Line type="monotone" dataKey="Depression" stroke="#82ca9d" /> */}
-    </LineChart>
+    <div>
+      <p className="text-center">{issue1}</p>
+      <LineChart
+        width={800}
+        height={300}
+        data={dataArray[0]}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Line type="monotone" dataKey="value" stroke="#8884d8" />
+      </LineChart>
+      <p className="text-center">{issue2}</p>
+      <LineChart
+        width={800}
+        height={300}
+        data={dataArray[1]}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Line type="monotone" dataKey="value" stroke="#8884d8" />
+      </LineChart>
+      <p className="text-center">{issue3}</p>
+      <LineChart
+        width={800}
+        height={300}
+        data={dataArray[2]}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        <Line type="monotone" dataKey="value" stroke="#8884d8" />
+      </LineChart>
+    </div>
   );
 };
