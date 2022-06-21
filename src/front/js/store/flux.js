@@ -22,6 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       quote: [],
       name: "",
       answers: [],
+      medications: [],
     },
     actions: {
       logOut: function () {
@@ -44,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             const token = await response.json();
             localStorage.setItem("token", JSON.stringify(token));
             console.log(response);
-
+            
             return true;
           } else {
             throw new Error("password not correct");
@@ -61,31 +62,51 @@ const getState = ({ getStore, getActions, setStore }) => {
         issue1,
         issue2,
         issue3
-      ) => {
-        try {
-          console.log("post /formsignup");
-          const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              name,
-              email,
-              password,
-              password2,
-              issue1,
-              issue2,
-              issue3,
-            }),
-          });
-          return response.json();
-        } catch (error) {
-          throw error;
-        }
-      },
-      getIssues: async () => {
-        try {
+        ) => {
+          try {
+            console.log("post /formsignup");
+            const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name,
+                email,
+                password,
+                password2,
+                issue1,
+                issue2,
+                issue3,
+              }),
+            });
+            return response.json();
+          } catch (error) {
+            throw error;
+          }
+        },
+        medications: async (medication) => {
+          try{
+            const response = await fetch(getStore().apURL + "/api/medications", {
+              method: "GET",
+              headers : {
+                "Content-Type": "application/json",
+            }
+            });
+            const medications = await response.json();
+            let meds = {
+              medication : medications.medication,
+            };
+            let med_info = medications.med_info;
+            setStore({meds:meds});
+            setStore({med_info:med_info});
+          } catch (error) {
+            throw error;
+          }
+
+        },
+        getIssues: async () => {
+          try {
           const response = await fetch(getStore().apiURL + `/api/user`, {
             method: "GET",
             headers: {
