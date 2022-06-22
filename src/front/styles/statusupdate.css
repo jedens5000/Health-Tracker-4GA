@@ -7,14 +7,6 @@
   padding: 0 30%;
 }
 
-/* .material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-  margin: 0 0 0 1.5rem;
-  color: rgb(252, 252, 173);
-  background-color: black;
-  border-radius: 50%;
-} */
-
 .emoji {
   border: none;
   background: transparent;
@@ -26,11 +18,18 @@
   border-radius: 50%;
 }
 .emoji:hover {
-  /* font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48; */
-  background-color: yellow;
+  /* background-color: yellow; */
   box-shadow: 0px 0px 20px 5px yellow;
   border-radius: 50%;
 }
 .form-check {
   padding-left: 0 !important;
 }
+
+/* .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+  margin: 0 0 0 1.5rem;
+  color: rgb(252, 252, 173);
+  background-color: black;
+  border-radius: 50%;
+} */
