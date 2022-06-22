@@ -28,7 +28,8 @@ export const Questionnaire = () => {
             <p className="mt-3">How is your {item} today?</p>
             <div className="form-check">
               <button
-                className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
+                className={isSelected ? "fs-4 emoji-selected" : "fs-4 emoji"}
+                // className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
                 // TWO FUNCTIONS ONCLICK
                 onClick={() => {
                   setValue({ issue: item, value: 5 });
