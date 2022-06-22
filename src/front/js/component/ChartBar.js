@@ -78,28 +78,72 @@ export const ChartBar = () => {
     },
   ];
 
+  const issue1 = dataArray[0][0].issue;
+  const issue2 = dataArray[1][0].issue;
+  const issue3 = dataArray[2][0].issue;
+
   return (
-    <BarChart
-      width={800}
-      height={300}
-      // data={data}
-      data={dataArray[0]}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="date" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Bar dataKey="value" fill="#8884d8" />
-      {/* <Bar dataKey="issue1" fill="#8884d8" />
-      <Bar dataKey="issue2" fill="#82ca9d" />
-      <Bar dataKey="issue3" fill="#888a9d" /> */}
-    </BarChart>
+    <div>
+      <p className="text-center chart-name">{issue1}</p>
+      <BarChart
+        width={800}
+        height={300}
+        // data={data}
+        data={dataArray[0]}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        {/* <Legend /> */}
+        <Bar dataKey="value" fill="#8884d8" />
+      </BarChart>
+      <p className="text-center chart-name">{issue2}</p>
+      <BarChart
+        width={800}
+        height={300}
+        // data={data}
+        data={dataArray[1]}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        {/* <Legend /> */}
+        <Bar dataKey="value" fill="#82ca9d" />
+      </BarChart>
+      <p className="text-center chart-name">{issue3}</p>
+      <BarChart
+        width={800}
+        height={300}
+        // data={data}
+        data={dataArray[2]}
+        margin={{
+          top: 5,
+          right: 30,
+          left: 20,
+          bottom: 5,
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="date" />
+        <YAxis />
+        <Tooltip />
+        {/* <Legend /> */}
+        <Bar dataKey="value" fill="#888a9d" />
+      </BarChart>
+    </div>
   );
 };

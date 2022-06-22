@@ -6,7 +6,6 @@ import { Questionnaire } from "../component/Questionnaire";
 
 export const StatusUpdate = () => {
   const { store, actions } = useContext(Context);
-  const [isSelected, setSelected] = useState(false);
   const [issues, setIssues] = useState([
     store.issues.issue1,
     store.issues.issue2,
@@ -14,6 +13,7 @@ export const StatusUpdate = () => {
   ]);
   console.log(store.issues);
 
+  const [isSelected, setSelected] = useState(false);
   const clickHandler = (e) => {
     setSelected(!isSelected);
   };
@@ -21,12 +21,29 @@ export const StatusUpdate = () => {
   return (
     <div>
       <Navbar />
-      <Questionnaire />
-      <Link to="/main">
-        <button className="btn btn-primary mt-3" onClick={() => setValue({})}>
-          Submit Status
-        </button>
-      </Link>
+      <div
+        id="questionnaire"
+        className="container-fluid position-relative top-0 start-50 translate-middle-x"
+      >
+        <h5 className="status-h5">
+          <em>Please rate how your issues are affecting you today.</em>
+          <br />
+          Select a happy face if your issues are not bothering you, or select a
+          sad face if they are having a negative impact on you today.
+        </h5>
+        <Questionnaire />
+        <Link to="/main">
+          <button className="btn btn-primary mt-3" onClick={() => setValue({})}>
+            Submit Status
+          </button>
+        </Link>
+        {/* <button
+          className={isSelected ? "emoji-selected" : ""}
+          onClick={clickHandler}
+        >
+          Change color
+        </button> */}
+      </div>
     </div>
   );
 };

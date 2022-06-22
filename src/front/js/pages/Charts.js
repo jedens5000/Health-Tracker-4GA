@@ -11,7 +11,23 @@ const Charts = () => {
       <Navbar />
       <div className="position-relative">
         <div className="position-absolute top-50 start-50 translate-middle-x">
-          <p>(Add Pill to change charts)</p>
+          {/* <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">
+                Line Charts
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Bar Chart
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Pie Chart
+              </a>
+            </li>
+          </ul> */}
           <p>Chartline</p>
           <ChartLine />
           <p>Chartlines</p>

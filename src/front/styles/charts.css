@@ -2,3 +2,8 @@
   margin: 0 auto;
   background-color: blanchedalmond;
 } */
+.chart-name {
+  width: 600;
+  background-color: lightyellow;
+  border: 1px solid grey;
+}

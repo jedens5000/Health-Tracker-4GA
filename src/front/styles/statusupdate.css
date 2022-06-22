@@ -3,14 +3,17 @@
   background: transparent;
 }
 
-.material-symbols-outlined {
+.status-h5 {
+  padding: 0 30%;
+}
+
+/* .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
   margin: 0 0 0 1.5rem;
-  /* color: yellow; */
   color: rgb(252, 252, 173);
   background-color: black;
   border-radius: 50%;
-}
+} */
 
 .emoji {
   border: none;
@@ -18,8 +21,8 @@
   margin: 0.5rem;
 }
 .emoji-selected {
-  background-color: yellow;
-  box-shadow: 0px 0px 20px 5px yellow;
+  background-color: blue !important;
+  box-shadow: 0px 0px 20px 5px lightblue !important;
   border-radius: 50%;
 }
 .emoji:hover {
