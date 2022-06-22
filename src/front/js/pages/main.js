@@ -29,9 +29,9 @@ export const Main = () => {
       >
         <h2>Welcome {store.name}!</h2>
         <h3>Here's what you're currently tracking:</h3>
-        <p>Issue: {store.issues.issue1}</p>
-        {store.issues.issue2 ? <p>Issue: {store.issues.issue2}</p> : ""}
-        {store.issues.issue3 ? <p>Issue: {store.issues.issue3}</p> : ""}
+        <p>Issue 1: {store.issues.issue1}</p>
+        {store.issues.issue2 ? <p>Issue 2: {store.issues.issue2}</p> : ""}
+        {store.issues.issue3 ? <p>Issue 3: {store.issues.issue3}</p> : ""}
 
         {/* {store.issues.map((item) => {
             return (

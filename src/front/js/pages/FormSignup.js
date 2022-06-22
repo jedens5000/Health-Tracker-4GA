@@ -129,7 +129,6 @@ export const FormSignup = ({ submitForm }) => {
               {errors.issue1 && <p>{errors.issue1}</p>}
             </div>
             <div className="mb-3">
-              {/* <label className="form-label">Issue</label> */}
               <input
                 className="form-input"
                 type="issue2"
@@ -143,7 +142,6 @@ export const FormSignup = ({ submitForm }) => {
               {errors.issue2 && <p>{errors.issue2}</p>}
             </div>
             <div className="mb-3">
-              {/* <label className="form-label">Issue</label> */}
               <input
                 className="form-input"
                 type="issue3"
