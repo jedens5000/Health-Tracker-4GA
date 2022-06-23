@@ -12,9 +12,9 @@
   background: transparent;
   margin: 0.5rem;
 }
-.emoji-selected {
-  background-color: blue !important;
-  box-shadow: 0px 0px 20px 5px lightblue !important;
+.emoji:focus-within {
+  background-color: yellow !important;
+  box-shadow: 0px 0px 20px 5px yellow !important;
   border-radius: 50%;
 }
 .emoji:hover {
