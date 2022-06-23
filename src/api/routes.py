@@ -68,11 +68,15 @@ def create_answer():
         db.session.commit()
     return "Success, answers saved", 200
 
-@api.route("/answer/<int:user_id>", methods=["GET"])
-def get_user_answers(user_id):
-    answers = Answer.query.filter_by(user_id = user_id).all()
-    answers_serialized = [item.serialize() for item in answers]
-  
+@api.route("/answer", methods=["GET"])
+@jwt_required()
+def get_user_answers():
+    id = get_jwt_identity()
+    print(id)
+    answers = Answer.query.filter_by(user_id = id).all()
+    print(answers)
+    answers_serialized = [item.serialize() for item in answers] 
+    print(answers_serialized) 
     return jsonify(answers_serialized), 200
 
 #TO STORE MEDICATIONS
