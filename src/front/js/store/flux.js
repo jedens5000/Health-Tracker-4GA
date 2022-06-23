@@ -45,7 +45,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             const token = await response.json();
             localStorage.setItem("token", JSON.stringify(token));
             console.log(response);
-            
+
             return true;
           } else {
             throw new Error("password not correct");
@@ -62,51 +62,50 @@ const getState = ({ getStore, getActions, setStore }) => {
         issue1,
         issue2,
         issue3
-        ) => {
-          try {
-            console.log("post /formsignup");
-            const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                name,
-                email,
-                password,
-                password2,
-                issue1,
-                issue2,
-                issue3,
-              }),
-            });
-            return response.json();
-          } catch (error) {
-            throw error;
-          }
-        },
-        medications: async (medication) => {
-          try{
-            const response = await fetch(getStore().apURL + "/api/medications", {
-              method: "GET",
-              headers : {
-                "Content-Type": "application/json",
-            }
-            });
-            const medications = await response.json();
-            let meds = {
-              medication : medications.medication,
-            };
-            let med_info = medications.med_info;
-            setStore({meds:meds});
-            setStore({med_info:med_info});
-          } catch (error) {
-            throw error;
-          }
-
-        },
-        getIssues: async () => {
-          try {
+      ) => {
+        try {
+          console.log("post /formsignup");
+          const response = await fetch(getStore().apiURL + "/api/FormSignup/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              password,
+              password2,
+              issue1,
+              issue2,
+              issue3,
+            }),
+          });
+          return response.json();
+        } catch (error) {
+          throw error;
+        }
+      },
+      medications: async (medication) => {
+        try {
+          const response = await fetch(getStore().apURL + "/api/medications", {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          const medications = await response.json();
+          let meds = {
+            medication: medications.medication,
+          };
+          let med_info = medications.med_info;
+          setStore({ meds: meds });
+          setStore({ med_info: med_info });
+        } catch (error) {
+          throw error;
+        }
+      },
+      getIssues: async () => {
+        try {
           const response = await fetch(getStore().apiURL + `/api/user`, {
             method: "GET",
             headers: {
@@ -131,7 +130,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       // NEED TO UPDATE WITH USER ID /api/answer/user_id
       getAnswers: async () => {
         try {
-          const response = await fetch(getStore().apiURL + `/api/answer/2`, {
+          const response = await fetch(getStore().apiURL + `/api/answer`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -142,6 +141,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ data: data });
         } catch (error) {
           throw error;
+        }
+      },
+      postAnswer: async (array) => {
+        try {
+          const response = await fetch(getStore().apiURL + "/api/answer", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${getToken()}`,
+            },
+            body: JSON.stringify(array),
+          });
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          throw Error("Please check your credentials");
         }
       },
       getQuote: async () => {

@@ -10,71 +10,90 @@ export const Questionnaire = () => {
     store.issues.issue2,
     store.issues.issue3,
   ]);
+  const [answers, setAnswers] = useState([]);
+  console.log(answers);
   console.log(store.issues);
-
-  const [isSelected, setSelected] = useState(false);
-  const clickHandler = () => {
-    setSelected(!isSelected);
-  };
 
   return (
     <div>
       {/* START ISSSUE QUESTIONS & ICONS --------------------> */}
       {issues.map((item, index) => {
         if (item === null) return;
-        const [value, setValue] = useState(null);
-        console.log(value);
+        // const [value, setValue] = useState(null);
+        // console.log(value);
+        const [isSelected, setSelected] = useState(false);
+        const clickHandler = (num, val) => {
+          setSelected(num);
+          let issueName = answers.find((item) => item.issue === val.issue);
+          if (issueName) {
+            let newArray = answers.filter((item) => item.issue != val.issue);
+            setAnswers([...newArray, val]);
+          } else {
+            setAnswers([...answers, val]);
+          }
+        };
         return (
           <div key={index}>
             <p className="mt-3">How is your {item} today?</p>
             <div className="form-check">
               <button
                 // className={isSelected ? "fs-4 emoji-selected" : "fs-4 emoji"}
-                className="fs-4 emoji"
+                className={
+                  isSelected == 5 ? "fs-4 emoji-selected" : "fs-4 emoji"
+                }
+                // className="fs-4 emoji"
                 onClick={() => {
-                  setValue({ issue: item, value: 5 });
+                  // setValue({ issue: item, value: 5 });
 
-                  clickHandler();
+                  clickHandler(5, { issue: item, value: 5 });
                 }}
               >
                 ☹️
               </button>
               <button
-                className="fs-4 emoji"
+                className={
+                  isSelected == 4 ? "fs-4 emoji-selected" : "fs-4 emoji"
+                }
                 onClick={() => {
-                  setValue({ issue: item, value: 4 });
+                  // setValue({ issue: item, value: 4 });
 
-                  clickHandler();
+                  clickHandler(4, { issue: item, value: 4 });
                 }}
               >
                 🙁
               </button>
               <button
-                className="fs-4 emoji"
+                className={
+                  isSelected == 3 ? "fs-4 emoji-selected" : "fs-4 emoji"
+                }
                 onClick={() => {
-                  setValue({ issue: item, value: 3 });
+                  // setValue({ issue: item, value: 3 });
 
-                  clickHandler();
+                  clickHandler(3, { issue: item, value: 3 });
                 }}
               >
                 😐
               </button>
               <button
-                className="fs-4 emoji"
+                className={
+                  isSelected == 2 ? "fs-4 emoji-selected" : "fs-4 emoji"
+                }
                 onClick={() => {
-                  setValue({ issue: item, value: 2 });
+                  // setValue({ issue: item, value: 2 });
 
-                  clickHandler();
+                  clickHandler(2, { issue: item, value: 2 });
                 }}
               >
                 🙂
               </button>
               <button
-                className="fs-4 emoji"
+                className={
+                  isSelected == 1 ? "fs-4 emoji-selected" : "fs-4 emoji"
+                }
                 onClick={() => {
-                  setValue({ issue: item, value: 1 });
+                  // setValue({ issue: item, value: 1 });
 
-                  clickHandler();
+                  clickHandler(1, { issue: item, value: 1 });
                 }}
               >
                 😊
@@ -83,9 +102,17 @@ export const Questionnaire = () => {
           </div>
         );
       })}
+      <Link to="/main">
+        <button
+          className="btn btn-primary mt-3"
+          onClick={() => actions.postAnswer(answers)}
+        >
+          Submit Status
+        </button>
+      </Link>
       {/* END ICONS ------------------------------------>   */}
       {/* BOOTSTRAP RADIO TEST-------------------------->   */}
-      {issues.map((item, index) => {
+      {/* {issues.map((item, index) => {
         if (item === null) return;
         const [value, setValue] = useState(null);
         console.log(value);
@@ -194,19 +221,11 @@ export const Questionnaire = () => {
               😊
             </label>
             <div>
-              {/* This says if "isRed" state is TRUE, use className "red", is FALSE dont do anything. */}
-              {/* this is same as if isRed STATE is true, set "red", if it's false, do nothing   */}
-              {/* <button className={isRed ? "red" : ""} onClick={clickHandler}> */}
-              {/* <button
-                className={isSelected ? "emoji-selected" : ""}
-                onClick={clickHandler}
-              >
-                Change color
-              </button> */}
+              
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
