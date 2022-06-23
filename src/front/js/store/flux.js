@@ -143,6 +143,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
+      postAnswer: async (array) => {
+        try {
+          const response = await fetch(getStore().apiURL + "/api/answer", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${getToken()}`,
+            },
+            body: JSON.stringify(array),
+          });
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          throw Error("Please check your credentials");
+        }
+      },
       getQuote: async () => {
         const response = await fetch("https://type.fit/api/quotes", {
           method: "GET",

@@ -32,11 +32,7 @@ export const StatusUpdate = () => {
           sad face if they are having a negative impact on you today.
         </h5>
         <Questionnaire />
-        <Link to="/main">
-          <button className="btn btn-primary mt-3" onClick={() => setValue({})}>
-            Submit Status
-          </button>
-        </Link>
+
         {/* <button
           className={isSelected ? "emoji-selected" : ""}
           onClick={clickHandler}

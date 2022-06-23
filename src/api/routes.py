@@ -57,13 +57,16 @@ def get_user_issues(user_id):
     return jsonify(issues), 200
 
 @api.route("/answer", methods=["POST"])
+@jwt_required()
 def create_answer():
     request_data = request.get_json()
+    user_id = get_jwt_identity()
     for item in request_data:
-        issue = item.issue
-        value = item.value
+        print(item)
+        issue = item["issue"]
+        value = item["value"]
         date = datetime.datetime.now()
-        answer = Answer(issue=issue, value=value, date=date)
+        answer = Answer(issue=issue, value=value, date=date, user_id=user_id)
         db.session.add(answer)
         db.session.commit()
     return "Success, answers saved", 200
@@ -72,11 +75,8 @@ def create_answer():
 @jwt_required()
 def get_user_answers():
     id = get_jwt_identity()
-    print(id)
-    answers = Answer.query.filter_by(user_id = id).all()
-    print(answers)
+    answers = Answer.query.filter_by(user_id = id).all()    
     answers_serialized = [item.serialize() for item in answers] 
-    print(answers_serialized) 
     return jsonify(answers_serialized), 200
 
 #TO STORE MEDICATIONS
