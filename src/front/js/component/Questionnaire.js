@@ -21,6 +21,7 @@ export const Questionnaire = () => {
     <div>
       {/* START ISSSUE QUESTIONS & ICONS --------------------> */}
       {issues.map((item, index) => {
+        if (item === null) return;
         const [value, setValue] = useState(null);
         console.log(value);
         return (
@@ -28,39 +29,53 @@ export const Questionnaire = () => {
             <p className="mt-3">How is your {item} today?</p>
             <div className="form-check">
               <button
-                className={isSelected ? "fs-4 emoji-selected" : "fs-4 emoji"}
-                // className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                // TWO FUNCTIONS ONCLICK
+                // className={isSelected ? "fs-4 emoji-selected" : "fs-4 emoji"}
+                className="fs-4 emoji"
                 onClick={() => {
                   setValue({ issue: item, value: 5 });
-                  {
-                    clickHandler;
-                  }
+
+                  clickHandler();
                 }}
               >
                 ☹️
               </button>
               <button
-                className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                onClick={() => setValue({ issue: item, value: 4 })}
+                className="fs-4 emoji"
+                onClick={() => {
+                  setValue({ issue: item, value: 4 });
+
+                  clickHandler();
+                }}
               >
                 🙁
               </button>
               <button
-                className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                onClick={() => setValue({ issue: item, value: 3 })}
+                className="fs-4 emoji"
+                onClick={() => {
+                  setValue({ issue: item, value: 3 });
+
+                  clickHandler();
+                }}
               >
                 😐
               </button>
               <button
-                className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                onClick={() => setValue({ issue: item, value: 2 })}
+                className="fs-4 emoji"
+                onClick={() => {
+                  setValue({ issue: item, value: 2 });
+
+                  clickHandler();
+                }}
               >
                 🙂
               </button>
               <button
-                className={`fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-                onClick={() => setValue({ issue: item, value: 1 })}
+                className="fs-4 emoji"
+                onClick={() => {
+                  setValue({ issue: item, value: 1 });
+
+                  clickHandler();
+                }}
               >
                 😊
               </button>
@@ -71,6 +86,7 @@ export const Questionnaire = () => {
       {/* END ICONS ------------------------------------>   */}
       {/* BOOTSTRAP RADIO TEST-------------------------->   */}
       {issues.map((item, index) => {
+        if (item === null) return;
         const [value, setValue] = useState(null);
         console.log(value);
         return (
@@ -86,12 +102,12 @@ export const Questionnaire = () => {
               autocomplete="off"
             />
             <label
-              className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
+              // className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
+              className="fs-4 emoji"
               onClick={() => {
                 setValue({ issue: item, value: 5 });
-                {
-                  clickHandler;
-                }
+
+                clickHandler();
               }}
               for="option1"
             >
