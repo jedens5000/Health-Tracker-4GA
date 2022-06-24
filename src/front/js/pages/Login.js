@@ -14,7 +14,10 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     actions
-      .login(email, password) .then(resp => {if (resp == true) history.push("/main") })
+      .login(email, password)
+      .then((resp) => {
+        if (resp == true) history.push("/main");
+      })
       .catch((error) => {
         setError(error);
         console.log("This is my error", error);
@@ -22,9 +25,11 @@ export const Login = () => {
   };
   return (
     <div id="loginFormAndPhoto">
-      <img id="loginPhoto" src={sunsetImg}></img>
+      <img id="loginPhoto" src={sunsetImg} alt="sunset" />
       <form onSubmit={handleSubmit}>
-        <img className="login-logo" src={mindsetLogo} />
+        <Link to="/">
+          <img className="login-logo" src={mindsetLogo} alt="mindset logo" />
+        </Link>
         <div>
           <p className="mt-3">Sign In</p>
         </div>

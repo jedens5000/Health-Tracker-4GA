@@ -156,7 +156,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await response.json();
           console.log(data);
         } catch (error) {
-          throw Error("Please check your credentials");
+          throw Error("Status did not post");
         }
       },
       getQuote: async () => {

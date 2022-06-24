@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { Navbar } from "../component/navbar";
 
 export const Questionnaire = () => {
   const { store, actions } = useContext(Context);
@@ -37,14 +36,10 @@ export const Questionnaire = () => {
             <p className="mt-3">How is your {item} today?</p>
             <div className="form-check">
               <button
-                // className={isSelected ? "fs-4 emoji-selected" : "fs-4 emoji"}
                 className={
                   isSelected == 5 ? "fs-4 emoji-selected" : "fs-4 emoji"
                 }
-                // className="fs-4 emoji"
                 onClick={() => {
-                  // setValue({ issue: item, value: 5 });
-
                   clickHandler(5, { issue: item, value: 5 });
                 }}
               >
@@ -55,8 +50,6 @@ export const Questionnaire = () => {
                   isSelected == 4 ? "fs-4 emoji-selected" : "fs-4 emoji"
                 }
                 onClick={() => {
-                  // setValue({ issue: item, value: 4 });
-
                   clickHandler(4, { issue: item, value: 4 });
                 }}
               >
@@ -67,8 +60,6 @@ export const Questionnaire = () => {
                   isSelected == 3 ? "fs-4 emoji-selected" : "fs-4 emoji"
                 }
                 onClick={() => {
-                  // setValue({ issue: item, value: 3 });
-
                   clickHandler(3, { issue: item, value: 3 });
                 }}
               >
@@ -79,8 +70,6 @@ export const Questionnaire = () => {
                   isSelected == 2 ? "fs-4 emoji-selected" : "fs-4 emoji"
                 }
                 onClick={() => {
-                  // setValue({ issue: item, value: 2 });
-
                   clickHandler(2, { issue: item, value: 2 });
                 }}
               >
@@ -91,8 +80,6 @@ export const Questionnaire = () => {
                   isSelected == 1 ? "fs-4 emoji-selected" : "fs-4 emoji"
                 }
                 onClick={() => {
-                  // setValue({ issue: item, value: 1 });
-
                   clickHandler(1, { issue: item, value: 1 });
                 }}
               >
@@ -102,130 +89,74 @@ export const Questionnaire = () => {
           </div>
         );
       })}
-      <Link to="/main">
-        <button
-          className="btn btn-primary mt-3"
-          onClick={() => actions.postAnswer(answers)}
-        >
-          Submit Status
-        </button>
-      </Link>
-      {/* END ICONS ------------------------------------>   */}
-      {/* BOOTSTRAP RADIO TEST-------------------------->   */}
-      {/* {issues.map((item, index) => {
-        if (item === null) return;
-        const [value, setValue] = useState(null);
-        console.log(value);
-        return (
-          <div>
-            <p className="mt-3">
-              How would you rate your {item} today? (radio)
-            </p>
-            <input
-              type="radio"
-              className="btn-check"
-              name="options"
-              id="option1"
-              autocomplete="off"
-            />
-            <label
-              // className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-              className="fs-4 emoji"
-              onClick={() => {
-                setValue({ issue: item, value: 5 });
-
-                clickHandler();
-              }}
-              for="option1"
+      {/* Modal start */}
+      <div>
+        <ul>
+          <li>
+            {/* <Link to="/main">
+              <button
+                className="btn btn-primary mt-3"
+                onClick={() => actions.postAnswer(answers)}
+              >
+                Submit Status
+              </button>
+            </Link> */}
+            <button
+              type="submit"
+              className="btn btn-primary mt-3"
+              onClick={() => actions.postAnswer(answers)}
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
             >
-              ☹️
-            </label>
+              Submit Status
+            </button>
 
-            <input
-              type="radio"
-              className="btn-check"
-              name="options"
-              id="option2"
-              autocomplete="off"
-            />
-            <label
-              className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-              onClick={() => {
-                setValue({ issue: item, value: 4 });
-                {
-                  clickHandler;
-                }
-              }}
-              for="option2"
+            {/* <!-- Modal --> */}
+            <div
+              data-bs-backdrop="false"
+              className="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
             >
-              🙁
-            </label>
+              <div className="modal-dialog">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <button
+                      type="button"
+                      className="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
 
-            <input
-              type="radio"
-              className="btn-check"
-              name="options"
-              id="option3"
-              autocomplete="off"
-            />
-            <label
-              className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-              onClick={() => {
-                setValue({ issue: item, value: 3 });
-                {
-                  clickHandler;
-                }
-              }}
-              for="option3"
-            >
-              😐
-            </label>
+                  <h5 className="modal-body">Status Update Complete!</h5>
 
-            <input
-              type="radio"
-              className="btn-check"
-              name="options"
-              id="option4"
-              autocomplete="off"
-            />
-            <label
-              className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-              onClick={() => {
-                setValue({ issue: item, value: 2 });
-                {
-                  clickHandler;
-                }
-              }}
-              for="option4"
-            >
-              🙂
-            </label>
-
-            <input
-              type="radio"
-              className="btn-check"
-              name="options"
-              id="option5"
-              autocomplete="off"
-            />
-            <label
-              className={`btn fs-4 emoji ${isSelected ? "emoji-selected" : ""}`}
-              onClick={() => {
-                setValue({ issue: item, value: 1 });
-                {
-                  clickHandler;
-                }
-              }}
-              for="option5"
-            >
-              😊
-            </label>
-            <div>
-              
+                  <div className="modal-footer">
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Revise
+                    </button>
+                    <Link to="/main">
+                      <button type="button" className="btn btn-primary">
+                        Continue
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        );
-      })} */}
+          </li>
+        </ul>
+      </div>
+
+      {/* <!-- Button trigger modal --> */}
+
+      {/* END ICONS ------------------------------------>   */}
     </div>
   );
 };
