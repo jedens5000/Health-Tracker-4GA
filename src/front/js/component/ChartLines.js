@@ -32,6 +32,7 @@ export const ChartLines = () => {
   for (let i = 0; i < setArray.length; i++) {
     const newArray = store.data.filter((element) => {
       if (element.issue === setArray[i]) {
+        // if (element.issue === setArray[i] && element.issue != null) {
         return true;
       }
     });
@@ -43,7 +44,8 @@ export const ChartLines = () => {
   ///////////////////////////////////
   const issue1 = dataArray[0][0].issue;
   const issue2 = dataArray[1][0].issue;
-  const issue3 = dataArray[2][0].issue;
+  // const issue3 = dataArray[2][0].issue;
+  const issue3 = null;
 
   let data = [
     {

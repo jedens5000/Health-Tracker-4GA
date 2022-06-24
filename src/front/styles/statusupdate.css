@@ -26,6 +26,10 @@
   padding-left: 0 !important;
 }
 
+div.modal-open div.modal-backdrop {
+  z-index: 0 !important;
+}
+
 /* .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
   margin: 0 0 0 1.5rem;
