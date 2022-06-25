@@ -7,7 +7,7 @@ import { ChartPie } from "../component/ChartPie";
 
 const Charts = () => {
   return (
-    <div>
+    <div className="chart-body">
       <Navbar />
       <div className="position-relative">
         <div className="position-absolute top-50 start-50 translate-middle-x">
