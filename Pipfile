@@ -18,6 +18,11 @@ gunicorn = "*"
 cloudinary = "*"
 flask-admin = "*"
 flask-jwt-extended = "*"
+twilio = "*"
+schedule = "*"
+celery = {extras = ["sqs"], version = "*"}
+arrow = "*"
+datetime = "*"
 
 [requires]
 python_version = "3.8"

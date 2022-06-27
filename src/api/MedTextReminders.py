@@ -1,40 +1,36 @@
 import os
-import schedule
-import time
-import random
+from datetime import datetime, timedelta
 from twilio.rest import Client
-from twilio_credentials import cellphone, twilio_account, twilio_token, twilio_number
+# from twilio_credentials import cellphone, twilio_account, twilio_token, twilio_number
 
-medication_reminders = [
-    "Time to take your medication",
-    "Did you take your medication yet?",
-    "Don't forget to take your medication"
-    ]
-
-
-
-# cellphone = 123
-# twilio_number = 234
 
 def send_message(notification):
-    account_sid = os.environ['AC8b23dea2a92c7b85b3e6aacf1c27de02']
-    auth_token = os.environ['24eca2a8c0838523e74534e60dcfb9e2']
+    account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
     client = Client(account_sid, auth_token)
 
-    client.messages.create(
-        to=cellphone, 
-        from_=+19705125409, 
-        body=notification)
+    print (account_sid)
+    print(auth_token)
 
-notification = medication_reminders [random.randint(0, len(medication_reminders))]
+    # client = Client("AC8b23dea2a92c7b85b3e6aacf1c27de02", "697f3695df9e93e49f3332e3fd1014e6")
+
+    # schedule message to be sent 61 minutes after current time
+send_when = datetime.utcnow() + timedelta(minutes=61)
+
+# send the SMS
+messaging_service_sid = os.environ['TWILIO_MESSAGING_SERVICE_SID']
+message = client.messages.create(
+    from_=messaging_service_sid,
+    to='+19546508821',  # ← your phone number here
+    body='Friendly reminder that it is time to take your medication.',
+    schedule_type='fixed',
+    send_at=send_when.isoformat() + 'Z',
+)
 
 print(message.sid)
 
-schedule.every().day.at("10:30").do(send_message, medication_reminders [0])
+ 
 
-schedule.every().day.at("20:30").do(send_message, medication_reminders [0])
 
-while True:
-    schedule.run_pending()
-    time.sleep(2)
-
+# for item in message:
+#     send_message(item)
