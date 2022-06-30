@@ -33,50 +33,50 @@ export const ChartBar = () => {
   console.log(dataArray);
 
   ///////////////////////////////////
-  let data = [
-    {
-      date: dataArray[0][0].date.slice(0, 11),
-      issue1: dataArray[0][0].value,
-      issue2: dataArray[1][0].value,
-      issue3: dataArray[2][0].value,
-    },
-    {
-      date: dataArray[0][1].date.slice(0, 11),
-      issue1: dataArray[0][1].value,
-      issue2: dataArray[1][1].value,
-      issue3: dataArray[2][1].value,
-    },
-    {
-      date: dataArray[0][2].date.slice(0, 11),
-      issue1: dataArray[0][2].value,
-      issue2: dataArray[1][2].value,
-      issue3: dataArray[2][2].value,
-    },
-    {
-      date: dataArray[0][3].date.slice(0, 11),
-      issue1: dataArray[0][3].value,
-      issue2: dataArray[1][3].value,
-      issue3: dataArray[2][3].value,
-    },
-    {
-      date: dataArray[0][4].date.slice(0, 11),
-      issue1: dataArray[0][4].value,
-      issue2: dataArray[1][4].value,
-      issue3: dataArray[2][4].value,
-    },
-    {
-      date: dataArray[0][5].date.slice(0, 11),
-      issue1: dataArray[0][5].value,
-      issue2: dataArray[1][5].value,
-      issue3: dataArray[2][5].value,
-    },
-    {
-      date: dataArray[0][6].date.slice(0, 11),
-      issue1: dataArray[0][6].value,
-      issue2: dataArray[1][6].value,
-      issue3: dataArray[2][6].value,
-    },
-  ];
+  // let data = [
+  //   {
+  //     date: dataArray[0][0].date.slice(0, 11),
+  //     issue1: dataArray[0][0].value,
+  //     issue2: dataArray[1][0].value,
+  //     issue3: dataArray[2][0].value,
+  //   },
+  //   {
+  //     date: dataArray[0][1].date.slice(0, 11),
+  //     issue1: dataArray[0][1].value,
+  //     issue2: dataArray[1][1].value,
+  //     issue3: dataArray[2][1].value,
+  //   },
+  //   {
+  //     date: dataArray[0][2].date.slice(0, 11),
+  //     issue1: dataArray[0][2].value,
+  //     issue2: dataArray[1][2].value,
+  //     issue3: dataArray[2][2].value,
+  //   },
+  //   {
+  //     date: dataArray[0][3].date.slice(0, 11),
+  //     issue1: dataArray[0][3].value,
+  //     issue2: dataArray[1][3].value,
+  //     issue3: dataArray[2][3].value,
+  //   },
+  //   {
+  //     date: dataArray[0][4].date.slice(0, 11),
+  //     issue1: dataArray[0][4].value,
+  //     issue2: dataArray[1][4].value,
+  //     issue3: dataArray[2][4].value,
+  //   },
+  //   {
+  //     date: dataArray[0][5].date.slice(0, 11),
+  //     issue1: dataArray[0][5].value,
+  //     issue2: dataArray[1][5].value,
+  //     issue3: dataArray[2][5].value,
+  //   },
+  //   {
+  //     date: dataArray[0][6].date.slice(0, 11),
+  //     issue1: dataArray[0][6].value,
+  //     issue2: dataArray[1][6].value,
+  //     issue3: dataArray[2][6].value,
+  //   },
+  // ];
 
   const issue1 = dataArray[0][0].issue;
   const issue2 = dataArray[1][0].issue;
