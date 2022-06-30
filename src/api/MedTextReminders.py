@@ -18,7 +18,6 @@ from twilio.rest import Client
 #     "Love you! I hope you dream about me tonight <3"
 # ]
 
-
 # def send_message():
 
 #     account = "AC8b23dea2a92c7b85b3e6aacf1c27de02"
@@ -59,12 +58,14 @@ from twilio.rest import Client
 import schedule
 import time
 import random
+from dotenv import load_dotenv
+load_dotenv()
 
 def send_message():
 
-    account = "AC8b23dea2a92c7b85b3e6aacf1c27de02"
-    token = "a33a13572484bcf7413c605247a2ad40"
-    client = Client(account, token)
+    account_sid = "AC8b23dea2a92c7b85b3e6aacf1c27de02"
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
+    client = Client(account_sid, auth_token)
     
 
     client.messages.create(to="+19546508821",
@@ -84,15 +85,17 @@ def work():
 def bedtime():
     print("It is bed time go rest")
 
+
 def geeks():
     print("Shaurya says Geeksforgeeks")
 
 # Task scheduling
 # After every 10mins geeks() is called.
-schedule.every().minutes.do(geeks)
+
+schedule.every(60).minutes.do(send_message)
 
 # After every hour geeks() is called.
-schedule.every().hour.do(geeks)
+schedule.every().hour.do(send_message)
 
 # Every day at 12am or 00:00 time bedtime() is called.
 schedule.every().day.at("08:00").do(send_message)
@@ -105,7 +108,8 @@ schedule.every(5).to(10).minutes.do(work)
 schedule.every().monday.do(good_luck)
 
 # Every tuesday at 18:00 sudo_placement() is called
-schedule.every().tuesday.at("18:00").do(sudo_placement)
+
+schedule.every().tuesday.at("17:00").do(sudo_placement)
 
 # Loop so that the scheduling task
 # keeps on running all time.
