@@ -1,4 +1,5 @@
 import React from "react";
+import { Nav } from "react-bootstrap";
 import { Navbar } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
 import { ChartLines } from "../component/ChartLines";
@@ -11,28 +12,26 @@ const Charts = () => {
       <Navbar />
       <div className="position-relative">
         <div className="position-absolute top-50 start-50 translate-middle-x">
-          {/* <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
-                Line Charts
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Bar Chart
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Pie Chart
-              </a>
-            </li>
-          </ul> */}
-          <p>Chartline</p>
-          <ChartLine />
-          <p>Chartlines</p>
-          <ChartLines />
-          <ChartBar />
+          <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
+            <Nav.Item>
+              <Nav.Link href="../component/ChartLine">Line Charts</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="../component/ChartBar">Bar Charts</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="link-2">Pie Chart</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey="link-3">Table Grid</Nav.Link>
+            </Nav.Item>
+          </Nav>
+
+          {/* <p>Chartline</p> */}
+          <ChartLine id="chartline" />
+          {/* <p>Chartlines</p> */}
+          {/* <ChartLines /> */}
+          <ChartBar id="barchart" />
           {/* <ChartPie /> */}
         </div>
       </div>
