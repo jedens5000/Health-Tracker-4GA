@@ -85,11 +85,13 @@ def work():
 def bedtime():
     print("It is bed time go rest")
 
+
 def geeks():
     print("Shaurya says Geeksforgeeks")
 
 # Task scheduling
 # After every 10mins geeks() is called.
+
 schedule.every(60).minutes.do(send_message)
 
 # After every hour geeks() is called.
@@ -106,6 +108,7 @@ schedule.every(5).to(10).minutes.do(work)
 schedule.every().monday.do(good_luck)
 
 # Every tuesday at 18:00 sudo_placement() is called
+
 schedule.every().tuesday.at("17:00").do(sudo_placement)
 
 # Loop so that the scheduling task

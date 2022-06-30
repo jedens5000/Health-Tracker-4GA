@@ -146,7 +146,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       postAnswer: async (array) => {
         try {
           const response = await fetch(getStore().apiURL + "/api/answer", {
-            method: "POST",
+            method: "PUT",
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${getToken()}`,

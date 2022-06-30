@@ -81,7 +81,7 @@ class Answer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     issue = db.Column(db.String(120), unique=False, nullable=False)
     value = db.Column(db.Integer, unique=False, nullable=True)
-    date = db.Column(db.Date, unique=False, nullable=False)
+    date = db.Column(db.Date, unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     user = db.relationship("User", back_populates="answers")
 

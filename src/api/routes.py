@@ -56,19 +56,28 @@ def get_user_issues(user_id):
     issues = [issue.serialize() for issue in user.issues]
     return jsonify(issues), 200
 
-@api.route("/answer", methods=["POST"])
+@api.route("/answer", methods=["PUT"])
 @jwt_required()
 def create_answer():
     request_data = request.get_json()
     user_id = get_jwt_identity()
+
     for item in request_data:
-        print(item)
         issue = item["issue"]
         value = item["value"]
-        date = datetime.datetime.now()
-        answer = Answer(issue=issue, value=value, date=date, user_id=user_id)
-        db.session.add(answer)
-        db.session.commit()
+        current_date = datetime.date.today()
+        print(current_date)
+        answer_found = Answer.query.filter_by(user_id=user_id, date=current_date, issue=issue).first()
+        print(answer_found)
+        if answer_found:
+            answer_found.value = value
+            db.session.commit()
+        else:
+            print(item)
+            date = datetime.datetime.now() #If fails try: current_date = datetime.date.today()
+            answer = Answer(issue=issue, value=value, date=date, user_id=user_id)
+            db.session.add(answer)
+            db.session.commit()
     return "Success, answers saved", 200
 
 @api.route("/answer", methods=["GET"])

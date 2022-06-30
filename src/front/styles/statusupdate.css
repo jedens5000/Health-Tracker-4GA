@@ -4,7 +4,7 @@
 }
 
 .status-h5 {
-  padding: 0 30%;
+  padding: 20px 30%;
 }
 
 .emoji {
@@ -12,13 +12,13 @@
   background: transparent;
   margin: 0.5rem;
 }
-.emoji:focus-within {
-  background-color: yellow !important;
+
+.emoji-selected {
   box-shadow: 0px 0px 20px 5px yellow !important;
   border-radius: 50%;
+  border: none;
 }
 .emoji:hover {
-  /* background-color: yellow; */
   box-shadow: 0px 0px 20px 5px yellow;
   border-radius: 50%;
 }
@@ -30,10 +30,6 @@ div.modal-open div.modal-backdrop {
   z-index: 0 !important;
 }
 
-/* .material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
-  margin: 0 0 0 1.5rem;
-  color: rgb(252, 252, 173);
-  background-color: black;
-  border-radius: 50%;
-} */
+.modal-open {
+  overflow: scroll !important;
+}

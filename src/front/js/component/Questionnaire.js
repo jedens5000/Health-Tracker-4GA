@@ -12,14 +12,15 @@ export const Questionnaire = () => {
   const [answers, setAnswers] = useState([]);
   console.log(answers);
   console.log(store.issues);
+  // item.endsWith("s")
+  //   ? "How are your {item} today?"
+  //   : "How is your {item} today?";
 
   return (
     <div>
       {/* START ISSSUE QUESTIONS & ICONS --------------------> */}
       {issues.map((item, index) => {
         if (item === null) return;
-        // const [value, setValue] = useState(null);
-        // console.log(value);
         const [isSelected, setSelected] = useState(false);
         const clickHandler = (num, val) => {
           setSelected(num);
@@ -33,7 +34,12 @@ export const Questionnaire = () => {
         };
         return (
           <div key={index}>
-            <p className="mt-3">How is your {item} today?</p>
+            {/* <p className="mt-3">How is your {item} today?</p> */}
+            {item.endsWith("s") ? (
+              <p className="mt-3">How are your {item} today?</p>
+            ) : (
+              <p className="mt-3">How is your {item} today?</p>
+            )}
             <div className="form-check">
               <button
                 className={
@@ -89,74 +95,59 @@ export const Questionnaire = () => {
           </div>
         );
       })}
+      {/* END ICONS ------------------------------------>   */}
       {/* Modal start */}
       <div>
-        <ul>
-          <li>
-            {/* <Link to="/main">
-              <button
-                className="btn btn-primary mt-3"
-                onClick={() => actions.postAnswer(answers)}
-              >
-                Submit Status
-              </button>
-            </Link> */}
-            <button
-              type="submit"
-              className="btn btn-primary mt-3"
-              onClick={() => actions.postAnswer(answers)}
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              Submit Status
-            </button>
+        <button
+          type="submit"
+          className="btn btn-primary mt-3"
+          onClick={() => actions.postAnswer(answers)}
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Submit Status
+        </button>
 
-            {/* <!-- Modal --> */}
-            <div
-              data-bs-backdrop="false"
-              className="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div className="modal-dialog">
-                <div className="modal-content">
-                  <div className="modal-header">
-                    <button
-                      type="button"
-                      className="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
+        {/* <!-- Modal --> */}
+        <div
+          data-bs-backdrop="false"
+          className="modal fade"
+          id="exampleModal"
+          tabIndex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button
+                  type="button"
+                  className="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
 
-                  <h5 className="modal-body">Status Update Complete!</h5>
+              <h5 className="modal-body">Status Update Complete!</h5>
 
-                  <div className="modal-footer">
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Revise
-                    </button>
-                    <Link to="/main">
-                      <button type="button" className="btn btn-primary">
-                        Continue
-                      </button>
-                    </Link>
-                  </div>
-                </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Revise
+                </button>
+                <Link to="/main">
+                  <button type="button" className="btn btn-primary">
+                    Continue
+                  </button>
+                </Link>
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-
-      {/* <!-- Button trigger modal --> */}
-
-      {/* END ICONS ------------------------------------>   */}
     </div>
   );
 };

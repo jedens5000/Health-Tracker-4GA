@@ -7,11 +7,13 @@
 */
 
 body {
-  background: radial-gradient(
+  /* background: radial-gradient(
       circle,
       rgba(255, 255, 255, 1) 28%,
       rgba(51, 236, 4, 0.35898109243697474) 50%,
       rgba(23, 9, 215, 1) 98%
     )
-    no-repeat center center fixed;
+    no-repeat center center fixed; */
+
+  background-color: blanchedalmond;
 }

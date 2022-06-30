@@ -25,12 +25,15 @@ export const StatusUpdate = () => {
         id="questionnaire"
         className="container-fluid position-relative top-0 start-50 translate-middle-x"
       >
-        <h5 className="status-h5">
+        <h4 className="status-h5">
           <em>Please rate how your issues are affecting you today.</em>
           <br />
-          Select a happy face if your issues are not bothering you, or select a
-          sad face if they are having a negative impact on you today.
-        </h5>
+        </h4>
+        <p className="status-h5">
+          Select a 😊 happy face if your issues are not bothering you,
+          <br /> or select a ☹️ sad face if they are having a negative impact on
+          you today.
+        </p>
         <Questionnaire />
       </div>
     </div>
