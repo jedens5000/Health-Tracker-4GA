@@ -61,12 +61,11 @@ def get_user_issues(user_id):
 def create_answer():
     request_data = request.get_json()
     user_id = get_jwt_identity()
-
+    print(request_data)
     for item in request_data:
         issue = item["issue"]
         value = item["value"]
         current_date = datetime.date.today()
-        print(current_date)
         answer_found = Answer.query.filter_by(user_id=user_id, date=current_date, issue=issue).first()
         print(answer_found)
         if answer_found:

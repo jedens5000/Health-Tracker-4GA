@@ -150,6 +150,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${getToken()}`,
+              "Access-Control-Allow-Origin":
+                "https://3000-jedens5000-healthtracke-x6ymtcibbnn.ws-us47.gitpod.io",
             },
             body: JSON.stringify(array),
           });

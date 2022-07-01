@@ -20,7 +20,7 @@ export const ChartLine = () => {
     issues.add(element.issue);
   });
   const setArray = [...issues];
-  console.log(issues);
+  console.log(setArray);
   const dataArray = [];
   for (let i = 0; i < setArray.length; i++) {
     const newArray = store.data.filter((element) => {
@@ -29,6 +29,10 @@ export const ChartLine = () => {
         return true;
       }
     });
+    // THIS WILL CHARGE dataArray to LAST 7 DAYS//////////////////////////////
+    // const array7Days = newArray.slice(newArray.length - 7, newArray.length);
+    // dataArray.push(array7Days);
+    //////////////////////////////////////////////////////////////////////////
     dataArray.push(newArray);
   }
 
