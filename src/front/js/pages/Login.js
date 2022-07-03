@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import sunsetImg from "../../img/sunset.jpg";
-import mindsetLogo from "../../img/mindset-logo.png";
+import mindsetLogo from "../../img/mindset-logo-clear.png";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 

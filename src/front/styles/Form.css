@@ -68,7 +68,7 @@
 .form-input {
   display: block;
   padding-left: 10px;
-  
+
   /* outline: none; */
   /* border-radius: 2px; */
   height: 40px;
@@ -114,6 +114,6 @@
 
 .form-input-login a {
   text-decoration: none;
-  color: green;
+  color: #5da9e9;
   font-weight: 600;
 }

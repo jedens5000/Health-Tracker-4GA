@@ -3,7 +3,29 @@
   background-color: blanchedalmond;
 } */
 
+#chartPhoto {
+  /* background-image: url(../img/mainPageBackground.png); */
+  height: 100vh;
+  position: static;
+  background-size: "cover";
+  position: absolute;
+  opacity: 0.5;
+  /* transform: scaleX(-1); */
+}
+
+.text-bg-chart {
+  background: rgba(182, 215, 179, 0.6) !important;
+  color: black;
+  height: 70vh;
+  width: 70vh;
+}
+
+.text-bg {
+  background: rgba(182, 215, 179, 0.5);
+}
+
 .chart-body {
+  background: transparent;
   overflow: auto !important;
 }
 

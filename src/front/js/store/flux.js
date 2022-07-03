@@ -126,8 +126,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
-      //////////////////////////////////////////////////
-      // NEED TO UPDATE WITH USER ID /api/answer/user_id
       getAnswers: async () => {
         try {
           const response = await fetch(getStore().apiURL + `/api/answer`, {

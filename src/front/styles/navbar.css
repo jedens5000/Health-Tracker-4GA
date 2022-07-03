@@ -1,9 +1,16 @@
 .container-fluid {
-  background-color: rgb(251, 245, 174);
+  /* background-color: rgb(251, 245, 174); */
+  /* background: rgba(182, 215, 179, 0.4); */
+  /* background-color: #d6eccd; */
+  background: transparent;
 }
 
 .navlogo {
-  margin-left: 30px;
-  height: 20px;
+  margin-left: 5px;
+  height: 180px;
   width: auto;
+}
+
+.navbar {
+  font-family: "Raleway", sans-serif;
 }

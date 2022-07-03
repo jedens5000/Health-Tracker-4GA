@@ -1,4 +1,6 @@
 #loginFormAndPhoto {
+  /* background-color: #b8f2e6; */
+  background: rgba(182, 215, 179, 0.6);
   display: flex;
 }
 

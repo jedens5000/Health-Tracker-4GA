@@ -1,10 +1,19 @@
 #questionnaire {
   text-align: center;
-  background: transparent;
+  /* background: transparent; */
 }
-
+.text-bg-status {
+  background: rgba(182, 215, 179, 0.6) !important;
+  color: black;
+  height: 70vh;
+  width: 70vh;
+}
+.h-100 {
+  /* background-color: #b8f2e6; */
+  height: 100vh !important;
+}
 .status-h5 {
-  padding: 20px 30%;
+  padding: 20px 3%;
 }
 
 .emoji {

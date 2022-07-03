@@ -5,13 +5,21 @@ import { ChartLine } from "../component/ChartLine";
 import { ChartLines } from "../component/ChartLines";
 import { ChartBar } from "../component/ChartBar";
 import { ChartPie } from "../component/ChartPie";
+import chartBamboo from "../../img/bamboo8.jpg";
 
 const Charts = () => {
   return (
-    <div className="chart-body">
+    <div
+      className="chart-body"
+      style={{
+        backgroundImage: `url(${chartBamboo})`,
+        backgroundSize: "cover",
+      }}
+    >
+      {/* <img id="chartPhoto" src={chartBamboo} alt="bamboo" /> */}
       <Navbar />
       <div className="position-relative">
-        <div className="position-absolute top-50 start-50 translate-middle-x">
+        <div className="position-absolute top-50 start-50 translate-middle-x text-bg-chart">
           <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
             <Nav.Item>
               <Nav.Link href="../component/ChartLine">Line Charts</Nav.Link>
