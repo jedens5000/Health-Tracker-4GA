@@ -11,6 +11,8 @@
 .h-100 {
   /* background-color: #b8f2e6; */
   height: 100vh !important;
+  background-color: transparent !important;
+  background-attachment: fixed;
 }
 .status-h5 {
   padding: 20px 3%;

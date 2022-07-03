@@ -11,7 +11,7 @@ import "../styles/login.css";
 // import "../styles/navbar.css";
 // import "../styles/main.css";
 import "../styles/statusupdate.css";
-// import "../styles/charts.css";
+import "../styles/charts.css";
 
 //import your own components
 import Layout from "./layout";

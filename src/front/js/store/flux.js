@@ -27,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     actions: {
       logOut: function () {
         localStorage.clear();
-        window.location.href = "/login";
+        window.location.href = "/";
       },
       login: async (email, password) => {
         try {
@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             return true;
           } else {
-            throw new Error("password not correct");
+            throw new Error("Password is not correct");
           }
         } catch (error) {
           throw Error("Please check your credentials");
@@ -148,6 +148,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${getToken()}`,
+              // UNCOMMENT IF GETTING CORS ERROR DURING ANSWER POST
               // "Access-Control-Allow-Origin":
               //   "https://3000-jedens5000-healthtracke-x6ymtcibbnn.ws-us47.gitpod.io",
             },
