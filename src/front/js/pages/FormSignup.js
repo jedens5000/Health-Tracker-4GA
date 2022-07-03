@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { validateSignUp } from "../component/validations";
 
-import mindsetLogo from "../../img/mindset-logo.png";
-import mainPageBackground from "../../img/mainPageBackground.png";
+import mindsetLogo from "../../img/mindset-logo-clear.png";
+// import mainPageBackground from "../../img/mainPageBackground.png";
+import mainPageBackground from "../../img/bgImgLotusBlue.png";
 import "../../styles/Form.css";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
