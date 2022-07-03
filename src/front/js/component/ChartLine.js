@@ -46,7 +46,7 @@ export const ChartLine = () => {
   console.log(issue1, issue2, issue3);
 
   return (
-    <div>
+    <div className="chartline-bg">
       <p className="text-center">{issue1}</p>
       <LineChart
         width={800}

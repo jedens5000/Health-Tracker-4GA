@@ -3,14 +3,20 @@
   background-color: blanchedalmond;
 } */
 
-#chartPhoto {
-  /* background-image: url(../img/mainPageBackground.png); */
+/* #chartPhoto {
+  background-image: url(../img/mainPageBackground.png);
   height: 100vh;
   position: static;
   background-size: "cover";
   position: absolute;
   opacity: 0.5;
-  /* transform: scaleX(-1); */
+  transform: scaleX(-1);
+} */
+#chart-h-100 {
+  /* background-color: #b8f2e6; */
+  height: 120vh !important;
+  background-color: transparent !important;
+  background-attachment: fixed;
 }
 
 .text-bg-chart {
@@ -20,12 +26,11 @@
   width: 70vh;
 }
 
-.text-bg {
-  background: rgba(182, 215, 179, 0.5);
-}
-
 .chart-body {
-  background: transparent;
+  /* background: transparent; */
+  height: 100vh !important;
+  background-color: transparent !important;
+  background-attachment: fixed;
   overflow: auto !important;
 }
 
