@@ -2,14 +2,15 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
-import { Signup } from "./component/Form";
+// import { Signup } from "./component/Form";
 import injectContext from "./store/appContext";
-import { Footer } from "./component/footer";
+// import { Footer } from "./component/footer";
 import FormSignup from "./pages/FormSignup";
 import { Login } from "./pages/Login";
 import { StatusUpdate } from "./pages/StatusUpdate";
 import { Main } from "./pages/main";
 import Charts from "./pages/Charts";
+import SMSForm from "./pages/SMSForm";
 import Medications from "./pages/medications";
 
 const Layout = () => {
@@ -37,6 +38,9 @@ const Layout = () => {
             </Route>
             <Route exact path="/main">
               <Main />
+            </Route>
+            <Route exact path="/SMSForm">
+              <SMSForm />
             </Route>
             <Route exact path="/medications">
               <Medications />

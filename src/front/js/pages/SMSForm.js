@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import './SMSForm.css';
+import React, { Component } from "react";
+// import './SMSForm.css';
 
 class SMSForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       message: {
-        to: '',
-        body: ''
+        to: "",
+        body: "",
       },
       submitting: false,
-      error: false
+      error: false,
     };
     this.onSubmit = this.onSubmit.bind(this);
     this.onHandleChange = this.onHandleChange.bind(this);
@@ -19,37 +19,37 @@ class SMSForm extends Component {
   onSubmit(event) {
     event.preventDefault();
     this.setState({ submitting: true });
-    fetch('/api/messages', {
-      method: 'POST',
+    fetch("/api/messages", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.message)
+      body: JSON.stringify(this.state.message),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.success) {
           this.setState({
             error: false,
             submitting: false,
             message: {
-              to: '',
-              body: ''
-            }
+              to: "",
+              body: "",
+            },
           });
         } else {
           this.setState({
             error: true,
-            submitting: false
+            submitting: false,
           });
         }
       });
   }
 
   onHandleChange(event) {
-    const name = event.target.getAttribute('name');
+    const name = event.target.getAttribute("name");
     this.setState({
-      message: { ...this.state.message, [name]: event.target.value }
+      message: { ...this.state.message, [name]: event.target.value },
     });
   }
 
@@ -57,7 +57,7 @@ class SMSForm extends Component {
     return (
       <form
         onSubmit={this.onSubmit}
-        className={this.state.error ? 'error sms-form' : 'sms-form'}
+        className={this.state.error ? "error sms-form" : "sms-form"}
       >
         <div>
           <label htmlFor="to">To:</label>
