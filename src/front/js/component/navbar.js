@@ -36,6 +36,9 @@ export const Navbar = () => {
             <Link to="/charts" className="nav-link">
               <p>Chart History</p>
             </Link>
+            <Link to="/SMSForm" className="nav-link">
+              <p>Reminders</p>
+            </Link>
             <Link to="/medications" className="nav-link">
               <p>Medications</p>
             </Link>
