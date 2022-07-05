@@ -1,72 +1,21 @@
-import React, { Component } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 // import './SMSForm.css';
 
-class SMSForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: {
-        to: "",
-        body: "",
-      },
-      submitting: false,
-      error: false,
-    };
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onHandleChange = this.onHandleChange.bind(this);
-  }
-
-  onSubmit(event) {
-    event.preventDefault();
-    this.setState({ submitting: true });
-    fetch("/api/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(this.state.message),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          this.setState({
-            error: false,
-            submitting: false,
-            message: {
-              to: "",
-              body: "",
-            },
-          });
-        } else {
-          this.setState({
-            error: true,
-            submitting: false,
-          });
-        }
-      });
-  }
-
-  onHandleChange(event) {
-    const name = event.target.getAttribute("name");
-    this.setState({
-      message: { ...this.state.message, [name]: event.target.value },
-    });
-  }
-
-  render() {
+const SMSForm = () => {
+  const [phone, setPhone] = useState("")
+  const [message, setMessage] = useState("")
+  const { store, actions } = useContext(Context);
     return (
-      <form
-        onSubmit={this.onSubmit}
-        className={this.state.error ? "error sms-form" : "sms-form"}
-      >
+      <form>
         <div>
           <label htmlFor="to">To:</label>
           <input
             type="tel"
             name="to"
             id="to"
-            value={this.state.message.to}
-            onChange={this.onHandleChange}
+            value={phone}
+            onChange={(e)=>setPhone(e.target.value)}
           />
         </div>
         <div>
@@ -74,16 +23,16 @@ class SMSForm extends Component {
           <textarea
             name="body"
             id="body"
-            value={this.state.message.body}
-            onChange={this.onHandleChange}
+            value={message}
+            onChange={(e)=>setMessage(e.target.value)}
           />
         </div>
-        <button type="submit" disabled={this.state.submitting}>
+        <button type="submit" onClick={()=>{actions.reminders(phone, message)}}>
           Send message
         </button>
       </form>
     );
   }
-}
+
 
 export default SMSForm;
