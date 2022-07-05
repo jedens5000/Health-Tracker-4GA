@@ -85,6 +85,18 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
+      reminders: (phone, message) => {
+        fetch("https://3001-jedens5000-healthtracke-l5xsbmsob88.ws-us51.gitpod.io/api/MedTextReminders", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({phone: phone, message: message})
+        })
+        .then((result)=> console.log(result))
+        .catch((error)=> console.log(error))
+      },
+
       medications: async (medication) => {
         try {
           const response = await fetch(getStore().apURL + "/api/medications", {

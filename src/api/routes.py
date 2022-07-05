@@ -1,7 +1,7 @@
 import os
 import datetime
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Issues, Answer
+from api.models import db, User, Issues, Answer, Notification
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -87,6 +87,17 @@ def get_user_answers():
     answers_serialized = [item.serialize() for item in answers] 
     return jsonify(answers_serialized), 200
 
-#TO STORE MEDICATIONS
-# @api.route("/medications", methods=["POST"])
-# def meds():
+@api.route("/MedTextReminders", methods=["GET"])
+def get_notification():
+    user = Notification.query.all()
+    issues = list(map(lambda x: x.serialize(), user))
+    return jsonify(issues), 200
+
+@api.route("/MedTextReminders", methods=["POST"])
+def meds():
+    data = request.get_json()
+
+    reminder = Notification(phone=data["phone"], message=data["message"])
+    db.session.add(reminder)
+    db.session.commit()
+    return "success"
