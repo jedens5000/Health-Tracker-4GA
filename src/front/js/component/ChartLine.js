@@ -47,60 +47,69 @@ export const ChartLine = () => {
 
   return (
     <div className="chartline-bg">
-      <p className="text-center">{issue1}</p>
-      <LineChart
-        width={800}
-        height={300}
-        data={dataArray[0]}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="value" stroke="#8884d8" />
-      </LineChart>
-      <p className="text-center">{issue2}</p>
-      <LineChart
-        width={800}
-        height={300}
-        data={dataArray[1]}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="value" stroke="#8884d8" />
-      </LineChart>
-      <p className="text-center">{issue3}</p>
-      <LineChart
-        width={800}
-        height={300}
-        data={dataArray[2]}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Line type="monotone" dataKey="value" stroke="#8884d8" />
-      </LineChart>
+      <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue1}</p>
+        <LineChart
+          width={800}
+          height={300}
+          data={dataArray[0]}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          className={"chart-bg"}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="value" stroke="#8884d8" />
+        </LineChart>
+      </div>
+      <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue2}</p>
+        <LineChart
+          width={800}
+          height={300}
+          data={dataArray[1]}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          className={"chart-bg"}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="value" stroke="#8884d8" />
+        </LineChart>
+      </div>
+      <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue3}</p>
+        <LineChart
+          width={800}
+          height={300}
+          data={dataArray[2]}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          className={"chart-bg"}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Line type="monotone" dataKey="value" stroke="#8884d8" />
+        </LineChart>
+      </div>
     </div>
   );
 };
