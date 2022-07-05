@@ -84,66 +84,75 @@ export const ChartBar = () => {
 
   return (
     <div>
-      <p className="text-center chart-name">{issue1}</p>
-      <BarChart
-        width={800}
-        height={300}
-        // data={data}
-        data={dataArray[0]}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        {/* <Legend /> */}
-        <Bar dataKey="value" fill="#8884d8" />
-      </BarChart>
-      <p className="text-center chart-name">{issue2}</p>
-      <BarChart
-        width={800}
-        height={300}
-        // data={data}
-        data={dataArray[1]}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        {/* <Legend /> */}
-        <Bar dataKey="value" fill="#82ca9d" />
-      </BarChart>
-      <p className="text-center chart-name">{issue3}</p>
-      <BarChart
-        width={800}
-        height={300}
-        // data={data}
-        data={dataArray[2]}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        {/* <Legend /> */}
-        <Bar dataKey="value" fill="#888a9d" />
-      </BarChart>
+      <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue1}</p>
+        <BarChart
+          width={800}
+          height={300}
+          // data={data}
+          data={dataArray[0]}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          className={"chart-bg"}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          {/* <Legend /> */}
+          <Bar dataKey="value" fill="#8884d8" />
+        </BarChart>
+      </div>
+      <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue2}</p>
+        <BarChart
+          width={800}
+          height={300}
+          // data={data}
+          data={dataArray[1]}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          className={"chart-bg"}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          {/* <Legend /> */}
+          <Bar dataKey="value" fill="#82ca9d" />
+        </BarChart>
+      </div>
+      <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue3}</p>
+        <BarChart
+          width={800}
+          height={300}
+          // data={data}
+          data={dataArray[2]}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+          className={"chart-bg"}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          {/* <Legend /> */}
+          <Bar dataKey="value" fill="#888a9d" />
+        </BarChart>
+      </div>
     </div>
   );
 };

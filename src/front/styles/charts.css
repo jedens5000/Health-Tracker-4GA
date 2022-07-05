@@ -19,11 +19,33 @@
   background-attachment: fixed;
 }
 
+.chart-wrapper {
+  /* stroke: blanchedalmond; */
+  /* stroke-width: 4; */
+  border: 2px solid black;
+  margin-bottom: 40px;
+}
+
+.chart-name {
+  width: 600;
+  background-color: lightyellow;
+  /* border: 1px solid black; */
+  border-bottom: 2px solid black;
+  margin-bottom: 0;
+}
+
 .text-bg-chart {
   background: rgba(182, 215, 179, 0.6) !important;
   color: black;
   height: 70vh;
-  width: 70vh;
+  /* width: 70vh; */
+}
+.chart-bg {
+  background: rgba(182, 215, 179, 0.8) !important;
+  color: black;
+  /* padding-bottom: 20px; */
+  /* height: 70vh; */
+  /* width: 70vh; */
 }
 
 .chart-body {
@@ -39,10 +61,4 @@
 }
 .element.style {
   overflow: scroll;
-}
-
-.chart-name {
-  width: 600;
-  background-color: lightyellow;
-  border: 1px solid grey;
 }

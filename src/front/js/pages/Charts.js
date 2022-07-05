@@ -21,7 +21,7 @@ const Charts = () => {
       {/* <img id="chartPhoto" src={chartBamboo} alt="bamboo" /> */}
       <Navbar />
       <div className="position-relative">
-        <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-charts text-bg-status">
+        <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart">
           {/* <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
             <Nav.Item>
               <Nav.Link href="../component/ChartLine">Line Charts</Nav.Link>
