@@ -2,6 +2,7 @@ import React from "react";
 import { Nav } from "react-bootstrap";
 import { Navbar } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
+import { ChartArea } from "../component/ChartArea";
 import { ChartLines } from "../component/ChartLines";
 import { ChartBar } from "../component/ChartBar";
 import { ChartPie } from "../component/ChartPie";
@@ -20,31 +21,41 @@ const Charts = () => {
     >
       {/* <img id="chartPhoto" src={chartBamboo} alt="bamboo" /> */}
       <Navbar />
-      <div className="position-relative">
-        <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart">
-          {/* <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
-            <Nav.Item>
-              <Nav.Link href="../component/ChartLine">Line Charts</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="../component/ChartBar">Bar Charts</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-2">Pie Chart</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="link-3">Table Grid</Nav.Link>
-            </Nav.Item>
-          </Nav> */}
+      {/* <div className="position-relative"> */}
+      {/* <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart"> */}
+      <div className="position-relative chart-body text-bg-chart">
+        <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
+          <Nav.Item>
+            <Nav.Link href="../component/ChartLine">Line Charts</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="../component/ChartBar">Bar Charts</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-2">Pie Chart</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-3">Table Grid</Nav.Link>
+          </Nav.Item>
+        </Nav>
 
-          {/* <p>Chartline</p> */}
-          <ChartLine id="chartline" />
-          {/* <p>Chartlines</p> */}
-          {/* <ChartLines /> */}
-          <ChartBar id="barchart" />
-          {/* <ChartPie /> */}
+        {/* <p>Chartline</p> */}
+        <div className="row justify-content-evenly">
+          <div className="col-6">
+            <ChartArea id="chartarea" />
+          </div>
+          {/* <div className="col-6">
+            <ChartLine id="chartline" />
+          </div> */}
+          <div className="col-6">
+            <ChartBar id="barchart" />
+          </div>
         </div>
+        {/* <p>Chartlines</p> */}
+        {/* <ChartLines /> */}
+        {/* <ChartPie /> */}
       </div>
+      {/* </div> */}
     </div>
   );
 };

@@ -20,8 +20,7 @@
 }
 
 .chart-wrapper {
-  /* stroke: blanchedalmond; */
-  /* stroke-width: 4; */
+  width: 800px;
   border: 2px solid black;
   margin-bottom: 40px;
 }
@@ -40,8 +39,11 @@
   height: 70vh;
   /* width: 70vh; */
 }
+/* THIS IS ACTIVE */
 .chart-bg {
-  background: rgba(182, 215, 179, 0.8) !important;
+  /* background: rgba(182, 215, 179, 0.8) !important; */
+  /* background: rgba(232, 248, 158, 0.6) !important; */
+  background: rgba(255, 255, 224, 0.6) !important;
   color: black;
   /* padding-bottom: 20px; */
   /* height: 70vh; */
