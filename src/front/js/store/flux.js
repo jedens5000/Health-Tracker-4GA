@@ -85,13 +85,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
-      reminders: (phone, message) => {
+      reminders: (phone, message, time) => {
         fetch("https://3001-jedens5000-healthtracke-l5xsbmsob88.ws-us51.gitpod.io/api/MedTextReminders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({phone: phone, message: message})
+          body: JSON.stringify({phone, message, time})
         })
         .then((result)=> console.log(result))
         .catch((error)=> console.log(error))
