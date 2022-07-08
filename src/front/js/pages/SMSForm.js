@@ -1,21 +1,31 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
+import { Navbar } from "../component/navbar";
 // import './SMSForm.css';
+import mainPageBackground from "../../img/bamboo9.jpg";
 
 const SMSForm = () => {
-  const [phone, setPhone] = useState("")
-  const [message, setMessage] = useState("")
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const { store, actions } = useContext(Context);
-    return (
-      <form>
-        <div>
+  return (
+    <div
+      className="h-100"
+      style={{
+        backgroundImage: `url(${mainPageBackground})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <Navbar />
+      <form className="container-fluid position-relative text-bg-status">
+        <div className="mt-3">
           <label htmlFor="to">To:</label>
           <input
             type="tel"
             name="to"
             id="to"
             value={phone}
-            onChange={(e)=>setPhone(e.target.value)}
+            onChange={(e) => setPhone(e.target.value)}
           />
         </div>
         <div>
@@ -24,15 +34,20 @@ const SMSForm = () => {
             name="body"
             id="body"
             value={message}
-            onChange={(e)=>setMessage(e.target.value)}
+            onChange={(e) => setMessage(e.target.value)}
           />
         </div>
-        <button type="submit" onClick={()=>{actions.reminders(phone, message)}}>
+        <button
+          type="submit"
+          onClick={() => {
+            actions.reminders(phone, message);
+          }}
+        >
           Send message
         </button>
       </form>
-    );
-  }
-
+    </div>
+  );
+};
 
 export default SMSForm;
