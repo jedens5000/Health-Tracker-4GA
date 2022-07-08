@@ -2,9 +2,12 @@ import React from "react";
 import { Nav, Tab, Tabs } from "react-bootstrap";
 import { Navbar } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
+import { ChartLine7 } from "../component/ChartLine7";
 import { ChartArea } from "../component/ChartArea";
+import { ChartArea7 } from "../component/ChartArea7";
 import { ChartLines } from "../component/ChartLines";
 import { ChartBar } from "../component/ChartBar";
+import { ChartBar7 } from "../component/ChartBar7";
 import { ChartPie } from "../component/ChartPie";
 import chartBamboo from "../../img/bamboo8.jpg";
 
@@ -25,19 +28,22 @@ const Charts = () => {
       {/* <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart"> */}
       <div className="container position-relative mx-auto chart-body text-bg-chart">
         <Tabs
-          defaultActiveKey="home"
+          defaultActiveKey="all"
           transition={false}
           id="noanim-tab-example"
           className="mb-3"
         >
-          <Tab eventKey="home" title="Area Chart">
-            <ChartArea />
+          <Tab eventKey="all" title="All Records">
+            {/* <ChartArea7 /> */}
           </Tab>
-          <Tab eventKey="profile" title="Bar Chart">
-            <ChartBar />
+          <Tab eventKey="7day" title="Last 7 Days">
+            <ChartArea7 />
           </Tab>
-          <Tab eventKey="contact" title="Line Chart">
-            <ChartLine />
+          <Tab eventKey="14day" title="Last 14 Days">
+            <ChartBar7 />
+          </Tab>
+          <Tab eventKey="30day" title="Last 30 Days">
+            <ChartLine7 />
           </Tab>
         </Tabs>
 
@@ -57,17 +63,17 @@ const Charts = () => {
         </Nav> */}
 
         {/* <p>Chartline</p> */}
-        {/* <div className="row justify-content-evenly">
+        <div className="row justify-content-evenly">
           <div className="col-6">
             <ChartArea id="chartarea" />
-          </div> */}
-        {/* <div className="col-6">
+          </div>
+          {/* <div className="col-6">
             <ChartLine id="chartline" />
           </div> */}
-        {/* <div className="col-6">
+          <div className="col-6">
             <ChartBar id="barchart" />
-          </div> */}
-        {/* </div> */}
+          </div>
+        </div>
         {/* <p>Chartlines</p> */}
         {/* <ChartLines /> */}
         {/* <ChartPie /> */}
