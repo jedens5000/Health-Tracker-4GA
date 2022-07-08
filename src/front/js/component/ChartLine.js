@@ -51,34 +51,16 @@ export const ChartLine = () => {
     <div className="chartline-bg">
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue1}</p>
-        {/* <LineChart
-          width={800}
-          height={300}
-          data={dataArray[0]}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          className={"chart-bg"}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis />
-          <Tooltip />
-          <Line type="monotone" dataKey="value" stroke="#8884d8" />
-        </LineChart> */}
         <ResponsiveContainer width="100%" height={300}>
-          <AreaChart
+          <LineChart
             width={800}
-            height={400}
+            height={300}
             data={dataArray[0]}
             margin={{
-              top: 10,
+              top: 5,
               right: 30,
-              left: 0,
-              bottom: 0,
+              left: 20,
+              bottom: 5,
             }}
             className={"chart-bg"}
           >
@@ -86,13 +68,8 @@ export const ChartLine = () => {
             <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="value"
-              stroke="#8884d8"
-              fill="#8884d8"
-            />
-          </AreaChart>
+            <Line type="monotone" dataKey="value" stroke="#8884d8" />
+          </LineChart>
         </ResponsiveContainer>
       </div>
       <div className="chart-wrapper">

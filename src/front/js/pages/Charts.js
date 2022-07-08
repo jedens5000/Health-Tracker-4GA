@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
+import { Nav, Tab, Tabs } from "react-bootstrap";
 import { Navbar } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
 import { ChartArea } from "../component/ChartArea";
@@ -23,8 +23,25 @@ const Charts = () => {
       <Navbar />
       {/* <div className="position-relative"> */}
       {/* <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart"> */}
-      <div className="position-relative chart-body text-bg-chart">
-        <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
+      <div className="container position-relative mx-auto chart-body text-bg-chart">
+        <Tabs
+          defaultActiveKey="home"
+          transition={false}
+          id="noanim-tab-example"
+          className="mb-3"
+        >
+          <Tab eventKey="home" title="Area Chart">
+            <ChartArea />
+          </Tab>
+          <Tab eventKey="profile" title="Bar Chart">
+            <ChartBar />
+          </Tab>
+          <Tab eventKey="contact" title="Line Chart">
+            <ChartLine />
+          </Tab>
+        </Tabs>
+
+        {/* <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
           <Nav.Item>
             <Nav.Link href="../component/ChartLine">Line Charts</Nav.Link>
           </Nav.Item>
@@ -37,20 +54,20 @@ const Charts = () => {
           <Nav.Item>
             <Nav.Link eventKey="link-3">Table Grid</Nav.Link>
           </Nav.Item>
-        </Nav>
+        </Nav> */}
 
         {/* <p>Chartline</p> */}
-        <div className="row justify-content-evenly">
+        {/* <div className="row justify-content-evenly">
           <div className="col-6">
             <ChartArea id="chartarea" />
-          </div>
-          {/* <div className="col-6">
+          </div> */}
+        {/* <div className="col-6">
             <ChartLine id="chartline" />
           </div> */}
-          <div className="col-6">
+        {/* <div className="col-6">
             <ChartBar id="barchart" />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
         {/* <p>Chartlines</p> */}
         {/* <ChartLines /> */}
         {/* <ChartPie /> */}
