@@ -39,9 +39,9 @@ export const Navbar = () => {
             <Link to="/SMSForm" className="nav-link">
               <p>Reminders</p>
             </Link>
-            <Link to="/medications" className="nav-link">
+            {/* <Link to="/medications" className="nav-link">
               <p>Medications</p>
-            </Link>
+            </Link> */}
             <Link to="#" className="nav-link">
               <p>Resources</p>
             </Link>

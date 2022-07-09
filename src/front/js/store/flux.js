@@ -85,38 +85,38 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
-      reminder: (phone, message, time) => {
-         // fetch("https://3001-jedens5000-healthtracke-l5xsbmsob88.ws-us51.gitpod.io/api/MedTextReminders", {
-          fetch(getStore().apURL + "/api/MedTextReminders", {
+      reminders: (phone, message, time) => {
+        // fetch("https://3001-jedens5000-healthtracke-l5xsbmsob88.ws-us51.gitpod.io/api/MedTextReminders", {
+        fetch(getStore().apURL + "/api/MedTextReminders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({phone, message, time})
+          body: JSON.stringify({ phone, message, time }),
         })
-        .then((result)=> console.log(result))
-        .catch((error)=> console.log(error))
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error));
       },
 
-      medications: async (medication) => {
-        try {
-          const response = await fetch(getStore().apURL + "/api/medications", {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
-          const medications = await response.json();
-          let meds = {
-            medication: medications.medication,
-          };
-          let med_info = medications.med_info;
-          setStore({ meds: meds });
-          setStore({ med_info: med_info });
-        } catch (error) {
-          throw error;
-        }
-      },
+      // medications: async (medication) => {
+      //   try {
+      //     const response = await fetch(getStore().apURL + "/api/medications", {
+      //       method: "GET",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //     });
+      //     const medications = await response.json();
+      //     let meds = {
+      //       medication: medications.medication,
+      //     };
+      //     let med_info = medications.med_info;
+      //     setStore({ meds: meds });
+      //     setStore({ med_info: med_info });
+      //   } catch (error) {
+      //     throw error;
+      //   }
+      // },
       getIssues: async () => {
         try {
           const response = await fetch(getStore().apiURL + `/api/user`, {

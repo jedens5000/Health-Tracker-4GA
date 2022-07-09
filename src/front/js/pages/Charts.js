@@ -1,10 +1,13 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
+import { Nav, Tab, Tabs } from "react-bootstrap";
 import { Navbar } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
+import { ChartLine7 } from "../component/ChartLine7";
 import { ChartArea } from "../component/ChartArea";
+import { ChartArea7 } from "../component/ChartArea7";
 import { ChartLines } from "../component/ChartLines";
 import { ChartBar } from "../component/ChartBar";
+import { ChartBar7 } from "../component/ChartBar7";
 import { ChartPie } from "../component/ChartPie";
 import chartBamboo from "../../img/bamboo8.jpg";
 
@@ -23,8 +26,28 @@ const Charts = () => {
       <Navbar />
       {/* <div className="position-relative"> */}
       {/* <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart"> */}
-      <div className="position-relative chart-body text-bg-chart">
-        <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
+      <div className="container position-relative mx-auto chart-body text-bg-chart">
+        <Tabs
+          defaultActiveKey="all"
+          transition={false}
+          id="noanim-tab-example"
+          className="mb-3"
+        >
+          <Tab eventKey="all" title="All Records">
+            {/* <ChartArea7 /> */}
+          </Tab>
+          <Tab eventKey="7day" title="Last 7 Days">
+            <ChartArea7 />
+          </Tab>
+          <Tab eventKey="14day" title="Last 14 Days">
+            <ChartBar7 />
+          </Tab>
+          <Tab eventKey="30day" title="Last 30 Days">
+            <ChartLine7 />
+          </Tab>
+        </Tabs>
+
+        {/* <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">
           <Nav.Item>
             <Nav.Link href="../component/ChartLine">Line Charts</Nav.Link>
           </Nav.Item>
@@ -37,7 +60,7 @@ const Charts = () => {
           <Nav.Item>
             <Nav.Link eventKey="link-3">Table Grid</Nav.Link>
           </Nav.Item>
-        </Nav>
+        </Nav> */}
 
         {/* <p>Chartline</p> */}
         <div className="row justify-content-evenly">

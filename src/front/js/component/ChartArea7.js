@@ -14,7 +14,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export const ChartLine = () => {
+export const ChartArea7 = () => {
   const { store, actions } = useContext(Context);
 
   const issues = new Set();
@@ -32,8 +32,8 @@ export const ChartLine = () => {
       }
     });
     // THIS WILL CHARGE dataArray to LAST 7 DAYS//////////////////////////////
-    // const array7Days = newArray.slice(newArray.length - 7, newArray.length);
-    // dataArray.push(array7Days);
+    const array7Days = newArray.slice(newArray.length - 7, newArray.length);
+    dataArray.push(array7Days);
     //////////////////////////////////////////////////////////////////////////
     dataArray.push(newArray);
   }
@@ -52,15 +52,15 @@ export const ChartLine = () => {
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue1}</p>
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart
+          <AreaChart
             width={800}
-            height={300}
+            height={400}
             data={dataArray[0]}
             margin={{
-              top: 5,
+              top: 10,
               right: 30,
-              left: 20,
-              bottom: 5,
+              left: 0,
+              bottom: 0,
             }}
             className={"chart-bg"}
           >
@@ -68,11 +68,72 @@ export const ChartLine = () => {
             <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
-            <Line type="monotone" dataKey="value" stroke="#8884d8" />
-          </LineChart>
+            <Area
+              type="monotone"
+              dataKey="value"
+              stroke="#8884d8"
+              fill="#8884d8"
+            />
+          </AreaChart>
         </ResponsiveContainer>
       </div>
       <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue2}</p>
+        <ResponsiveContainer width="100%" height={300}>
+          <AreaChart
+            width={800}
+            height={400}
+            data={dataArray[1]}
+            margin={{
+              top: 10,
+              right: 30,
+              left: 0,
+              bottom: 0,
+            }}
+            className={"chart-bg"}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="value"
+              stroke="#82ca9d"
+              fill="#82ca9d"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="chart-wrapper">
+        <p className="text-center chart-name">{issue3}</p>
+        <ResponsiveContainer width="100%" height={300}>
+          <AreaChart
+            width={800}
+            height={400}
+            data={dataArray[2]}
+            margin={{
+              top: 10,
+              right: 30,
+              left: 0,
+              bottom: 0,
+            }}
+            className={"chart-bg"}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Area
+              type="monotone"
+              dataKey="value"
+              stroke="#888a9d"
+              fill="#888a9d"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
+      {/* <div className="chart-wrapper">
         <p className="text-center chart-name">{issue2}</p>
         <LineChart
           width={800}
@@ -113,7 +174,7 @@ export const ChartLine = () => {
           <Tooltip />
           <Line type="monotone" dataKey="value" stroke="#8884d8" />
         </LineChart>
-      </div>
+      </div> */}
     </div>
   );
 };

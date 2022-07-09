@@ -14,7 +14,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export const ChartLine = () => {
+export const ChartLine7 = () => {
   const { store, actions } = useContext(Context);
 
   const issues = new Set();
@@ -32,9 +32,9 @@ export const ChartLine = () => {
       }
     });
     // THIS WILL CHARGE dataArray to LAST 7 DAYS//////////////////////////////
-    // const array7Days = newArray.slice(newArray.length - 7, newArray.length);
-    // dataArray.push(array7Days);
-    //////////////////////////////////////////////////////////////////////////
+    const array7Days = newArray.slice(newArray.length - 7, newArray.length);
+    dataArray.push(array7Days);
+    ////////////////////////////////////////////////////////////////////////
     dataArray.push(newArray);
   }
 
