@@ -55,6 +55,7 @@ class Notification(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     phone = db.Column(db.String(120))
     message = db.Column(db.String(255))
+    time = db.Column(db.String(255))
 
     def __repr__(self):
         return self.name
@@ -62,7 +63,8 @@ class Notification(db.Model):
     def serialize(self):
         return {
             "phone": self.phone,
-            "message": self.message
+            "message": self.message,
+            "time": self.time,
         }
 
 

@@ -10,33 +10,33 @@ import random
 from dotenv import load_dotenv
 load_dotenv()
 
-def send_message():
+# def send_message():
 
-    account_sid = "AC8b23dea2a92c7b85b3e6aacf1c27de02"
-    auth_token = os.environ['TWILIO_AUTH_TOKEN']
-    client = Client(account_sid, auth_token)
+#     account_sid = "AC8b23dea2a92c7b85b3e6aacf1c27de02"
+#     auth_token = os.environ['TWILIO_AUTH_TOKEN']
+#     client = Client(account_sid, auth_token)
     
 
-    client.messages.create(to="+19546508821",
-                           from_="+19705125409",
-                           body="time to take your medication"
-                           )
+#     client.messages.create(to="+19546508821",
+#                            from_="+19705125409",
+#                            body="time to take your medication"
+#                            )
 # Functions setup
-def sudo_placement():
-    print("Get ready for Sudo Placement at Geeksforgeeks")
+# def sudo_placement():
+#     print("Get ready for Sudo Placement at Geeksforgeeks")
 
-def good_luck():
-    print("Good Luck for Test")
+# def good_luck():
+#     print("Good Luck for Test")
 
-def work():
-    print("Study and work hard")
+# def work():
+#     print("Study and work hard")
 
-def bedtime():
-    print("It is bed time go rest")
+# def bedtime():
+#     print("It is bed time go rest")
 
 
-def geeks():
-    print("Shaurya says Geeksforgeeks")
+# def geeks():
+#     print("Shaurya says Geeksforgeeks")
 
 # Task scheduling
 # After every 10mins geeks() is called.
@@ -54,6 +54,8 @@ def message_scheduler(time, message, phone):
                             body=msg
                             )
     schedule.every().day.at(time).do(send_message(message))
+
+
 
 # schedule.every(60).minutes.do(send_message)
 
@@ -80,5 +82,6 @@ def message_scheduler(time, message, phone):
 
 # Checks whether a scheduled task
 # is pending to run or not
-    # schedule.run_pending()
-    # time.sleep(1)
+    schedule.run_pending()
+    time.sleep(1)
+
