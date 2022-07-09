@@ -20,7 +20,7 @@
 }
 
 .chart-wrapper {
-  width: 800px;
+  /* width: 800px; */
   border: 2px solid black;
   margin-bottom: 40px;
 }
@@ -53,9 +53,11 @@
 .chart-body {
   /* background: transparent; */
   height: 100vh !important;
+  width: auto;
   background-color: transparent !important;
   background-attachment: fixed;
-  overflow: auto !important;
+  /* overflow: auto !important; */
+  overflow: visible;
 }
 
 .modal-open {
