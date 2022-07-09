@@ -98,10 +98,10 @@ def get_notification():
     issues = list(map(lambda x: x.serialize(), user))
     return jsonify(issues), 200
 
-@api.route("/reminder", methods=["POST"])
+@api.route("/MedTextReminders", methods=["POST"])
 def meds():
     data = request.get_json()
-    message_scheduler(data["time"], data["message"], data["phone"])
+    message_scheduler(data["phone"], data["message"], data["time"])
     # reminder = Notification(phone=data["phone"], message=data["message"])
     # db.session.add(reminder)
     # db.session.commit()
