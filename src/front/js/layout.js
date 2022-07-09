@@ -42,9 +42,9 @@ const Layout = () => {
             <Route exact path="/SMSForm">
               <SMSForm />
             </Route>
-            <Route exact path="/medications">
+            {/* <Route exact path="/medications">
               <Medications />
-            </Route>
+            </Route> */}
             <Route>
               <h1>Not found!</h1>
             </Route>

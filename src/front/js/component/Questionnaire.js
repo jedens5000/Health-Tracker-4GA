@@ -138,7 +138,7 @@ export const Questionnaire = () => {
                 >
                   Revise
                 </button>
-                <Link to="/main">
+                <Link to="/charts">
                   <button type="button" className="btn btn-primary">
                     Continue
                   </button>

@@ -9,6 +9,7 @@ import { ChartLines } from "../component/ChartLines";
 import { ChartBar } from "../component/ChartBar";
 import { ChartBar7 } from "../component/ChartBar7";
 import { ChartPie } from "../component/ChartPie";
+import { Stats } from "../component/Stats";
 import chartBamboo from "../../img/bamboo8.jpg";
 
 const Charts = () => {
@@ -35,6 +36,15 @@ const Charts = () => {
         >
           <Tab eventKey="all" title="All Records">
             {/* <ChartArea7 /> */}
+            <div className="row justify-content-evenly">
+              <div className="col-5">
+                <ChartArea id="chartarea" />
+              </div>
+              {/* <div className="col-1"></div> */}
+              <div className="col-5">
+                <ChartBar id="barchart" />
+              </div>
+            </div>
           </Tab>
           <Tab eventKey="7day" title="Last 7 Days">
             <ChartArea7 />
@@ -44,6 +54,12 @@ const Charts = () => {
           </Tab>
           <Tab eventKey="30day" title="Last 30 Days">
             <ChartLine7 />
+          </Tab>
+          <Tab eventKey="stats" title="Stats">
+            <Stats />
+          </Tab>
+          <Tab eventKey="pie" title="Chart Pie">
+            <ChartPie />
           </Tab>
         </Tabs>
 
@@ -63,17 +79,7 @@ const Charts = () => {
         </Nav> */}
 
         {/* <p>Chartline</p> */}
-        <div className="row justify-content-evenly">
-          <div className="col-6">
-            <ChartArea id="chartarea" />
-          </div>
-          {/* <div className="col-6">
-            <ChartLine id="chartline" />
-          </div> */}
-          <div className="col-6">
-            <ChartBar id="barchart" />
-          </div>
-        </div>
+
         {/* <p>Chartlines</p> */}
         {/* <ChartLines /> */}
         {/* <ChartPie /> */}
