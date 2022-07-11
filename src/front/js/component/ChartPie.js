@@ -93,10 +93,10 @@ export const ChartPie = () => {
         <Pie
           data={data}
           cx="50%"
-          cy="50%"
-          labelLine={true}
+          cy="40%"
+          labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={300}
+          outerRadius={280}
           fill="#8884d8"
           dataKey="value"
         >
