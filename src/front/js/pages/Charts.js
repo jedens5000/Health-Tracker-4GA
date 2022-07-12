@@ -21,6 +21,9 @@ const Charts = () => {
         backgroundImage: `url(${chartBamboo})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
+        backgroundRepeat: "repeat",
+        width: "100vw",
+        height: "100vh",
       }}
     >
       {/* <img id="chartPhoto" src={chartBamboo} alt="bamboo" /> */}
@@ -29,11 +32,17 @@ const Charts = () => {
       {/* <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart"> */}
       <div className="container position-relative mx-auto chart-body text-bg-chart">
         <Tabs
-          defaultActiveKey="all"
+          defaultActiveKey="stats"
           transition={false}
           id="noanim-tab-example"
           className="mb-3"
         >
+          <Tab eventKey="stats" title="Stats">
+            <div className="chart-bg">
+              <Stats />
+            </div>
+            <ChartPie />
+          </Tab>
           <Tab eventKey="all" title="All Records">
             {/* <ChartArea7 /> */}
             <div className="row justify-content-evenly">
@@ -55,12 +64,9 @@ const Charts = () => {
           <Tab eventKey="30day" title="Last 30 Days">
             <ChartLine7 />
           </Tab>
-          <Tab eventKey="stats" title="Stats">
-            <Stats />
-          </Tab>
-          <Tab eventKey="pie" title="Chart Pie">
+          {/* <Tab eventKey="pie" title="Chart Pie">
             <ChartPie />
-          </Tab>
+          </Tab> */}
         </Tabs>
 
         {/* <Nav fill variant="tabs" defaultActiveKey="../component/ChartLine">

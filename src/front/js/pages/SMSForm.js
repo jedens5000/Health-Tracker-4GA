@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Navbar } from "../component/navbar";
 // import './SMSForm.css';
-import mainPageBackground from "../../img/bamboo9.jpg";
+import mainPageBackground from "../../img/bamboo7.jpg";
 
 const SMSForm = () => {
   const [phone, setPhone] = useState("");

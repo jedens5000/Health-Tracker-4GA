@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import mindsetLogo from "../../img/mindset-logo.png";
 // import mainPageBackground from "../../img/mainPageBackground.png";
 // import mainPageBackground from "../../img/bgImgLotusBlue.png";
-import mainPageBackground from "../../img/bamboo8.jpg";
+import mainPageBackground from "../../img/bamboo9.jpg";
 import "../../styles/main.css";
 import { Navbar } from "../component/navbar";
 import { Link } from "react-router-dom";
@@ -39,7 +39,7 @@ export const Main = () => {
           <p>Issue 1: {store.issues.issue1}</p>
           {store.issues.issue2 ? <p>Issue 2: {store.issues.issue2}</p> : ""}
           {store.issues.issue3 ? <p>Issue 3: {store.issues.issue3}</p> : ""}
-
+          {/* <Stats /> */}
           <blockquote className="py-2 text-center">
             "{store.quote.text}"<br />
             <p>

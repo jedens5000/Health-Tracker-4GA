@@ -1,18 +1,6 @@
 import React, { useContext, useEffect, PureComponent } from "react";
-
+import Table from "react-bootstrap/Table";
 import { Context } from "../store/appContext";
-import {
-  LineChart,
-  AreaChart,
-  Area,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
 
 export const Stats = () => {
   const { store, actions } = useContext(Context);
@@ -31,23 +19,11 @@ export const Stats = () => {
         return true;
       }
     });
-    // THIS WILL CHARGE dataArray to LAST 7 DAYS//////////////////////////////
-    // const array7Days = newArray.slice(newArray.length - 7, newArray.length);
-    // dataArray.push(array7Days);
-    //////////////////////////////////////////////////////////////////////////
+
     dataArray.push(newArray);
   }
 
   console.log(dataArray);
-
-  // /////////////////////////////////AVGS////////////////
-  // var sum = 0;
-  // for (const value of dataArray[0]) {
-  //   sum += value;
-  // }
-  // console.log(sum);
-  // let avg = sum / dataArray.length;
-  // console.log(avg);
 
   // ////////////THIS SUMS ALL VALUES IN EACH ISSUE /////////////////
   const values1 = Object.values(dataArray[0]);
@@ -69,12 +45,23 @@ export const Stats = () => {
   console.log(sumIssue1);
   console.log(sumIssue2);
   console.log(sumIssue3);
+  ///////////////////////////AVG CONVERSTION////////////////////////////
+  const trackedDays1 = values1.length;
+  const trackedDays2 = values2.length;
+  const trackedDays3 = values3.length;
+  const avg1 = Math.round((sumIssue1 / trackedDays1) * 100) / 100;
+  const avg2 = Math.round((sumIssue2 / trackedDays2) * 100) / 100;
+  const avg3 = Math.round((sumIssue3 / trackedDays3) * 100) / 100;
+
+  console.log(avg1);
+  console.log(avg2);
+  console.log(avg3);
+  console.log(values1.length);
   ///////////////////////////////////////////////////////////////
 
   // const testArray = [...dataArray[0], ...dataArray[1], ...dataArray[2]];
   // console.log(testArray);
   const issue1 = dataArray[0][0].issue;
-  const avg1 = dataArray[0][0].value;
   const issue2 = dataArray[1][0].issue;
   const issue3 = dataArray[2][0].issue;
   console.log(issue1, issue2, issue3);
@@ -84,14 +71,39 @@ export const Stats = () => {
   console.log(store.data);
 
   return (
-    <div className="chartline-bg">
-      {/* <div className="chart-wrapper"> */}
-      <p className="text-center">
-        Your average {issue1} level is: {avg1}
-      </p>
-      <p className="text-center">Your average {issue2} level is:</p>
-      <p className="text-center">Your average {issue3} level is:</p>
-      {/* </div> */}
+    <div className="chartline-bg text-center">
+      <div className="chart-wrapper">
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Issue</th>
+              <th>Average Level</th>
+              <th>Days tracked</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>{issue1}</td>
+              <td>{avg1}</td>
+              <td>{trackedDays1}</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>{issue2}</td>
+              <td>{avg2}</td>
+              <td>{trackedDays2}</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>{issue3}</td>
+              <td>{avg3}</td>
+              <td>{trackedDays3}</td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 };
