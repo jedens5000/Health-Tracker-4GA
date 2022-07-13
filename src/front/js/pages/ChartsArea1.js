@@ -5,6 +5,8 @@ import { ChartLine } from "../component/ChartLine";
 import { ChartLine7 } from "../component/ChartLine7";
 import { ChartArea } from "../component/ChartArea";
 import { ChartArea7 } from "../component/ChartArea7";
+import { ChartArea14 } from "../component/ChartArea14";
+import { ChartArea30 } from "../component/ChartArea30";
 import { ChartLines } from "../component/ChartLines";
 import { ChartBar } from "../component/ChartBar";
 import { ChartBar7 } from "../component/ChartBar7";
@@ -13,7 +15,7 @@ import { Stats } from "../component/Stats";
 import chartBamboo from "../../img/bamboo8.jpg";
 import "../../styles/charts.css";
 
-const Charts = () => {
+const ChartsArea1 = () => {
   return (
     <div
       // id="chart-h-100"
@@ -44,34 +46,32 @@ const Charts = () => {
             </div>
             <ChartPie />
           </Tab>
-          <Tab eventKey="all" title="All Records">
-            {/* <ChartArea7 /> */}
+          {/* <Tab eventKey="all" title="All Records">
             <div className="row justify-content-evenly">
               <div className="col-5">
                 <ChartArea id="chartarea" />
               </div>
-              {/* <div className="col-1"></div> */}
               <div className="col-5">
                 <ChartBar id="barchart" />
               </div>
             </div>
+          </Tab> */}
+          <Tab eventKey="all" title="All Records">
+            <ChartArea />
           </Tab>
           <Tab eventKey="7day" title="Last 7 Days">
             <ChartArea7 />
           </Tab>
           <Tab eventKey="14day" title="Last 14 Days">
-            <ChartBar7 />
+            <ChartArea14 />
           </Tab>
           <Tab eventKey="30day" title="Last 30 Days">
-            <ChartLine7 />
+            <ChartArea30 />
           </Tab>
-          {/* <Tab eventKey="pie" title="Chart Pie">
-            <ChartPie />
-          </Tab> */}
         </Tabs>
       </div>
     </div>
   );
 };
 
-export default Charts;
+export default ChartsArea1;
