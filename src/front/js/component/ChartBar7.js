@@ -29,8 +29,8 @@ export const ChartBar7 = () => {
       }
     });
     // THIS WILL CHARGE dataArray to LAST 7 DAYS//////////////////////////////
-    const array7Days = newArray.slice(newArray.length - 7, newArray.length);
-    dataArray.push(array7Days);
+    const array14Days = newArray.slice(newArray.length - 14, newArray.length);
+    dataArray.push(array14Days);
     ////////////////////////////////////////////////////////////////////////
     dataArray.push(newArray);
   }

@@ -11,7 +11,7 @@ export const NavMenu = () => {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="transparent">
-      <Container>
+      <Container style={{ marginLeft: "0" }}>
         <Navbar.Brand href="#home">
           <img src={mindsetLogo} margin="0 5px" height="180px" width="auto" />
         </Navbar.Brand>
