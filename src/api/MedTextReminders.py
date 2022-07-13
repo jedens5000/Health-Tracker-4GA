@@ -122,7 +122,7 @@ def message_scheduler():
 # def notice():
 #     print("Reminder to take your medication")
 
-# API_KEY = "o.ANMGPgx5p5WluBkO1YLmfVVVyOyHCAMk"
+# API_KEY = ""
 # text = "Reminder to take your medication"
 
 
