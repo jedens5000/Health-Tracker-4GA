@@ -4,12 +4,12 @@
   /* background-color: #d6eccd; */
   background: transparent;
 }
-
-.navlogo {
+/* NO LONGER NEEDED */
+/* .navlogo {
   margin-left: 5px;
   height: 180px;
   width: auto;
-}
+} */
 
 .navbar {
   font-family: "Raleway", sans-serif;

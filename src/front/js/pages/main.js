@@ -5,7 +5,7 @@ import mindsetLogo from "../../img/mindset-logo.png";
 // import mainPageBackground from "../../img/bgImgLotusBlue.png";
 import mainPageBackground from "../../img/bamboo9.jpg";
 import "../../styles/main.css";
-import { Navbar } from "../component/navbar";
+import { NavMenu } from "../component/navbar";
 import { Link } from "react-router-dom";
 
 export const Main = () => {
@@ -30,7 +30,7 @@ export const Main = () => {
           // position: "static",
         }}
       >
-        <Navbar />
+        <NavMenu />
         <div className="pt-3 ms-3 text-bg">
           <h2>Welcome, {store.name}!</h2>
           <h3>

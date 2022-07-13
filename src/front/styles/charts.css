@@ -13,8 +13,9 @@
   transform: scaleX(-1);
 } */
 #chart-h-100 {
-  /* background-color: #b8f2e6; */
-  height: 120vh !important;
+  background-color: #b8f2e6;
+  /* height: 120vh !important; */
+  height: 100vh !important;
   background-color: transparent !important;
   background-attachment: fixed;
 }
@@ -24,6 +25,12 @@
   border: 2px solid black;
   margin-bottom: 40px;
 }
+/* @media (min-width: 768px) {
+  .chart-wrapper {
+    border: 2px solid black;
+    margin-bottom: 40px;
+
+} */
 
 .chart-name {
   width: 600;
@@ -36,7 +43,7 @@
 .text-bg-chart {
   background: rgba(182, 215, 179, 0.6) !important;
   color: black;
-  height: 70vh;
+  /* height: 70vh; */
   /* width: 70vh; */
 }
 /* THIS IS ACTIVE */
@@ -53,11 +60,13 @@
 .chart-body {
   /* background: transparent; */
   height: 100vh !important;
-  width: auto;
+  /* width: auto; */
   background-color: transparent !important;
   background-attachment: fixed;
   /* overflow: auto !important; */
-  overflow: visible;
+  overflow: hidden !important;
+  /* overflow: scroll !important; */
+  /* overflow: visible; */
 }
 
 .modal-open {
