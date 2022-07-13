@@ -1,5 +1,4 @@
 import os
-import datetime
 import schedule
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Answer, Notification
@@ -8,8 +7,9 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import create_refresh_token
-from .MedTextReminders import message_scheduler
+from api.MedTextReminders import message_scheduler
 from twilio.rest import Client
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 
@@ -101,7 +101,7 @@ def get_notification():
 @api.route("/MedTextReminders", methods=["POST"])
 def meds():
     data = request.get_json()
-    message_scheduler(data["phone"], data["message"], data["time"])
+    message_scheduler(data["time"], data["message"], data["phone"])
     # reminder = Notification(phone=data["phone"], message=data["message"])
     # db.session.add(reminder)
     # db.session.commit()

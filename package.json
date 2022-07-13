@@ -78,8 +78,10 @@
 		"react": "^16.8.4",
 		"react-bootstrap": "^2.4.0",
 		"react-dom": "^16.8.4",
+		"react-native-onesignal": "^4.3.11",
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.3.3",
+		"react-simple-timefield": "^3.2.5",
 		"recharts": "^2.1.10"
 	}
 }
