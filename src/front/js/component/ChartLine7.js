@@ -29,8 +29,8 @@ export const ChartLine7 = () => {
       }
     });
     // THIS WILL CHARGE dataArray to LAST 7 DAYS//////////////////////////////
-    const array7Days = newArray.slice(newArray.length - 7, newArray.length);
-    dataArray.push(array7Days);
+    const array30Days = newArray.slice(newArray.length - 30, newArray.length);
+    dataArray.push(array30Days);
     ////////////////////////////////////////////////////////////////////////
     dataArray.push(newArray);
   }
@@ -85,7 +85,7 @@ export const ChartLine7 = () => {
           <LineChart
             width={800}
             height={300}
-            data={dataArray[0]}
+            data={dataArray[1]}
             margin={{
               top: 5,
               right: 30,
@@ -113,7 +113,7 @@ export const ChartLine7 = () => {
           <LineChart
             width={800}
             height={300}
-            data={dataArray[2]}
+            data={dataArray[3]}
             margin={{
               top: 5,
               right: 30,
@@ -141,7 +141,7 @@ export const ChartLine7 = () => {
           <LineChart
             width={800}
             height={300}
-            data={dataArray[4]}
+            data={dataArray[5]}
             margin={{
               top: 5,
               right: 30,
