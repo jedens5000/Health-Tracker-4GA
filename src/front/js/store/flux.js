@@ -86,7 +86,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       reminders: (phone, message, time) => {
-        // fetch("https://3001-jedens5000-healthtracke-l5xsbmsob88.ws-us51.gitpod.io/api/MedTextReminders", {
         fetch(getStore().apURL + "/api/MedTextReminders", {
           method: "POST",
           headers: {

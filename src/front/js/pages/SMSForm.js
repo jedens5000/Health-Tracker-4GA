@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { Navbar } from "../component/navbar";
 import TimeField from 'react-simple-timefield';
 // import './SMSForm.css';
-import mainPageBackground from "../../img/bamboo9.jpg";
+import mainPageBackground from "../../img/bamboo7.jpg";
 
 const SMSForm = () => {
   const [phone, setPhone] = useState("");
@@ -18,7 +18,7 @@ const SMSForm = () => {
         backgroundSize: "cover",
       }}
     >
-      <Navbar />
+      <NavMenu />
       <form className="container-fluid position-relative text-bg-status">
         <div className="mt-3">
           <label htmlFor="to">To:</label>
