@@ -88,7 +88,7 @@ export const ChartPie = () => {
   };
 
   return (
-    <ResponsiveContainer width="100%" height={800}>
+    <ResponsiveContainer width="100%" height={800} className="chart-body">
       <PieChart width={800} height={800}>
         <Pie
           data={data}

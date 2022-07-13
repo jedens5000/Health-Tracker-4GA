@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Navbar } from "../component/navbar";
+import { NavMenu } from "../component/navbar";
 // import './SMSForm.css';
 import mainPageBackground from "../../img/bamboo7.jpg";
 
@@ -16,7 +16,7 @@ const SMSForm = () => {
         backgroundSize: "cover",
       }}
     >
-      <Navbar />
+      <NavMenu />
       <form className="container-fluid position-relative text-bg-status">
         <div className="mt-3">
           <label htmlFor="to">To:</label>

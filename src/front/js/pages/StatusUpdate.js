@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { Navbar } from "../component/navbar";
+import { NavMenu } from "../component/navbar";
 import { Questionnaire } from "../component/Questionnaire";
 // import mainPageBackground from "../../img/bgImgLotusBlue.png";
 import mainPageBackground from "../../img/bamboo10.jpg";
@@ -22,13 +22,16 @@ export const StatusUpdate = () => {
 
   return (
     <div
-      className="h-100"
+      // className="h-100"
       style={{
         backgroundImage: `url(${mainPageBackground})`,
         backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
       }}
     >
-      <Navbar />
+      <NavMenu />
       <div
         id="questionnaire"
         // className="container-fluid position-relative top-0 start-50 translate-middle-x text-bg-status"
