@@ -10,7 +10,7 @@ import { Login } from "./pages/Login";
 import { StatusUpdate } from "./pages/StatusUpdate";
 import { Main } from "./pages/main";
 import Charts from "./pages/Charts";
-import App from "./pages/App.js";
+import App from "./pages/App";
 import Medications from "./pages/medications";
 
 const Layout = () => {
