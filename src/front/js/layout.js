@@ -10,7 +10,7 @@ import { Login } from "./pages/Login";
 import { StatusUpdate } from "./pages/StatusUpdate";
 import { Main } from "./pages/main";
 import Charts from "./pages/Charts";
-import SMSForm from "./pages/SMSForm";
+import App from "./pages/App.js";
 import Medications from "./pages/medications";
 
 const Layout = () => {
@@ -39,12 +39,12 @@ const Layout = () => {
             <Route exact path="/main">
               <Main />
             </Route>
-            <Route exact path="/SMSForm">
-              <SMSForm />
+            <Route exact path="/App">
+              <App />
             </Route>
-            <Route exact path="/medications">
+            {/* <Route exact path="/medications">
               <Medications />
-            </Route>
+            </Route> */}
             <Route>
               <h1>Not found!</h1>
             </Route>

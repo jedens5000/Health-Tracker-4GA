@@ -12,9 +12,6 @@ export const Questionnaire = () => {
   const [answers, setAnswers] = useState([]);
   console.log(answers);
   console.log(store.issues);
-  // item.endsWith("s")
-  //   ? "How are your {item} today?"
-  //   : "How is your {item} today?";
 
   return (
     <div>
@@ -34,12 +31,12 @@ export const Questionnaire = () => {
         };
         return (
           <div key={index}>
-            {/* <p className="mt-3">How is your {item} today?</p> */}
-            {item.endsWith("s") ? (
+            <p className="mt-3">How is your {item} today?</p>
+            {/* {item.endsWith("s") ? (
               <p className="mt-3">How are your {item} today?</p>
             ) : (
               <p className="mt-3">How is your {item} today?</p>
-            )}
+            )} */}
             <div className="form-check">
               <button
                 className={

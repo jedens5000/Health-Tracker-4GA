@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import { validateSignUp } from "../component/validations";
-
 import mindsetLogo from "../../img/mindset-logo-clear.png";
 // import mainPageBackground from "../../img/mainPageBackground.png";
 import mainPageBackground from "../../img/bgImgLotusBlue.png";
+import chartBamboo from "../../img/bamboo8.jpg";
 import "../../styles/Form.css";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
@@ -14,7 +14,15 @@ export const FormSignup = ({ submitForm }) => {
   const [values, setValues] = useState({ issue2: null, issue3: null });
   const [errors, setErrors] = useState({});
   return (
-    <div className="top">
+    <div
+      className="top pb-5"
+      style={{
+        backgroundImage: `url(${chartBamboo})`,
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <img className="logo" src={mindsetLogo} />
       <h1>
         Start tracking your issues today!
@@ -25,11 +33,10 @@ export const FormSignup = ({ submitForm }) => {
       <div className="form-container">
         <div
           style={{
-            backgroundImage: "url(/mainPageBackground.png)",
-            backgroundSize: "cover",
-            id: "background",
-            border: "1px solid yellowgreen",
-            borderRadius: 5,
+            background: "rgba(182, 215, 179, 0.8)",
+            border: "1px solid #495159",
+            borderRadius: "3%",
+            color: "#495159",
           }}
         >
           <form

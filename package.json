@@ -73,6 +73,24 @@
 		]
 	},
 	"dependencies": {
+		"@progress/kendo-date-math": "^1.5.7",
+		"@progress/kendo-drawing": "^1.16.3",
+		"@progress/kendo-licensing": "^1.2.2",
+		"@progress/kendo-react-animation": "^5.5.0",
+		"@progress/kendo-react-buttons": "^5.5.0",
+		"@progress/kendo-react-common": "^5.5.0",
+		"@progress/kendo-react-dateinputs": "^5.5.0",
+		"@progress/kendo-react-dialogs": "^5.5.0",
+		"@progress/kendo-react-dropdowns": "^5.5.0",
+		"@progress/kendo-react-form": "^5.5.0",
+		"@progress/kendo-react-inputs": "^5.5.0",
+		"@progress/kendo-react-intl": "^5.5.0",
+		"@progress/kendo-react-labels": "^5.5.0",
+		"@progress/kendo-react-popup": "^5.5.0",
+		"@progress/kendo-react-scheduler": "^5.5.0",
+		"@progress/kendo-react-treeview": "^5.5.0",
+		"@progress/kendo-scheduler-react-wrapper": "^2021.3.1112",
+		"@progress/kendo-theme-default": "^5.5.0",
 		"bootstrap": "^5.2.0-beta1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
@@ -82,6 +100,7 @@
 		"react-polyfills": "0.0.1",
 		"react-router-dom": "^5.3.3",
 		"react-simple-timefield": "^3.2.5",
-		"recharts": "^2.1.10"
+		"recharts": "^2.1.10",
+		"scheduler": "^0.23.0"
 	}
 }

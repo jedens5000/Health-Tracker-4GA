@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 export const ChartBar = () => {
@@ -86,72 +87,78 @@ export const ChartBar = () => {
     <div>
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue1}</p>
-        <BarChart
-          width={800}
-          height={300}
-          // data={data}
-          data={dataArray[0]}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          className={"chart-bg"}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis />
-          <Tooltip />
-          {/* <Legend /> */}
-          <Bar dataKey="value" fill="#8884d8" />
-        </BarChart>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart
+            width={800}
+            height={300}
+            // data={data}
+            data={dataArray[0]}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+            className={"chart-bg"}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            {/* <Legend /> */}
+            <Bar dataKey="value" fill="#8884d8" />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue2}</p>
-        <BarChart
-          width={800}
-          height={300}
-          // data={data}
-          data={dataArray[1]}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          className={"chart-bg"}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis />
-          <Tooltip />
-          {/* <Legend /> */}
-          <Bar dataKey="value" fill="#82ca9d" />
-        </BarChart>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart
+            width={800}
+            height={300}
+            // data={data}
+            data={dataArray[1]}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+            className={"chart-bg"}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            {/* <Legend /> */}
+            <Bar dataKey="value" fill="#82ca9d" />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue3}</p>
-        <BarChart
-          width={800}
-          height={300}
-          // data={data}
-          data={dataArray[2]}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-          className={"chart-bg"}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="date" />
-          <YAxis />
-          <Tooltip />
-          {/* <Legend /> */}
-          <Bar dataKey="value" fill="#888a9d" />
-        </BarChart>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart
+            width={800}
+            height={300}
+            // data={data}
+            data={dataArray[2]}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+            className={"chart-bg"}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            {/* <Legend /> */}
+            <Bar dataKey="value" fill="#888a9d" />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
