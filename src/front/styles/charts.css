@@ -64,7 +64,7 @@
   background-color: transparent !important;
   background-attachment: fixed;
   /* overflow: auto !important; */
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
   /* overflow: scroll !important; */
   /* overflow: visible; */
 }

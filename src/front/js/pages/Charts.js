@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Nav, Tab, Tabs } from "react-bootstrap";
 import { NavMenu } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
@@ -14,16 +15,18 @@ import chartBamboo from "../../img/bamboo8.jpg";
 import "../../styles/charts.css";
 
 const Charts = () => {
+  const { store, actions } = useContext(Context);
+
   return (
     <div
       // id="chart-h-100"
-      className="h-100"
+      // className="h-100"
       style={{
         backgroundImage: `url(${chartBamboo})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        height: "100vh",
+        height: "150vh",
       }}
     >
       {/* <div> */}
@@ -57,7 +60,15 @@ const Charts = () => {
             </div>
           </Tab>
           <Tab eventKey="7day" title="Last 7 Days">
-            <ChartArea7 />
+            {store.chartType === "chartarea" ? (
+              <ChartArea7 />
+            ) : store.chartType === "chartbar" ? (
+              <ChartBar7 />
+            ) : store.chartType === "chartline" ? (
+              <ChartLine7 />
+            ) : (
+              <ChartArea7 />
+            )}
           </Tab>
           <Tab eventKey="14day" title="Last 14 Days">
             <ChartBar7 />
