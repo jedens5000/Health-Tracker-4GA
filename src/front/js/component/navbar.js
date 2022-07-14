@@ -44,21 +44,32 @@ export const NavMenu = () => {
                 <p>Chart History</p>
               </Link>
 
-              {/* <NavDropdown title="Chart History" id="basic-nav-dropdown">
+              <NavDropdown title="Chart History" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#">
                   <Link to="/charts" className="nav-link">
                     Select Chart Type:
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/ChartsArea1">
+                <NavDropdown.Item
+                  // href="/Charts"
+                  onClick={() => actions.changeChart("chartarea")}
+                >
                   Area Chart
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/ChartsBar">Bar Chart</NavDropdown.Item>
-                <NavDropdown.Item href="/ChartsLine">
+                <NavDropdown.Item
+                  // href="/ChartsBar"
+                  onClick={() => actions.changeChart("chartbar")}
+                >
+                  Bar Chart
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  // href="/ChartsLine"
+                  onClick={() => actions.changeChart("chartline")}
+                >
                   Line Chart
                 </NavDropdown.Item>
-              </NavDropdown> */}
+              </NavDropdown>
               <Link
                 to="/SMSForm"
                 onClick={() => setExpanded(false)}

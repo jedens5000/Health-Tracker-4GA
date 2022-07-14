@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import { Navbar } from "../component/navbar";
-import TimeField from 'react-simple-timefield';
+import { NavMenu } from "../component/navbar";
 // import './SMSForm.css';
 import mainPageBackground from "../../img/bamboo7.jpg";
 
