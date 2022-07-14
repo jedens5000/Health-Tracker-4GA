@@ -85,7 +85,7 @@ export const ChartLine7 = () => {
           <LineChart
             width={800}
             height={300}
-            data={dataArray[1]}
+            data={dataArray[0]}
             margin={{
               top: 5,
               right: 30,
@@ -113,7 +113,7 @@ export const ChartLine7 = () => {
           <LineChart
             width={800}
             height={300}
-            data={dataArray[3]}
+            data={dataArray[2]}
             margin={{
               top: 5,
               right: 30,
@@ -141,7 +141,7 @@ export const ChartLine7 = () => {
           <LineChart
             width={800}
             height={300}
-            data={dataArray[5]}
+            data={dataArray[4]}
             margin={{
               top: 5,
               right: 30,

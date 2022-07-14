@@ -44,7 +44,7 @@ export const NavMenu = () => {
                 <p>Chart History</p>
               </Link>
 
-              <NavDropdown title="Chart History" id="basic-nav-dropdown">
+              {/* <NavDropdown title="Chart History" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/charts">
                   <Link to="/charts" className="nav-link">
                     Select Chart Type:
@@ -69,7 +69,7 @@ export const NavMenu = () => {
                 >
                   Line Chart
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
               <Link
                 to="/SMSForm"
                 onClick={() => setExpanded(false)}
