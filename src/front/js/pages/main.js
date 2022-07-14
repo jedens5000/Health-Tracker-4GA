@@ -31,21 +31,23 @@ export const Main = () => {
         }}
       >
         <NavMenu />
-        <div className="pt-3 ms-3 text-bg">
-          <h2>Welcome, {store.name}!</h2>
-          <h3>
-            <em>Here's what you're currently tracking:</em>
-          </h3>
-          <p>Issue 1: {store.issues.issue1}</p>
-          {store.issues.issue2 ? <p>Issue 2: {store.issues.issue2}</p> : ""}
-          {store.issues.issue3 ? <p>Issue 3: {store.issues.issue3}</p> : ""}
-          {/* <Stats /> */}
-          <blockquote className="py-2 text-center">
-            "{store.quote.text}"<br />
-            <p>
-              <em> &mdash; {store.quote.author}</em>
-            </p>
-          </blockquote>
+        <div className="pt-3 m-3 text-bg">
+          <div className="ms-3">
+            <h2>Welcome, {store.name}!</h2>
+            <h3>
+              <em>Here's what you're currently tracking:</em>
+            </h3>
+            <p>Issue 1: {store.issues.issue1}</p>
+            {store.issues.issue2 ? <p>Issue 2: {store.issues.issue2}</p> : ""}
+            {store.issues.issue3 ? <p>Issue 3: {store.issues.issue3}</p> : ""}
+            {/* <Stats /> */}
+            <blockquote className="py-2 text-center">
+              "{store.quote.text}"<br />
+              <p>
+                <em> &mdash; {store.quote.author}</em>
+              </p>
+            </blockquote>
+          </div>
         </div>
       </div>
     </div>

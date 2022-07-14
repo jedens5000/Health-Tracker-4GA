@@ -5,13 +5,13 @@
 .text-bg-status {
   background: rgba(182, 215, 179, 0.6) !important;
   color: black;
-  height: 75vh;
+  height: 65vh;
   width: 70vh;
 }
-.h-100 {
+/* .h-100 {
   height: 100vh !important;
   background-attachment: fixed;
-}
+} */
 .status-h5 {
   padding: 20px 3%;
 }

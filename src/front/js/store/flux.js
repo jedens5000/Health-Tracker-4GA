@@ -23,6 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       name: "",
       answers: [],
       medications: [],
+      chartType: "chartarea",
     },
     actions: {
       logOut: function () {
@@ -182,6 +183,9 @@ const getState = ({ getStore, getActions, setStore }) => {
         const data = await response.json();
         let x = Math.floor(Math.random() * data.length);
         setStore({ quote: data[x] });
+      },
+      changeChart: (type) => {
+        setStore({ chartType: type });
       },
     },
   };

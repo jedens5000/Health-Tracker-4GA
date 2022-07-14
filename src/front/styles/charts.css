@@ -1,27 +1,11 @@
-/* LineChart {
-  margin: 0 auto;
-  background-color: blanchedalmond;
-} */
-
-/* #chartPhoto {
-  background-image: url(../img/mainPageBackground.png);
-  height: 100vh;
-  position: static;
-  background-size: "cover";
-  position: absolute;
-  opacity: 0.5;
-  transform: scaleX(-1);
-} */
-#chart-h-100 {
+/* #chart-h-100 {
   background-color: #b8f2e6;
-  /* height: 120vh !important; */
   height: 100vh !important;
   background-color: transparent !important;
   background-attachment: fixed;
-}
+} */
 
 .chart-wrapper {
-  /* width: 800px; */
   border: 2px solid black;
   margin-bottom: 40px;
 }
@@ -29,13 +13,11 @@
   .chart-wrapper {
     border: 2px solid black;
     margin-bottom: 40px;
-
 } */
 
 .chart-name {
   width: 600;
   background-color: lightyellow;
-  /* border: 1px solid black; */
   border-bottom: 2px solid black;
   margin-bottom: 0;
 }
@@ -48,23 +30,15 @@
 }
 /* THIS IS ACTIVE */
 .chart-bg {
-  /* background: rgba(182, 215, 179, 0.8) !important; */
-  /* background: rgba(232, 248, 158, 0.6) !important; */
   background: rgba(255, 255, 224, 0.6) !important;
   color: black;
-  /* padding-bottom: 20px; */
-  /* height: 70vh; */
-  /* width: 70vh; */
 }
 
 .chart-body {
-  /* background: transparent; */
-  height: 100vh !important;
-  /* width: auto; */
   background-color: transparent !important;
   background-attachment: fixed;
   /* overflow: auto !important; */
-  overflow: hidden !important;
+  /* overflow: hidden !important; */
   /* overflow: scroll !important; */
   /* overflow: visible; */
 }

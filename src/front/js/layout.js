@@ -36,6 +36,15 @@ const Layout = () => {
             <Route exact path="/charts">
               <Charts />
             </Route>
+            <Route exact path="/chartsarea1">
+              <Charts />
+            </Route>
+            <Route exact path="/chartsbar">
+              <Charts />
+            </Route>
+            <Route exact path="/chartsline">
+              <Charts />
+            </Route>
             <Route exact path="/main">
               <Main />
             </Route>
