@@ -4,11 +4,17 @@ import { Nav, Tab, Tabs } from "react-bootstrap";
 import { NavMenu } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
 import { ChartLine7 } from "../component/ChartLine7";
+import { ChartLine14 } from "../component/ChartLine14";
+import { ChartLine30 } from "../component/ChartLine30";
 import { ChartArea } from "../component/ChartArea";
 import { ChartArea7 } from "../component/ChartArea7";
+import { ChartArea14 } from "../component/ChartArea14";
+import { ChartArea30 } from "../component/ChartArea30";
 import { ChartLines } from "../component/ChartLines";
 import { ChartBar } from "../component/ChartBar";
 import { ChartBar7 } from "../component/ChartBar7";
+import { ChartBar14 } from "../component/ChartBar14";
+import { ChartBar30 } from "../component/ChartBar30";
 import { ChartPie } from "../component/ChartPie";
 import { Stats } from "../component/Stats";
 import chartBamboo from "../../img/bamboo8.jpg";
@@ -71,10 +77,26 @@ const Charts = () => {
             )}
           </Tab>
           <Tab eventKey="14day" title="Last 14 Days">
-            <ChartBar7 />
+            {store.chartType === "chartarea" ? (
+              <ChartArea14 />
+            ) : store.chartType === "chartbar" ? (
+              <ChartBar14 />
+            ) : store.chartType === "chartline" ? (
+              <ChartLine14 />
+            ) : (
+              <ChartArea14 />
+            )}
           </Tab>
           <Tab eventKey="30day" title="Last 30 Days">
-            <ChartLine7 />
+            {store.chartType === "chartarea" ? (
+              <ChartArea30 />
+            ) : store.chartType === "chartbar" ? (
+              <ChartBar30 />
+            ) : store.chartType === "chartline" ? (
+              <ChartLine30 />
+            ) : (
+              <ChartArea30 />
+            )}
           </Tab>
           {/* <Tab eventKey="pie" title="Chart Pie">
             <ChartPie />

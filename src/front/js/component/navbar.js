@@ -45,26 +45,26 @@ export const NavMenu = () => {
               </Link>
 
               <NavDropdown title="Chart History" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#">
+                <NavDropdown.Item href="/charts">
                   <Link to="/charts" className="nav-link">
                     Select Chart Type:
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item
-                  // href="/Charts"
+                  // href="/charts"
                   onClick={() => actions.changeChart("chartarea")}
                 >
                   Area Chart
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                  // href="/ChartsBar"
+                  // href="/charts"
                   onClick={() => actions.changeChart("chartbar")}
                 >
                   Bar Chart
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                  // href="/ChartsLine"
+                  // href="/charts"
                   onClick={() => actions.changeChart("chartline")}
                 >
                   Line Chart

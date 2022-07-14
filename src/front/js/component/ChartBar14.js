@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export const ChartBar7 = () => {
+export const ChartBar14 = () => {
   const { store, actions } = useContext(Context);
 
   const issues = new Set();
@@ -28,9 +28,9 @@ export const ChartBar7 = () => {
         return true;
       }
     });
-    // THIS WILL CHARGE dataArray to LAST 7 DAYS//////////////////////////////
-    const array7Days = newArray.slice(newArray.length - 7, newArray.length);
-    dataArray.push(array7Days);
+    // THIS WILL CHARGE dataArray to LAST 14 DAYS//////////////////////////////
+    const array14Days = newArray.slice(newArray.length - 14, newArray.length);
+    dataArray.push(array14Days);
     ////////////////////////////////////////////////////////////////////////
     dataArray.push(newArray);
   }
