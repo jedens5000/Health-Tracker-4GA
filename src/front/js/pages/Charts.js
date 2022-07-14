@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Nav, Tab, Tabs } from "react-bootstrap";
+import { Dropdown, DropdownButton, Tab, Tabs } from "react-bootstrap";
 import { NavMenu } from "../component/navbar";
 import { ChartLine } from "../component/ChartLine";
 import { ChartLine7 } from "../component/ChartLine7";
@@ -41,11 +41,36 @@ const Charts = () => {
       {/* <div className="position-relative"> */}
       {/* <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart"> */}
       <div className="container position-relative mx-auto chart-body text-bg-chart">
+        {/* CHART SELECTOR BUTTON */}
+
+        <DropdownButton id="dropdown-basic-button" title="Select Chart Type:">
+          <Dropdown.Item
+            onClick={() => actions.changeChart("chartarea")}
+            // href="#/action-1"
+          >
+            Area Chart
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => actions.changeChart("chartbar")}
+            // href="#/action-2"
+          >
+            Bar Chart
+          </Dropdown.Item>
+          <Dropdown.Item
+            onClick={() => actions.changeChart("chartline")}
+            // href="#/action-3"
+          >
+            Line Chart
+          </Dropdown.Item>
+        </DropdownButton>
+
+        {/* CHART RANGE SELECTION TABS */}
         <Tabs
           defaultActiveKey="stats"
           transition={false}
           id="noanim-tab-example"
           className="mb-3"
+          fill
         >
           <Tab eventKey="stats" title="Stats">
             <div className="chart-bg">
