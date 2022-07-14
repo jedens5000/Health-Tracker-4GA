@@ -25,8 +25,6 @@ const Charts = () => {
 
   return (
     <div
-      // id="chart-h-100"
-      // className="h-100"
       style={{
         backgroundImage: `url(${chartBamboo})`,
         backgroundSize: "cover",
@@ -35,35 +33,27 @@ const Charts = () => {
         height: "150vh",
       }}
     >
-      {/* <div> */}
-      {/* <img id="chartPhoto" src={chartBamboo} alt="bamboo" /> */}
       <NavMenu />
-      {/* <div className="position-relative"> */}
-      {/* <div className="position-absolute top-50 start-50 translate-middle-x chart-body text-bg-chart"> */}
       <div className="container position-relative mx-auto chart-body text-bg-chart">
         {/* CHART SELECTOR BUTTON */}
-
-        <DropdownButton id="dropdown-basic-button" title="Select Chart Type:">
-          <Dropdown.Item
-            onClick={() => actions.changeChart("chartarea")}
-            // href="#/action-1"
+        <div className="d-flex justify-content-center">
+          <DropdownButton
+            className="mb-3 bg-light"
+            variant="outline-primary"
+            id="dropdown-basic-button"
+            title="Select Chart Type:"
           >
-            Area Chart
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={() => actions.changeChart("chartbar")}
-            // href="#/action-2"
-          >
-            Bar Chart
-          </Dropdown.Item>
-          <Dropdown.Item
-            onClick={() => actions.changeChart("chartline")}
-            // href="#/action-3"
-          >
-            Line Chart
-          </Dropdown.Item>
-        </DropdownButton>
-
+            <Dropdown.Item onClick={() => actions.changeChart("chartarea")}>
+              Area Chart
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => actions.changeChart("chartbar")}>
+              Bar Chart
+            </Dropdown.Item>
+            <Dropdown.Item onClick={() => actions.changeChart("chartline")}>
+              Line Chart
+            </Dropdown.Item>
+          </DropdownButton>
+        </div>
         {/* CHART RANGE SELECTION TABS */}
         <Tabs
           defaultActiveKey="stats"
@@ -75,28 +65,11 @@ const Charts = () => {
           <Tab eventKey="stats" title="Stats">
             <div className="chart-bg">
               <Stats />
+              {/* <ChartLines /> */}
             </div>
             <ChartPie />
           </Tab>
-          <Tab eventKey="all" title="All Records">
-            {/* <div className="row justify-content-evenly">
-              <div className="col-5">
-                <ChartArea id="chartarea" />
-              </div>
-              <div className="col-5">
-                <ChartBar id="barchart" />
-              </div>
-            </div> */}
-            {store.chartType === "chartarea" ? (
-              <ChartArea />
-            ) : store.chartType === "chartbar" ? (
-              <ChartBar />
-            ) : store.chartType === "chartline" ? (
-              <ChartLine />
-            ) : (
-              <ChartArea />
-            )}
-          </Tab>
+
           <Tab eventKey="7day" title="Last 7 Days">
             {store.chartType === "chartarea" ? (
               <ChartArea7 />
@@ -130,9 +103,17 @@ const Charts = () => {
               <ChartArea30 />
             )}
           </Tab>
-          {/* <Tab eventKey="pie" title="Chart Pie">
-            <ChartPie />
-          </Tab> */}
+          <Tab eventKey="all" title="All Records">
+            {store.chartType === "chartarea" ? (
+              <ChartArea />
+            ) : store.chartType === "chartbar" ? (
+              <ChartBar />
+            ) : store.chartType === "chartline" ? (
+              <ChartLine />
+            ) : (
+              <ChartArea />
+            )}
+          </Tab>
         </Tabs>
       </div>
     </div>

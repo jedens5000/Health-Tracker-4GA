@@ -28,7 +28,7 @@ export const StatusUpdate = () => {
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         backgroundRepeat: "no-repeat",
-        // height: "100vh",
+        height: "100vh",
       }}
     >
       <NavMenu />
