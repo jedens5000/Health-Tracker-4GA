@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, PureComponent } from "react";
-
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import {
-  LineChart,
-  AreaChart,
-  Area,
-  Line,
+  BarChart,
+  Bar,
+  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -14,7 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export const ChartArea30 = () => {
+export const ChartBar30 = () => {
   const { store, actions } = useContext(Context);
 
   const issues = new Set();
@@ -22,45 +20,88 @@ export const ChartArea30 = () => {
     issues.add(element.issue);
   });
   const setArray = [...issues];
-  console.log(setArray);
+  console.log(issues);
   const dataArray = [];
   for (let i = 0; i < setArray.length; i++) {
     const newArray = store.data.filter((element) => {
       if (element.issue === setArray[i]) {
-        element.date = element.date.split("").slice(0, 11).join(""); // Date reformat
         return true;
       }
     });
     // THIS WILL CHARGE dataArray to LAST 30 DAYS//////////////////////////////
     const array30Days = newArray.slice(newArray.length - 30, newArray.length);
     dataArray.push(array30Days);
-    //////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////
     dataArray.push(newArray);
   }
 
   console.log(dataArray);
 
-  // const testArray = [...dataArray[0], ...dataArray[1], ...dataArray[2]];
-  // console.log(testArray);
+  ///////////////////////////////////
+  // let data = [
+  //   {
+  //     date: dataArray[0][0].date.slice(0, 11),
+  //     issue1: dataArray[0][0].value,
+  //     issue2: dataArray[1][0].value,
+  //     issue3: dataArray[2][0].value,
+  //   },
+  //   {
+  //     date: dataArray[0][1].date.slice(0, 11),
+  //     issue1: dataArray[0][1].value,
+  //     issue2: dataArray[1][1].value,
+  //     issue3: dataArray[2][1].value,
+  //   },
+  //   {
+  //     date: dataArray[0][2].date.slice(0, 11),
+  //     issue1: dataArray[0][2].value,
+  //     issue2: dataArray[1][2].value,
+  //     issue3: dataArray[2][2].value,
+  //   },
+  //   {
+  //     date: dataArray[0][3].date.slice(0, 11),
+  //     issue1: dataArray[0][3].value,
+  //     issue2: dataArray[1][3].value,
+  //     issue3: dataArray[2][3].value,
+  //   },
+  //   {
+  //     date: dataArray[0][4].date.slice(0, 11),
+  //     issue1: dataArray[0][4].value,
+  //     issue2: dataArray[1][4].value,
+  //     issue3: dataArray[2][4].value,
+  //   },
+  //   {
+  //     date: dataArray[0][5].date.slice(0, 11),
+  //     issue1: dataArray[0][5].value,
+  //     issue2: dataArray[1][5].value,
+  //     issue3: dataArray[2][5].value,
+  //   },
+  //   {
+  //     date: dataArray[0][6].date.slice(0, 11),
+  //     issue1: dataArray[0][6].value,
+  //     issue2: dataArray[1][6].value,
+  //     issue3: dataArray[2][6].value,
+  //   },
+  // ];
+
   const issue1 = dataArray[0][0].issue;
   const issue2 = dataArray[2][0].issue;
   const issue3 = dataArray[4][0].issue;
-  console.log(issue1, issue2, issue3);
 
   return (
-    <div className="chartline-bg">
+    <div>
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue1}</p>
         <ResponsiveContainer width="100%" height={300}>
-          <AreaChart
+          <BarChart
             width={800}
             height={300}
+            // data={data}
             data={dataArray[1]}
             margin={{
-              top: 10,
+              top: 5,
               right: 30,
-              left: 0,
-              bottom: 0,
+              left: 20,
+              bottom: 5,
             }}
             className={"chart-bg"}
           >
@@ -68,27 +109,24 @@ export const ChartArea30 = () => {
             <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="value"
-              stroke="#8884d8"
-              fill="#8884d8"
-            />
-          </AreaChart>
+            {/* <Legend /> */}
+            <Bar dataKey="value" fill="#8884d8" />
+          </BarChart>
         </ResponsiveContainer>
       </div>
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue2}</p>
         <ResponsiveContainer width="100%" height={300}>
-          <AreaChart
+          <BarChart
             width={800}
             height={300}
+            // data={data}
             data={dataArray[3]}
             margin={{
-              top: 10,
+              top: 5,
               right: 30,
-              left: 0,
-              bottom: 0,
+              left: 20,
+              bottom: 5,
             }}
             className={"chart-bg"}
           >
@@ -96,27 +134,24 @@ export const ChartArea30 = () => {
             <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="value"
-              stroke="#82ca9d"
-              fill="#82ca9d"
-            />
-          </AreaChart>
+            {/* <Legend /> */}
+            <Bar dataKey="value" fill="#82ca9d" />
+          </BarChart>
         </ResponsiveContainer>
       </div>
       <div className="chart-wrapper">
         <p className="text-center chart-name">{issue3}</p>
         <ResponsiveContainer width="100%" height={300}>
-          <AreaChart
+          <BarChart
             width={800}
             height={300}
+            // data={data}
             data={dataArray[5]}
             margin={{
-              top: 10,
+              top: 5,
               right: 30,
-              left: 0,
-              bottom: 0,
+              left: 20,
+              bottom: 5,
             }}
             className={"chart-bg"}
           >
@@ -124,13 +159,9 @@ export const ChartArea30 = () => {
             <XAxis dataKey="date" />
             <YAxis />
             <Tooltip />
-            <Area
-              type="monotone"
-              dataKey="value"
-              stroke="#888a9d"
-              fill="#888a9d"
-            />
-          </AreaChart>
+            {/* <Legend /> */}
+            <Bar dataKey="value" fill="#888a9d" />
+          </BarChart>
         </ResponsiveContainer>
       </div>
     </div>
