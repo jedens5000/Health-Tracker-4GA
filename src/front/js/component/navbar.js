@@ -17,7 +17,7 @@ export const NavMenu = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav justify className="me-auto">
             {/* <div
               className="collapse navbar-collapse d-flex justify-content-between align-self-stretch"
               id="navbarNavAltMarkup"

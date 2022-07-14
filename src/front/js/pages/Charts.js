@@ -79,16 +79,23 @@ const Charts = () => {
             <ChartPie />
           </Tab>
           <Tab eventKey="all" title="All Records">
-            {/* <ChartArea7 /> */}
-            <div className="row justify-content-evenly">
+            {/* <div className="row justify-content-evenly">
               <div className="col-5">
                 <ChartArea id="chartarea" />
               </div>
-              {/* <div className="col-1"></div> */}
               <div className="col-5">
                 <ChartBar id="barchart" />
               </div>
-            </div>
+            </div> */}
+            {store.chartType === "chartarea" ? (
+              <ChartArea />
+            ) : store.chartType === "chartbar" ? (
+              <ChartBar />
+            ) : store.chartType === "chartline" ? (
+              <ChartLine />
+            ) : (
+              <ChartArea />
+            )}
           </Tab>
           <Tab eventKey="7day" title="Last 7 Days">
             {store.chartType === "chartarea" ? (
