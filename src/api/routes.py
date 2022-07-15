@@ -1,5 +1,9 @@
 import os
 import schedule
+import sendgrid 
+from sendgrid.helpers.mail import *
+import time
+from time import sleep
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Answer, Notification
 from api.utils import generate_sitemap, APIException
@@ -7,7 +11,7 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import create_refresh_token
-from api.MedTextReminders import message_scheduler
+# from api.MedTextReminders import intro_message
 from twilio.rest import Client
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
@@ -29,6 +33,7 @@ def create_user():
     user=User(name=name, email=email, password=password, issue1=issue1, issue2=issue2, issue3=issue3)
     db.session.add(user)
     db.session.commit()
+    # intro_message(email, name)
     return jsonify({"msg": "success, user created"}), 200
 
 
@@ -38,7 +43,9 @@ def get_user():
     user_id = get_jwt_identity()
     print(user_id)
     user = User.query.filter_by(id=user_id).first()
-    return jsonify(user.serialize())
+    if user:
+        return jsonify(user.serialize())
+    return jsonify("error user not found")
 
 @api.route("/login", methods=["POST"])
 def create_token():
@@ -92,17 +99,33 @@ def get_user_answers():
     answers_serialized = [item.serialize() for item in answers] 
     return jsonify(answers_serialized), 200
 
-@api.route("/MedTextReminders", methods=["GET"])
-def get_notification():
-    user = Notification.query.all()
-    issues = list(map(lambda x: x.serialize(), user))
-    return jsonify(issues), 200
+# @api.route("/MedTextReminders", methods=["GET"])
+# def get_notification():
+#     user = Notification.query.all()
+#     issues = list(map(lambda x: x.serialize(), user))
+#     return jsonify(issues), 200
 
-@api.route("/MedTextReminders", methods=["POST"])
-def meds():
-    data = request.get_json()
-    message_scheduler(data["time"], data["message"], data["phone"])
-    # reminder = Notification(phone=data["phone"], message=data["message"])
-    # db.session.add(reminder)
-    # db.session.commit()
-    return "success"
+# @api.route("/MedTextReminders", methods=["POST", "GET"])
+# def job():
+
+#     print("I'm working...")
+#     sg = sendgrid.SendGridAPIClient(api_key="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")
+#     from_email = Email("mindsetmentalhealth1@gmail.com")
+#     to_email = To("mindsetmentalhealth1@gmail.com")
+#     subject = "Birthday Alert!"
+#     content = Content("text/plain", "It's someone's birthday! Log on to send a card")
+#     mail = Mail(from_email, to_email, subject, content)
+#     response = sg.client.mail.send.post(request_body=mail.get())
+#     print(response.status_code)
+#     print(response.body)
+#     print(response.headers)
+#     return ('success')  
+
+# schedule.every(10).seconds.do(job)
+# schedule.every(10).minutes.do(job)
+# schedule.every().hour.do(job)
+
+
+# while True:
+#     schedule.run_pending()
+    # time.sleep(1)
