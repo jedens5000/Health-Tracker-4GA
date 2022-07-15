@@ -71,7 +71,7 @@ export const NavMenu = () => {
                 </NavDropdown.Item>
               </NavDropdown> */}
               <Link
-                to="/SMSForm"
+                to="/App"
                 onClick={() => setExpanded(false)}
                 className="nav-link"
               >

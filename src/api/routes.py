@@ -1,7 +1,5 @@
 import os
 import schedule
-import sendgrid 
-from sendgrid.helpers.mail import *
 import time
 from time import sleep
 from flask import Flask, request, jsonify, url_for, Blueprint
