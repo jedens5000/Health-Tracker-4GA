@@ -86,17 +86,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error;
         }
       },
-      reminders: (phone, message, time) => {
-        fetch(getStore().apURL + "/api/MedTextReminders", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ phone, message, time }),
-        })
-          .then((result) => console.log(result))
-          .catch((error) => console.log(error));
-      },
+      // reminders: (phone, message, time) => {
+      //   fetch(getStore().apURL + "/api/MedTextReminders", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify({ phone, message, time }),
+      //   })
+      //     .then((result) => console.log(result))
+      //     .catch((error) => console.log(error));
+      // },
 
       // medications: async (medication) => {
       //   try {
