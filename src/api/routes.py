@@ -1,7 +1,5 @@
 import os
-import schedule
-import time
-from time import sleep
+import datetime
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Answer, Notification
 from api.utils import generate_sitemap, APIException
@@ -9,9 +7,6 @@ from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import create_refresh_token
-# from api.MedTextReminders import intro_message
-from twilio.rest import Client
-from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 

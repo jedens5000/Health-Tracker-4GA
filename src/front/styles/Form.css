@@ -38,12 +38,15 @@
   align-items: center;
 }
 
+.form-reminders {
+  top: 20%;
+}
+
 .form h1 {
   font-size: 1rem;
   text-align: start;
   width: 100%;
   margin-bottom: 1rem;
-  /* color: rgb(0, 0, 0); */
 }
 
 .form-input {
@@ -59,7 +62,6 @@
 
 .form-label {
   display: inline-block;
-  /* font-size: 0.8rem; */
   margin-bottom: 6px;
   color: rgb(0, 0, 0);
 }
@@ -67,30 +69,13 @@
 .form-input {
   display: block;
   padding-left: 10px;
-
-  /* outline: none; */
-  /* border-radius: 2px; */
   height: 40px;
   width: 300px;
-  /* border: none; */
 }
 
 .form-input::placeholder {
   color: #595959;
-  /* font-size: 12px; */
 }
-
-/* .form-input-btn {
-    width: 80%;
-    height: 50px;
-    margin-top: 10px;
-    border-radius: 2px;
-    background-color: blue;
-    outline: none;
-    border: none;
-    color: #fff;
-    font-size: 1rem;
-  } */
 
 .form-input-btn:hover {
   cursor: pointer;
