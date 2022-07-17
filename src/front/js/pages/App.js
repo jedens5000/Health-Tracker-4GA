@@ -9,6 +9,7 @@ import React from "react";
 import chartBamboo from "../../img/bamboo8.jpg";
 import { NavMenu } from "../component/navbar";
 
+
 function App() {
   return (
     <div
@@ -59,6 +60,7 @@ function App() {
       </div>
     </div>
   );
-}
+</div>
+)}
 
 export default App;

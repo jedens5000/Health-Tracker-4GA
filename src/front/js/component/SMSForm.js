@@ -10,30 +10,30 @@ import {
   import React, { useState } from "react";
   import { guid } from "@progress/kendo-react-common";
   
-  const meetingRooms = {
-    name: "Meeting Room",
-    data: [
-      {
-        text: "Blue room",
-        value: 1,
-        color: "blue",
-      },
-      {
-        text: "Red room",
-        value: 2,
-        color: "red",
-      },
-      {
-        text: "Green room",
-        value: 3,
-        color: "green",
-      },
-    ],
-    field: "RoomID",
-    valueField: "value",
-    textField: "text",
-    colorField: "color",
-  };
+  // const meetingRooms = {
+  //   name: "Meeting Room",
+  //   data: [
+  //     {
+  //       text: "Blue room",
+  //       value: 1,
+  //       color: "blue",
+  //     },
+  //     {
+  //       text: "Red room",
+  //       value: 2,
+  //       color: "red",
+  //     },
+  //     {
+  //       text: "Green room",
+  //       value: 3,
+  //       color: "green",
+  //     },
+  //   ],
+  //   field: "RoomID",
+  //   valueField: "value",
+  //   textField: "text",
+  //   colorField: "color",
+  // };
   
   const compareById = matchingItem => item => matchingItem.id === item.id;
   
@@ -60,12 +60,12 @@ import {
   
     return (
       <div className="k-my-8">
-        <div className="k-mb-4 k-font-weight-bold">Book a room</div>
+        <div className="k-mb-4 k-font-weight-bold">Reminder Scheduler</div>
         <Scheduler
           editable
           data={data}
           onDataChange={onDataChange}
-          resources={[meetingRooms]}
+          // resources={[meetingRooms]}
         >
           <TimelineView />
           <DayView />
