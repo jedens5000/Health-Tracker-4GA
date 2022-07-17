@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { NavDropdown, Navbar, Nav, Container } from "react-bootstrap";
-import "../../styles/navbar.css";
 import mindsetLogo from "../../img/mindset-logo-greenB6D7B3.png";
 
 export const NavMenu = () => {
