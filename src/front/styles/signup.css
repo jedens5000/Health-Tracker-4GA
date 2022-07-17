@@ -12,8 +12,6 @@
   font-size: 1rem;
   text-align: center;
   width: 100%;
-  /* margin-bottom: 1rem; */
-  /* color: rgb(0, 0, 0); */
 }
 
 .label {
@@ -30,7 +28,6 @@
 }
 .btn-signup {
   color: white;
-  /* background-color: red; */
   border-radius: 5px;
   font-size: larger;
   display: block;
