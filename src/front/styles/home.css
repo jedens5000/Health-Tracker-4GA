@@ -6,10 +6,6 @@
     on that page only (the ones not reused in other pages).
 */
 
-/* #homeBg {
-  background: no-repeat url("../../img/bamboo1.jpg");
-  background: rgba(182, 215, 179, 0.3);
-} */
 
 .text-bg-home {
   background: rgba(182, 215, 179, 0.8);
@@ -21,22 +17,4 @@
   object-fit: cover;
 }
 
-/* body { */
-/* background: radial-gradient(
-      circle,
-      rgba(255, 243, 221, 1) 28%,
-      rgba(51, 236, 4, 0.35898109243697474) 50%,
-      rgba(23, 9, 215, 1) 98%
-    )
-    no-repeat center center fixed; */
-/* background: radial-gradient(
-      circle,
-      rgba(184, 242, 230, 1) 48%,
-      rgba(51, 236, 4, 0.35898109243697474) 60%,
-      rgba(93, 169, 233, 1) 98%
-    )
-    no-repeat center center fixed; */
 
-/* background-color: blanchedalmond; */
-/* background-color: #b8f2e6; */
-/* } */

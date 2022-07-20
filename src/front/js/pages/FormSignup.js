@@ -1,10 +1,7 @@
 import React, { useContext, useState } from "react";
 import { validateSignUp } from "../component/validations";
 import mindsetLogo from "../../img/mindset-logo-clear.png";
-// import mainPageBackground from "../../img/mainPageBackground.png";
-import mainPageBackground from "../../img/bgImgLotusBlue.png";
 import chartBamboo from "../../img/bamboo8.jpg";
-import "../../styles/Form.css";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 
@@ -23,14 +20,14 @@ export const FormSignup = ({ submitForm }) => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <img className="logo" src={mindsetLogo} />
-      <h1>
+      <img className="signup-logo" src={mindsetLogo} />
+      <h1 className="signup-text">
         Start tracking your issues today!
         <br />
         Create your account by filling out the information below.
       </h1>
 
-      <div className="form-container">
+      <div className="signup-form-container">
         <div
           style={{
             background: "rgba(182, 215, 179, 0.8)",
@@ -65,13 +62,13 @@ export const FormSignup = ({ submitForm }) => {
                 .catch((error) => alert(error));
               console.log("form submitted");
             }}
-            className="form"
+            className="signup-form"
             noValidate
           >
             <div className="mb-3">
-              <label className="form-label">Name</label>
+              <label className="signup-label">Name</label>
               <input
-                className="form-input"
+                className="signup-input"
                 type="name"
                 name="name"
                 placeholder="Enter your name"
@@ -81,9 +78,9 @@ export const FormSignup = ({ submitForm }) => {
               {errors.name && <p>{errors.name}</p>}
             </div>
             <div className="mb-3">
-              <label className="form-label">Email</label>
+              <label className="signup-label">Email</label>
               <input
-                className="form-input"
+                className="signup-input"
                 type="email"
                 name="email"
                 placeholder="Enter your email"
@@ -95,9 +92,9 @@ export const FormSignup = ({ submitForm }) => {
               {errors.email && <p>{errors.email}</p>}
             </div>
             <div className="mb-3">
-              <label className="form-label">Password</label>
+              <label className="signup-label">Password</label>
               <input
-                className="form-input"
+                className="signup-input"
                 type="password"
                 name="password"
                 placeholder="Enter your password"
@@ -109,9 +106,9 @@ export const FormSignup = ({ submitForm }) => {
               {errors.password && <p>{errors.password}</p>}
             </div>
             <div className="mb-3">
-              <label className="form-label">Confirm Password</label>
+              <label className="signup-label">Confirm Password</label>
               <input
-                className="form-input"
+                className="signup-input"
                 type="password"
                 name="password2"
                 placeholder="Confirm your password"
@@ -123,9 +120,9 @@ export const FormSignup = ({ submitForm }) => {
               {errors.password2 && <p>{errors.password2}</p>}
             </div>
             <div className="mb-3">
-              <label className="form-label">Issues to track:</label>
+              <label className="signup-label">Issues to track:</label>
               <input
-                className="form-input"
+                className="signup-input"
                 type="issue1"
                 name="issue1"
                 placeholder="Enter your first issue (required)"
@@ -138,7 +135,7 @@ export const FormSignup = ({ submitForm }) => {
             </div>
             <div className="mb-3">
               <input
-                className="form-input"
+                className="signup-input"
                 type="issue2"
                 name="issue2"
                 placeholder="Enter your second issue (optional)"
@@ -151,7 +148,7 @@ export const FormSignup = ({ submitForm }) => {
             </div>
             <div className="mb-3">
               <input
-                className="form-input"
+                className="signup-input"
                 type="issue3"
                 name="issue3"
                 placeholder="Enter your third issue (optional)"
@@ -167,8 +164,11 @@ export const FormSignup = ({ submitForm }) => {
               Sign up
             </button>
 
-            <span className="form-input-login">
-              Already have an account? Login <a href="Login">here</a>
+            <span>
+              Already have an account? Login{" "}
+              <a href="Login" className="login-link">
+                here
+              </a>
             </span>
           </form>
         </div>

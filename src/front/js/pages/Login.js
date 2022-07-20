@@ -24,9 +24,9 @@ export const Login = () => {
       });
   };
   return (
-    <div id="loginFormAndPhoto">
+    <div className="login-bg">
       <img id="loginPhoto" src={sunsetImg} alt="sunset" />
-      <form onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <Link to="/">
           <img className="login-logo" src={mindsetLogo} alt="mindset logo" />
         </Link>
@@ -56,16 +56,6 @@ export const Login = () => {
             required
           />
         </div>
-        {/* <div className="form-check mb-3">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            id="flexCheckIndeterminate"
-          ></input>
-          <label className="form-check-label" for="flexCheckIndeterminate">
-            Remember Me
-          </label>
-        </div> */}
         {error && (
           <div className="alert alert-danger">
             <h6>{error.message}</h6>
@@ -79,13 +69,9 @@ export const Login = () => {
           Submit
         </button>
         <div className="d-flex justify-content-between">
-          <Link to="/signup">
+          <Link to="/signup" className="login-link">
             <div>Don't have an account? Sign Up</div>
           </Link>
-          {/* <Link to="/formForgotPassword">
-            {" "}
-            <div>ForgotPassword?</div>
-          </Link> */}
         </div>
       </form>
     </div>

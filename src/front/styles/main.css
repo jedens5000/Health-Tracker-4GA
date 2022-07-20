@@ -1,21 +1,14 @@
 .main-body {
   height: 80vh;
   background-size: cover;
-  /* font-family: "Quicksand", sans-serif; */
-  /* font-family: "Raleway", sans-serif; */
-
-  /* border: 1px solid yellowgreen;
-  border-radius: 5px; */
 }
 
 .main-bg-img {
-  /* background-image: url(../img/mainPageBackground.png); */
   height: 100vh;
   position: static;
   background-size: "cover";
-  /* transform: scaleX(-1); */
 }
-/* src/front/img/mainPageBackground.png */
+
 .text-bg {
   background: rgba(182, 215, 179, 0.5);
 }
