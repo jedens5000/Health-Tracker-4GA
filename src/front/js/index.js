@@ -6,7 +6,7 @@ import ReactDOM from "react-dom";
 import "../styles/index.css";
 import "../styles/home.css";
 import "../styles/signup.css";
-// import "../styles/Form.css";
+import "../styles/reminder.css";
 import "../styles/login.css";
 // import "../styles/navbar.css";
 // import "../styles/main.css";

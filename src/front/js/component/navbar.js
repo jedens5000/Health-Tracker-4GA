@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { NavDropdown, Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import mindsetLogo from "../../img/mindset-logo-greenB6D7B3.png";
 
 export const NavMenu = () => {
@@ -17,14 +17,7 @@ export const NavMenu = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav justify className="me-auto">
-            {/* <div
-              className="collapse navbar-collapse d-flex justify-content-between align-self-stretch"
-              id="navbarNavAltMarkup"
-            > */}
-            <div
-              className="navbar-nav ml-auto fs-4 justify-content-between"
-              // id="homeNavbar"
-            >
+            <div className="navbar-nav ml-auto fs-4 justify-content-between">
               <a className="nav-link" aria-current="page" href="/main">
                 Home
               </a>
@@ -42,35 +35,8 @@ export const NavMenu = () => {
               >
                 <p>Chart History</p>
               </Link>
-
-              {/* <NavDropdown title="Chart History" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/charts">
-                  <Link to="/charts" className="nav-link">
-                    Select Chart Type:
-                  </Link>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item
-                  // href="/charts"
-                  onClick={() => actions.changeChart("chartarea")}
-                >
-                  Area Chart
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  // href="/charts"
-                  onClick={() => actions.changeChart("chartbar")}
-                >
-                  Bar Chart
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  // href="/charts"
-                  onClick={() => actions.changeChart("chartline")}
-                >
-                  Line Chart
-                </NavDropdown.Item>
-              </NavDropdown> */}
               <Link
-                to="/App"
+                to="/Reminders"
                 onClick={() => setExpanded(false)}
                 className="nav-link"
               >
@@ -80,7 +46,6 @@ export const NavMenu = () => {
                 Sign Out
               </a>
             </div>
-            {/* </div> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

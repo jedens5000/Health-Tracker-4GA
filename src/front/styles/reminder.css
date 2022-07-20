@@ -1,0 +1,28 @@
+.reminder-form-container {
+  margin: auto;
+  margin-top: 10px;
+  width: 500px;
+  position: relative;
+  border-radius: 5px;
+  height: 750px;
+  display: grid;
+}
+
+.reminder-form {
+  background: rgba(182, 215, 179, 0.8);
+  border: 1px solid #495159;
+  border-radius: 10px;
+  color: #495159;
+  margin-top: 20px;
+  height: 30%;
+  width: 95%;
+  padding: 8%;
+  text-align: center;
+}
+
+.reminder-form-input {
+  padding-left: 10px;
+  height: 40px;
+  width: 300px;
+  margin: 0.5rem 0;
+}

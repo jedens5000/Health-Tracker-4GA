@@ -1,4 +1,4 @@
-#loginFormAndPhoto {
+.login-bg {
   background: rgba(182, 215, 179, 0.6);
   display: flex;
 }
@@ -9,20 +9,13 @@
   object-fit: cover;
 }
 
-form {
+.login-form {
   width: 50%;
   height: auto;
   margin: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-.input-field {
-  height: 50px !important;
-}
-
-.form-check-label {
-  float: left !important;
 }
 
 .login-logo {
@@ -35,13 +28,9 @@ form {
   object-fit: cover;
 }
 
-.button-text {
-  color: white;
+.login-link {
   text-decoration: none;
-}
-.button-text:hover {
-  color: white;
-  text-decoration: none;
+  color: #0d6efd;
 }
 
 @media (max-width: 500px) {
@@ -49,7 +38,7 @@ form {
     display: none;
   }
 
-  form {
+  .login-form {
     width: 100%;
     height: auto;
   }
