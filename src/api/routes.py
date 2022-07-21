@@ -26,7 +26,6 @@ def create_user():
     user=User(name=name, email=email, password=password, issue1=issue1, issue2=issue2, issue3=issue3)
     db.session.add(user)
     db.session.commit()
-    # intro_message(email, name)
     return jsonify({"msg": "success, user created"}), 200
 
 
@@ -91,34 +90,3 @@ def get_user_answers():
     answers = Answer.query.filter_by(user_id = id).all()    
     answers_serialized = [item.serialize() for item in answers] 
     return jsonify(answers_serialized), 200
-
-# @api.route("/MedTextReminders", methods=["GET"])
-# def get_notification():
-#     user = Notification.query.all()
-#     issues = list(map(lambda x: x.serialize(), user))
-#     return jsonify(issues), 200
-
-# @api.route("/MedTextReminders", methods=["POST", "GET"])
-# def job():
-
-#     print("I'm working...")
-#     sg = sendgrid.SendGridAPIClient(api_key="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")
-#     from_email = Email("mindsetmentalhealth1@gmail.com")
-#     to_email = To("mindsetmentalhealth1@gmail.com")
-#     subject = "Birthday Alert!"
-#     content = Content("text/plain", "It's someone's birthday! Log on to send a card")
-#     mail = Mail(from_email, to_email, subject, content)
-#     response = sg.client.mail.send.post(request_body=mail.get())
-#     print(response.status_code)
-#     print(response.body)
-#     print(response.headers)
-#     return ('success')  
-
-# schedule.every(10).seconds.do(job)
-# schedule.every(10).minutes.do(job)
-# schedule.every().hour.do(job)
-
-
-# while True:
-#     schedule.run_pending()
-    # time.sleep(1)
