@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
-import { Context } from "../store/appContext";
-import { NavMenu } from "../component/navbar";
+import { Context } from "../../store/appContext";
+import { NavMenu } from "../../component/navbar";
 import mainPageBackground from "../../img/bamboo7.jpg";
 
-// Unfinished form to set up scheduled text reminders for 
-// Dr. appointments, to sign in to the app to track wellness, medication reminders. 
-// Need to set up twilio on the backend and get the scheduler to work with twilio. 
+// Unfinished form to set up scheduled text reminders for
+// Dr. appointments, to sign in to the app to track wellness, medication reminders.
+// Need to set up twilio on the backend and get the scheduler to work with twilio.
 // Also need to change front end to properly set schedule.
 
 const SMSForm = () => {

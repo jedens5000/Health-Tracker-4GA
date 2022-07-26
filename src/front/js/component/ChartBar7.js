@@ -9,6 +9,8 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  Label,
+  LabelList,
   ResponsiveContainer,
 } from "recharts";
 
@@ -107,6 +109,8 @@ export const ChartBar7 = () => {
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
+            {/* Attempt to angle the dates */}
+            {/* <XAxis dataKey="date" angle="315" /> */}
             <YAxis />
             <Tooltip />
             {/* <Legend /> */}
