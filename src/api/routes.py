@@ -1,7 +1,7 @@
 import os
 import datetime
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Answer, Notification
+from api.models import db, User, Answer
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
