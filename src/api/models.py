@@ -50,25 +50,27 @@ class Answer(db.Model):
             "date": self.date,
             "issue": self.issue,                
         }
+# ############UNUSED DB########################################
+# #TO REACTIVATE NOTIFICATION DB: ADD CLASS NAME TO LINE 4 ON ROUTES.PY & ADMIN.PY, & UNCOMMENT LINE 17 ADMIN.PY####
 
-class Notification(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    phone = db.Column(db.String(120))
-    message = db.Column(db.String(255))
-    time = db.Column(db.String(255))
+# class Notification(db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     phone = db.Column(db.String(120))
+#     message = db.Column(db.String(255))
+#     time = db.Column(db.String(255))
 
-    def __repr__(self):
-        return self.name
+#     def __repr__(self):
+#         return self.name
            
-    def serialize(self):
-        return {
-            "phone": self.phone,
-            "message": self.message,
-            "time": self.time,
-        }
+#     def serialize(self):
+#         return {
+#             "phone": self.phone,
+#             "message": self.message,
+#             "time": self.time,
+#         }
 
 
-# ############UNUSED TABLES########################################
+# ##############################################################
 
 # associations = db.Table(
 #     "associations",
