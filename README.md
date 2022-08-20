@@ -4,7 +4,7 @@
 <a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset-logo.png" /></a>
 </p>
 
-This was my final project for school that I built alongside my classmate, <a href="https://github.com/Chadmichaelg">Chad Grubbs</a>. We built it with React using Router, Flux, and Context API. The backend uses Python Flask with SQLAlchemy.
+This was my final project for school that I built alongside my classmate, <a href="https://github.com/Chadmichaelg" target="_blank">Chad Grubbs</a>. We built it with React using Router, Flux, and Context API. The backend uses Python Flask with SQLAlchemy.
 
 The general purpose of the app is to provide the user with a data visualization of how frequently they are affected by their health issues. It's geared at tracking mental health issues, however it could be used to track many other things, like chronic pain, headaches, asthma, or anything else that might be a recurring problem for the user.
 
@@ -28,7 +28,6 @@ This project has not been deployed yet, but you can see it in the screenshots be
 <a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_4.png" /></a>
 <a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_5.png" /></a>
 <a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_6.png" /></a>
-<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset-logo.png" /></a>
 </p>
 
 <!-- # WebApp boilerplate with React JS and Flask API
