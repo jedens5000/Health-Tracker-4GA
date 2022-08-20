@@ -1,4 +1,32 @@
-# WebApp boilerplate with React JS and Flask API
+## Mindset Mental Health Tracker Project.
+
+This was my final project for school that I built along with my partner, Chad Grubbs. We built it with React using Router, Flux, and Context API. The backend uses Python Flask with SQLAlchemy.
+
+The general purpose of the app is to provide the user with a data visualization of how frequently they are affected by their health issues. It's geared at tracking mental health issues, however it could be used to track many other things, like chronic pain, headaches, asthma, or anything else that might be a recurring problem for the user.
+
+When the user signs up, they can enter up to three issues that they'd like to track. Then they log in once a day and rate how each issue is affecting them that day. The rating system was designed to make it as easy as possible for the user to quickly submit an update. They simply click on the smiley face icon that represents how good or bad that issue is making them feel that day. Each 5 available icons has a numerical value that is stored to disply in the data visualization. A really sad faced icon has a value of 5, while the happiest icon has a value of 1. This allows the charts to show the highest levels for days that the user was affected the most by their issues. If it's not affecting them, the charts will show the lowest level. Users can change the range and the types of the data visualization charts that they want to view.
+
+<!-- <p align="center">
+This project has been deployed with Vercel, so you can view it live at:<br />
+	<a href="https://star-wars-4ga.vercel.app" target="_blank">https://star-wars-4ga.vercel.app</a>
+</p> -->
+<p align="center">
+This project has not been deployed yet, but you can see it in the screenshots below. You can view my other projects at:<br />
+	<a href="https://www.jonedens.com" target="_blank">www.jonedens.com</a>
+</p>
+<br />
+
+<p align="center">
+<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_0.png" /></a>
+<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_1.png" /></a>
+<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_2.png" /></a>
+<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_3.png" /></a>
+<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_4.png" /></a>
+<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_5.png" /></a>
+<a href="https://www.jonedens.com" target="_blank"><img src="https://www.jonedens.com/images/mindset/mindset_6.png" /></a>
+</p>
+
+<!-- # WebApp boilerplate with React JS and Flask API
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/4GeeksAcademy/react-flask-hello.git)
 
@@ -92,4 +120,4 @@ This boilerplate it's 100% integrated with Herkou, just by pushing your changes 
     	// "prettier-webpack-plugin": "^1.2.0",
 
 "dotenv-webpack": "^1.7.0",
-"friendly-errors-webpack-plugin": "^1.7.0",
+"friendly-errors-webpack-plugin": "^1.7.0", -->
